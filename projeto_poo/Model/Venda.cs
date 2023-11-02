@@ -20,6 +20,5 @@ namespace projeto_poo.Model
         double ValorTotal { get; set; }
         string Estado { get; set; }
         DateTime HorioRealizacao { get; set; }
-        
     }
 }
