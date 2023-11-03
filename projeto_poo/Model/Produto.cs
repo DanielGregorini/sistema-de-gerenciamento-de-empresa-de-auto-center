@@ -6,7 +6,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace projeto_poo.Model
+
+namespace AutoCenter.Model
 {
     [Table("tb_produto")]
     public class Produto
