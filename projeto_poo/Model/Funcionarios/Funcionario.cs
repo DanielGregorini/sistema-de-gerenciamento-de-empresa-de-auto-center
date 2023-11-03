@@ -12,12 +12,10 @@ namespace AutoCenter.Model
     //[Table("tb_funcionario")]
     public class Funcionario
     {
-        [Key]
-        int FuncionarioId { get; set; }
-        Empresa Empresa { get; set; }
-        string Nome { get; set; }
-        string Cpf { get; set; }
-        string Login { get; set; }
-        string Senha { get; set; }
+        public Empresa Empresa { get; set; }
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
     }
 }

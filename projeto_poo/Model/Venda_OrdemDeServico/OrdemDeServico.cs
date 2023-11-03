@@ -12,13 +12,13 @@ namespace AutoCenter.Model
     [Table("tb_ordemdeservico")]
     public class OrdemDeServico
     {
-        int OrdemDeServicoId { get; set; }
-        string TipoDeServico { get; set; }
-        string Descricao { get; set; }
-        int VendedorId { get; set; }
-        Vendedor Vendedor { get; set; }
-        List<ProdutoOrdemDeServico> ProdutosUtilizados { get; set; }
-        string Estado { get; set; }
-        DateTime HorarioDeEntrega { get; set; }
+        public int OrdemDeServicoId { get; set; }
+        public string TipoDeServico { get; set; }
+        public string Descricao { get; set; }
+        public int VendedorId { get; set; }
+        public Vendedor Vendedor { get; set; }
+        public List<ProdutoOrdemDeServico> ProdutosUtilizados { get; set; }
+        public string Estado { get; set; }
+        public DateTime HorarioDeEntrega { get; set; }
     }
 }

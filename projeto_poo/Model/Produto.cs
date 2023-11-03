@@ -13,12 +13,12 @@ namespace AutoCenter.Model
     public class Produto
     {
         [Key]
-        int ProdutoId { get; set; }
-        string Nome { get; set; }
-        string Descricao { get; set; }
-        double Preco { get; set; }
-        double Quantidade { get; set; }
-        double CustoMedio { get; set; }
-        double CustoUltimaEntrada{ get; set; }
+        public int ProdutoId { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public double Preco { get; set; }
+        public double Quantidade { get; set; }
+        public double CustoMedio { get; set; }
+        public double CustoUltimaEntrada { get; set; }
     }
 }

@@ -13,11 +13,13 @@ namespace AutoCenter.Model
     public class Cliente
     {
         [Key]
-        int ClienteId { get; set; }
-        string Nome { get; set; }
-        string? Rg { get; set; }
-        string? Cpf_Cnpj { get; set; }
-        string? Endereco { get; set; }
-        string? Telefone { get; set; }
+        public int ClienteId { get; set; }
+        public string Nome { get; set; }
+        public string? Rg { get; set; }
+        public string? Cpf_Cnpj { get; set; }
+        public string? Endereco { get; set; }
+        public string? Telefone { get; set; }
+        public List<Veiculo>? Veiculos { get; set; }
+        public List<Venda>? Vendas { get; set; }
     }
 }

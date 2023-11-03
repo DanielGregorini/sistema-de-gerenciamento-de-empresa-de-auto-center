@@ -12,6 +12,6 @@ namespace AutoCenter.Model
     public class Gerente : Funcionario
     {
         [Key]
-        int GerenteId { get; set; }
+        public int GerenteId { get; set; }
     }
 }

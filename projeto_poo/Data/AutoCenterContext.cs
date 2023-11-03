@@ -8,8 +8,9 @@ using AutoCenter.Model;
 using AutoCenter.Data;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using AutoCenter.Model;
 using AutoCenter.Repository;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoCenter.Data
 {
@@ -53,22 +54,64 @@ namespace AutoCenter.Data
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*
-            modelBuilder.Entity<ParticipanteEvento>()
-                .HasKey(pe => new { pe.IdParticipante, pe.IdEvento });
+            //funcionarios
+            modelBuilder.Entity<Caixa>()
+                .HasKey(pk => pk.CaixaId);
 
-            modelBuilder.Entity<ParticipanteEvento>()
-                .HasOne(pe => pe.Participante)
-                .WithMany(p => p.EventosInscritos)
-                .HasForeignKey(pe => pe.IdParticipante);
+            modelBuilder.Entity<Vendedor>()
+                .HasKey(pk => pk.VendedorId);
 
-            modelBuilder.Entity<ParticipanteEvento>()
-                .HasOne(pe => pe.Evento)
-                .WithMany(e => e.ParticipantesInscritos)
-                .HasForeignKey(pe => pe.IdEvento);
+            modelBuilder.Entity<Gerente>()
+                .HasKey(pk => pk.GerenteId);
+
+            //ordens de serviço
+            modelBuilder.Entity<OrdemDeServico>()
+                .HasKey(pk => pk.OrdemDeServicoId);
+
+            modelBuilder.Entity<ProdutoOrdemDeServico>()
+                .HasKey(pk => pk.ProdutoOrdemDeServicoId);
+
+            modelBuilder.Entity<ProdutoOrdemDeServico>()
+                .HasOne(po => po.OrdemDeServico) // Define a propriedade de navegação para a OrdemDeServico
+                .WithMany(os => os.ProdutosUtilizados) // Define o tipo de relacionamento (um-para-muitos)
+                .HasForeignKey(po => po.OrdemDeServicoId); // Define a chave estrangeira para OrdemDeServicoId
+
+            //venda
+            modelBuilder.Entity<Venda>()
+                .HasKey(pk => pk.VendaId);
+
+            modelBuilder.Entity<Venda>()
+                .HasOne(v => v.Cliente)
+                .WithMany(c => c.Vendas)
+                .HasForeignKey(v => v.ClienteId);
+
+            modelBuilder.Entity<ProdutoVenda>()
+                .HasKey(pk => pk.ProdutoVendaId);
+
+            modelBuilder.Entity<ProdutoVenda>()
+                .HasOne(po => po.Venda) // Define a propriedade de navegação para a OrdemDeServico
+                .WithMany(os => os.ProdutosVendidos) // Define o tipo de relacionamento (um-para-muitos)
+                .HasForeignKey(po => po.VendaId); // Define a chave estrangeira para OrdemDeServicoId
+
+            //Produto
+            modelBuilder.Entity<Produto>()
+                .HasKey(pk => pk.ProdutoId);
+
+            //Cliente, veiculos e empresa
+            modelBuilder.Entity<Cliente>()
+                .HasKey(pk => pk.ClienteId);
+
+            modelBuilder.Entity<Veiculo>()
+                .HasKey(pk => pk.VeiculoId);
             
-            */
+            modelBuilder.Entity<Veiculo>()
+                .HasOne(v => v.Cliente)
+                .WithMany(c => c.Veiculos)
+                .HasForeignKey(v => v.ClienteId);
+
+            modelBuilder.Entity<Empresa>()
+                .HasKey(pk => pk.EmpresaId);
+
         }
-     
     }
 }

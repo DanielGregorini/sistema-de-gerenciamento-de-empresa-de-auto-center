@@ -13,12 +13,12 @@ namespace AutoCenter.Model
     public class Venda
     {
         [Key]
-        int VendaId { get; set; }
-        List<ProdutoVenda> ProdutosVendidos { get; set; }
-        int ClienteId { get; set; }
-        Cliente Cliente { get; set; }
-        double ValorTotal { get; set; }
-        string Estado { get; set; }
-        DateTime HorioRealizacao { get; set; }
+        public int VendaId { get; set; }
+        public List<ProdutoVenda> ProdutosVendidos { get; set; }
+        public int ClienteId { get; set; }
+        public Cliente Cliente { get; set; }
+        public double ValorTotal { get; set; }
+        public string Estado { get; set; }
+        public DateTime HorioRealizacao { get; set; }
     }
 }

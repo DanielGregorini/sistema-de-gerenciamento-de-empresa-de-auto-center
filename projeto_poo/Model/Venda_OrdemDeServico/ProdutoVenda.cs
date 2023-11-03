@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Numerics;
 
 namespace AutoCenter.Model
 {
@@ -13,9 +14,11 @@ namespace AutoCenter.Model
     public class ProdutoVenda
     {
         [Key]
-        int IdProdutoVenda { get; set; }
-        int ProdutoId { get; set; }
-        Produto Produto { get; set; }
-        double Quantidade { get; set; }
+        public int ProdutoVendaId { get; set; }
+        public int ProdutoId { get; set; }
+        public Produto Produto { get; set; }
+        public int VendaId { get; set; }
+        public Venda Venda { get; set; }
+        public double Quantidade { get; set; }
     }
 }

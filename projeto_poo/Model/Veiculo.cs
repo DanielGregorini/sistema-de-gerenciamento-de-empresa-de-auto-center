@@ -13,11 +13,11 @@ namespace AutoCenter.Model
     public class Veiculo
     {
         [Key]
-        int VeiculoId { get; set; } 
-        string? Tipo { get; set; } //carro, moto, barco...
-        string Modelo { get; set; }
-        int ClienteId { get; set; }
-        Cliente Cliente { get; set; }
-        string? Placa { get; set; }
+        public int VeiculoId { get; set; }
+        public string? Tipo { get; set; } //carro, moto, barco...
+        public string Modelo { get; set; }
+        public int ClienteId { get; set; }
+        public Cliente Cliente { get; set; }
+        public string? Placa { get; set; }
     }
 }

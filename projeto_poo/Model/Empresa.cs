@@ -13,11 +13,11 @@ namespace AutoCenter.Model
     public class Empresa
     {
         [Key]
-        int EmpresaId { get; set; }
-        string Nome { get; set; }
-        string RazaoSocial { get; set; }
-        string CNPJ { get; set; }
-        string Endereco { get; set; }
-        string Telefone { get; set; }
+        public int EmpresaId { get; set; }
+        public string Nome { get; set; }
+        public string RazaoSocial { get; set; }
+        public string CNPJ { get; set; }
+        public string Endereco { get; set; }
+        public string Telefone { get; set; }
     }
 }

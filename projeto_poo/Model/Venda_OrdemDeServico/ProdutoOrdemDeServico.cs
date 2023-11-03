@@ -13,9 +13,11 @@ namespace AutoCenter.Model
     public class ProdutoOrdemDeServico
     {
         [Key]
-        int IdProdutoOrdemDeServico { get; set; }
-        int ProdutoId { get; set; }
-        Produto Produto { get; set; }
-        double Quantidade { get; set; }
+        public int ProdutoOrdemDeServicoId { get; set; }
+        public int ProdutoId { get; set; }
+        public Produto Produto { get; set; }
+        public int OrdemDeServicoId { get; set; }
+        public OrdemDeServico OrdemDeServico { get; set; }
+        public double Quantidade { get; set; }
     }
 }
