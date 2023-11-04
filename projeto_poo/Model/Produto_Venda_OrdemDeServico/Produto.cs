@@ -7,12 +7,11 @@ using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AutoCenter.Model
+namespace AutoCenter.Model.Venda_OrdemDeServico
 {
     [Table("tb_produto")]
     public class Produto
     {
-        [Key]
         public int ProdutoId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }

@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace AutoCenter.Model
 {
-    [Table("tb_vendedor")]
-    public class Vendedor : Funcionario
+    public class Funcionario
     {
-        [Key]
-        public int VendedorId { get; set; }
+        public Empresa Empresa { get; set; }
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
     }
 }

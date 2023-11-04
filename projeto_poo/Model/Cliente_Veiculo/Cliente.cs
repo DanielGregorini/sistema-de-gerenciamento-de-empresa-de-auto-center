@@ -9,15 +9,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoCenter.Model
 {
-    [Table("tb_empresa")]
-    public class Empresa
+    [Table("tb_cliente")]
+    public class Cliente
     {
-        [Key]
-        public int EmpresaId { get; set; }
+        public int ClienteId { get; set; }
         public string Nome { get; set; }
-        public string RazaoSocial { get; set; }
-        public string CNPJ { get; set; }
-        public string Endereco { get; set; }
-        public string Telefone { get; set; }
+        public string? Rg { get; set; }
+        public string? Cpf_Cnpj { get; set; }
+        public string? Endereco { get; set; }
+        public string? Telefone { get; set; }
+        public List<Veiculo>? Veiculos { get; set; }
+        public List<Venda>? Vendas { get; set; }
     }
 }

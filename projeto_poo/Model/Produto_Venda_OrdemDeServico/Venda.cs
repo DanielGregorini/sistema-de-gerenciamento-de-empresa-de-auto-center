@@ -6,18 +6,19 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
+using AutoCenter.Model.Cliente_Veiculo;
 
 namespace AutoCenter.Model
 {
-    [Table("tb_veiculo")]
-    public class Veiculo
+    [Table("tb_venda")]
+    public class Venda
     {
-        [Key]
-        public int VeiculoId { get; set; }
-        public string? Tipo { get; set; } //carro, moto, barco...
-        public string Modelo { get; set; }
+        public int VendaId { get; set; }
+        public List<ProdutoVenda> ProdutosVendidos { get; set; }
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
-        public string? Placa { get; set; }
+        public double ValorTotal { get; set; }
+        public string Estado { get; set; }
+        public DateTime HorioRealizacao { get; set; }
     }
 }

@@ -6,19 +6,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Numerics;
+using AutoCenter.Model.Venda_OrdemDeServico;
 
 namespace AutoCenter.Model
 {
-    [Table("tb_produto_venda")]
-    public class ProdutoVenda
+    [Table("tb_produto_ordemdeservico")]
+    public class ProdutoOrdemDeServico
     {
-        [Key]
-        public int ProdutoVendaId { get; set; }
+        public int ProdutoOrdemDeServicoId { get; set; }
         public int ProdutoId { get; set; }
         public Produto Produto { get; set; }
-        public int VendaId { get; set; }
-        public Venda Venda { get; set; }
+        public int OrdemDeServicoId { get; set; }
+        public OrdemDeServico OrdemDeServico { get; set; }
         public double Quantidade { get; set; }
     }
 }

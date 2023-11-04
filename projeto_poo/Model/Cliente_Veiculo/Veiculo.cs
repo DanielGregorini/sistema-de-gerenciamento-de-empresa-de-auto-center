@@ -9,17 +9,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoCenter.Model
 {
-    [Table("tb_cliente")]
-    public class Cliente
+    [Table("tb_veiculo")]
+    public class Veiculo
     {
-        [Key]
+        public int VeiculoId { get; set; }
+        public string? Tipo { get; set; } //carro, moto, barco...
+        public string Modelo { get; set; }
         public int ClienteId { get; set; }
-        public string Nome { get; set; }
-        public string? Rg { get; set; }
-        public string? Cpf_Cnpj { get; set; }
-        public string? Endereco { get; set; }
-        public string? Telefone { get; set; }
-        public List<Veiculo>? Veiculos { get; set; }
-        public List<Venda>? Vendas { get; set; }
+        public Cliente Cliente { get; set; }
+        public string? Placa { get; set; }
     }
 }
