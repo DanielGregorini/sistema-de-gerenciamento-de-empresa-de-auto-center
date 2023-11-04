@@ -37,7 +37,7 @@ namespace AutoCenter.Data
 
         //ordem de serviço
         public DbSet<ProdutoOrdemDeServico> ProdutoOrdemDeServicos { get; set; }
-        public DbSet<OrdemDeServico> OrdemDeServicos { get; set; }
+        public DbSet<OrdemDeServico> OrdensDeServico { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

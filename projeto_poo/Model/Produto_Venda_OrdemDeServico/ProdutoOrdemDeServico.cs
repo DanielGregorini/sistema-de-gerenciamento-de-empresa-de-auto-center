@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.ComponentModel.DataAnnotations.Schema;
-using AutoCenter.Model.Venda_OrdemDeServico;
+using AutoCenter.Model;
 
 namespace AutoCenter.Model
 {

@@ -14,6 +14,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
+                venda.Estado = "NãoPago";
                 context.Vendas.Add(venda);
                 context.SaveChanges();
             }
@@ -29,6 +30,15 @@ namespace AutoCenter.Repository
             }
         }
 
+        static public void MudarEstadoVenda(Venda venda)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                venda.Estado = "Pago";
+                context.SaveChanges();
+            }
+        }
+
         //public int VendaId { get; set; }
         //public List<ProdutoVenda> ProdutosVendidos { get; set; }
         //public int ClienteId { get; set; }
@@ -36,7 +46,7 @@ namespace AutoCenter.Repository
         //public double ValorTotal { get; set; }
         //public string Estado { get; set; }
         //public DateTime HorioRealizacao { get; set; }
-
+        /*
         static public void EditarVenda(int id, string? novoNome, string? novaDescricao,
             double? novoPreco, double? novaQuantidade)
         {
@@ -44,31 +54,11 @@ namespace AutoCenter.Repository
             {
                 var produtoParaEditar = context.Produtos.Find(id);
 
-                if (produtoParaEditar == null)
-                {
-                    throw new ArgumentException("ID não encontrado");
-                    return;
-                }
-
-                if (!string.IsNullOrWhiteSpace(novaDescricao))
-                {
-                    produtoParaEditar.Descricao = novaDescricao;
-                }
-
-                if (novoPreco >= produtoParaEditar.CustoMedio || novoPreco != null)
-                {
-                    produtoParaEditar.Preco = novoPreco.Value;
-                }
-
-                if (novaQuantidade >= 0 || novaQuantidade != null)
-                {
-                    produtoParaEditar.Quantidade = novaQuantidade.Value;
-                }
 
                 context.SaveChanges();
             }
         }
-        
+        */
         static public List<Venda> VendasDeUmCliente(int clienteId)
         {
             using (var context = new AutoCenterContext())
