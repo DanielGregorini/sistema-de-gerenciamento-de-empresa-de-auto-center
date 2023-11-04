@@ -11,9 +11,6 @@ using System.Diagnostics;
 using AutoCenter.Repository;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using AutoCenter.Model.Cliente_Veiculo;
-using AutoCenter.Model.Venda_OrdemDeServico;
-using AutoCenter.Model.Funcionarios_Empresa;
 
 namespace AutoCenter.Data
 {

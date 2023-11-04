@@ -79,7 +79,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                //procura o cliente pela id
+                //procura o cliente pelo id
                 var veiculo = context.Veiculos.Find(id);
 
                 if (veiculo == null)

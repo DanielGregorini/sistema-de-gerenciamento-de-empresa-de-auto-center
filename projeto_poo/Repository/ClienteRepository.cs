@@ -1,6 +1,10 @@
-﻿using System;
-using AutoCenter.Data;
+﻿using AutoCenter.Data;
 using AutoCenter.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AutoCenter.Repository
 {
@@ -80,7 +84,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                //procura o cliente pela id
+                //procura o cliente pelo id
                 var cliente = context.Clientes.Find(id);
 
                 if (cliente == null)
