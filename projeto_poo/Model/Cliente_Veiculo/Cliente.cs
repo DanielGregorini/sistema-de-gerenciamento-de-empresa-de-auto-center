@@ -20,5 +20,6 @@ namespace AutoCenter.Model
         public string? Telefone { get; set; }
         public List<Veiculo>? Veiculos { get; set; }
         public List<Venda>? Vendas { get; set; }
+        public List<OrdemDeServico>? OrdensDeServico { get; set; }
     }
 }

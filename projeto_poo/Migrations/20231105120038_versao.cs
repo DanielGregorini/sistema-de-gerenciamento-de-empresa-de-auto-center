@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AutoCenter.Migrations
 {
     /// <inheritdoc />
-    public partial class versao1 : Migration
+    public partial class versao : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -109,30 +109,6 @@ namespace AutoCenter.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "tb_venda",
-                columns: table => new
-                {
-                    VendaId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ClienteId = table.Column<int>(type: "int", nullable: false),
-                    ValorTotal = table.Column<double>(type: "double", nullable: false),
-                    Estado = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    HorioRealizacao = table.Column<DateTime>(type: "datetime(6)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tb_venda", x => x.VendaId);
-                    table.ForeignKey(
-                        name: "FK_tb_venda_tb_cliente_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "tb_cliente",
-                        principalColumn: "ClienteId",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "tb_caixa",
                 columns: table => new
                 {
@@ -217,34 +193,6 @@ namespace AutoCenter.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "tb_produto_venda",
-                columns: table => new
-                {
-                    ProdutoVendaId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ProdutoId = table.Column<int>(type: "int", nullable: false),
-                    VendaId = table.Column<int>(type: "int", nullable: false),
-                    Quantidade = table.Column<double>(type: "double", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tb_produto_venda", x => x.ProdutoVendaId);
-                    table.ForeignKey(
-                        name: "FK_tb_produto_venda_tb_produto_ProdutoId",
-                        column: x => x.ProdutoId,
-                        principalTable: "tb_produto",
-                        principalColumn: "ProdutoId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_tb_produto_venda_tb_venda_VendaId",
-                        column: x => x.VendaId,
-                        principalTable: "tb_venda",
-                        principalColumn: "VendaId",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "tb_ordemdeservico",
                 columns: table => new
                 {
@@ -254,6 +202,7 @@ namespace AutoCenter.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Descricao = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    ClienteId = table.Column<int>(type: "int", nullable: false),
                     VendedorId = table.Column<int>(type: "int", nullable: false),
                     Estado = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -263,7 +212,44 @@ namespace AutoCenter.Migrations
                 {
                     table.PrimaryKey("PK_tb_ordemdeservico", x => x.OrdemDeServicoId);
                     table.ForeignKey(
+                        name: "FK_tb_ordemdeservico_tb_cliente_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "tb_cliente",
+                        principalColumn: "ClienteId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_tb_ordemdeservico_tb_vendedor_VendedorId",
+                        column: x => x.VendedorId,
+                        principalTable: "tb_vendedor",
+                        principalColumn: "VendedorId",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "tb_venda",
+                columns: table => new
+                {
+                    VendaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ClienteId = table.Column<int>(type: "int", nullable: false),
+                    VendedorId = table.Column<int>(type: "int", nullable: false),
+                    ValorTotal = table.Column<double>(type: "double", nullable: false),
+                    Estado = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    HorioRealizacao = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tb_venda", x => x.VendaId);
+                    table.ForeignKey(
+                        name: "FK_tb_venda_tb_cliente_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "tb_cliente",
+                        principalColumn: "ClienteId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_tb_venda_tb_vendedor_VendedorId",
                         column: x => x.VendedorId,
                         principalTable: "tb_vendedor",
                         principalColumn: "VendedorId",
@@ -299,6 +285,34 @@ namespace AutoCenter.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "tb_produto_venda",
+                columns: table => new
+                {
+                    ProdutoVendaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ProdutoId = table.Column<int>(type: "int", nullable: false),
+                    VendaId = table.Column<int>(type: "int", nullable: false),
+                    Quantidade = table.Column<double>(type: "double", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tb_produto_venda", x => x.ProdutoVendaId);
+                    table.ForeignKey(
+                        name: "FK_tb_produto_venda_tb_produto_ProdutoId",
+                        column: x => x.ProdutoId,
+                        principalTable: "tb_produto",
+                        principalColumn: "ProdutoId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_tb_produto_venda_tb_venda_VendaId",
+                        column: x => x.VendaId,
+                        principalTable: "tb_venda",
+                        principalColumn: "VendaId",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateIndex(
                 name: "IX_tb_caixa_EmpresaId",
                 table: "tb_caixa",
@@ -308,6 +322,11 @@ namespace AutoCenter.Migrations
                 name: "IX_tb_gerente_EmpresaId",
                 table: "tb_gerente",
                 column: "EmpresaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tb_ordemdeservico_ClienteId",
+                table: "tb_ordemdeservico",
+                column: "ClienteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tb_ordemdeservico_VendedorId",
@@ -345,6 +364,11 @@ namespace AutoCenter.Migrations
                 column: "ClienteId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_tb_venda_VendedorId",
+                table: "tb_venda",
+                column: "VendedorId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_tb_vendedor_EmpresaId",
                 table: "tb_vendedor",
                 column: "EmpresaId");
@@ -378,10 +402,10 @@ namespace AutoCenter.Migrations
                 name: "tb_venda");
 
             migrationBuilder.DropTable(
-                name: "tb_vendedor");
+                name: "tb_cliente");
 
             migrationBuilder.DropTable(
-                name: "tb_cliente");
+                name: "tb_vendedor");
 
             migrationBuilder.DropTable(
                 name: "tb_empresa");

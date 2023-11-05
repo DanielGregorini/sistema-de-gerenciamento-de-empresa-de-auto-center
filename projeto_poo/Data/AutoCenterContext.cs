@@ -68,6 +68,11 @@ namespace AutoCenter.Data
             modelBuilder.Entity<OrdemDeServico>()
                 .HasKey(pk => pk.OrdemDeServicoId);
 
+            modelBuilder.Entity<OrdemDeServico>()
+                .HasOne(v => v.Cliente)
+                .WithMany(c => c.OrdensDeServico)
+                .HasForeignKey(v => v.ClienteId);
+
             modelBuilder.Entity<ProdutoOrdemDeServico>()
                 .HasKey(pk => pk.ProdutoOrdemDeServicoId);
 
@@ -111,7 +116,6 @@ namespace AutoCenter.Data
 
             modelBuilder.Entity<Empresa>()
                 .HasKey(pk => pk.EmpresaId);
-
         }
     }
 }

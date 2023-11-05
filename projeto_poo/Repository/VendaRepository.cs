@@ -59,7 +59,7 @@ namespace AutoCenter.Repository
             }
         }
         */
-        static public List<Venda> VendasDeUmCliente(int clienteId)
+        static public List<Venda> ListarVendasDeCliente(int clienteId)
         {
             using (var context = new AutoCenterContext())
             {
@@ -72,6 +72,25 @@ namespace AutoCenter.Repository
                 }
 
                 return vendasCliente;
+            }
+        }
+
+        static public List<Venda> ListarVendaDeVendedor(int vendedorId)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var vendas = context.Vendas.ToList();
+                List<Venda> vendaVendedor = new List<Venda>();
+
+                foreach (var venda in vendas)
+                {
+                    if (venda.VendedorId == vendedorId)
+                    {
+                        vendaVendedor.Add(venda);
+                    }
+                }
+
+                return vendaVendedor;
             }
         }
 

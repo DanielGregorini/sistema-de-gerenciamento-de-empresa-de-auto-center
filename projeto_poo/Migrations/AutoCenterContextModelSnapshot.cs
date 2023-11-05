@@ -147,6 +147,9 @@ namespace AutoCenter.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -166,6 +169,8 @@ namespace AutoCenter.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("OrdemDeServicoId");
+
+                    b.HasIndex("ClienteId");
 
                     b.HasIndex("VendedorId");
 
@@ -296,9 +301,14 @@ namespace AutoCenter.Migrations
                     b.Property<double>("ValorTotal")
                         .HasColumnType("double");
 
+                    b.Property<int>("VendedorId")
+                        .HasColumnType("int");
+
                     b.HasKey("VendaId");
 
                     b.HasIndex("ClienteId");
+
+                    b.HasIndex("VendedorId");
 
                     b.ToTable("tb_venda");
                 });
@@ -359,11 +369,19 @@ namespace AutoCenter.Migrations
 
             modelBuilder.Entity("AutoCenter.Model.OrdemDeServico", b =>
                 {
+                    b.HasOne("AutoCenter.Model.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("AutoCenter.Model.Vendedor", "Vendedor")
                         .WithMany()
                         .HasForeignKey("VendedorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cliente");
 
                     b.Navigation("Vendedor");
                 });
@@ -425,7 +443,15 @@ namespace AutoCenter.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("AutoCenter.Model.Vendedor", "Vendedor")
+                        .WithMany()
+                        .HasForeignKey("VendedorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Cliente");
+
+                    b.Navigation("Vendedor");
                 });
 
             modelBuilder.Entity("AutoCenter.Model.Vendedor", b =>

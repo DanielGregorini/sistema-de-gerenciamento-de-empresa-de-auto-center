@@ -38,6 +38,46 @@ namespace AutoCenter.Repository
             }
         }
 
+        static public List<OrdemDeServico> ListarOrdemDeServicoDeCliente(int clienteId)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var ordensDeServico = context.OrdensDeServico.ToList();
+                List<OrdemDeServico> ordensDeServicoCliente = new List<OrdemDeServico>();
+
+                foreach (var ordemDeServico in ordensDeServico)
+                {
+                    if (ordemDeServico.ClienteId == clienteId)
+                    {
+                        ordensDeServicoCliente.Add(ordemDeServico);
+                    }
+                }
+
+
+                return ordensDeServicoCliente;
+            }
+        }
+
+        static public List<OrdemDeServico> ListarOrdemDeServicoDeVendedor(int vendedorId)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var ordensDeServico = context.OrdensDeServico.ToList();
+                List<OrdemDeServico> ordensDeServicoVendedor = new List<OrdemDeServico>();
+
+                foreach(var ordemDeServico in ordensDeServico)
+                {
+                    if(ordemDeServico.VendedorId == vendedorId)
+                    {
+                        ordensDeServicoVendedor.Add(ordemDeServico);
+                    }
+                }
+
+
+                return ordensDeServicoVendedor;
+            }
+        }
+
         static public List<OrdemDeServico> ListarOrdemDeServico()
         {
             using (var context = new AutoCenterContext())

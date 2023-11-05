@@ -65,6 +65,24 @@ namespace AutoCenter.Repository
                 context.SaveChanges();
             }
         }
+        static public List<Veiculo> ListarVeiculosDeCliente(int clienteId)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var veiculos = context.Veiculos.ToList();
+                List<Veiculo> veiculosCliente = new List<Veiculo>();
+
+                foreach (var veiculo in veiculos)
+                {
+                    if(veiculo.ClienteId == clienteId)
+                    {
+                        veiculosCliente.Add(veiculo);
+                    }
+                }
+
+                return veiculosCliente;
+            }
+        }
 
         static public List<Veiculo> ListarVeiculos()
         {
