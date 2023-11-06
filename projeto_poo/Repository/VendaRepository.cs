@@ -63,13 +63,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                var vendas = context.Vendas.ToList();
-                List<Venda> vendasCliente = new List<Venda>();
-
-                foreach (var venda in vendas) { 
-                    venda.ClienteId = clienteId;
-                    vendasCliente.Add(venda);
-                }
+                var vendasCliente = context.Vendas.Where(veiculo => veiculo.ClienteId == clienteId).ToList();
 
                 return vendasCliente;
             }
@@ -79,18 +73,10 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                var vendas = context.Vendas.ToList();
-                List<Venda> vendaVendedor = new List<Venda>();
 
-                foreach (var venda in vendas)
-                {
-                    if (venda.VendedorId == vendedorId)
-                    {
-                        vendaVendedor.Add(venda);
-                    }
-                }
+                var vendasVendedor = context.Vendas.Where(veiculo => veiculo.VendedorId == vendedorId).ToList();
 
-                return vendaVendedor;
+                return vendasVendedor;
             }
         }
 

@@ -42,17 +42,8 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                var ordensDeServico = context.OrdensDeServico.ToList();
-                List<OrdemDeServico> ordensDeServicoCliente = new List<OrdemDeServico>();
-
-                foreach (var ordemDeServico in ordensDeServico)
-                {
-                    if (ordemDeServico.ClienteId == clienteId)
-                    {
-                        ordensDeServicoCliente.Add(ordemDeServico);
-                    }
-                }
-
+                var ordensDeServicoCliente = context.OrdensDeServico.
+                     Where(veiculo => veiculo.ClienteId == clienteId).ToList();
 
                 return ordensDeServicoCliente;
             }
@@ -62,18 +53,9 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                var ordensDeServico = context.OrdensDeServico.ToList();
-                List<OrdemDeServico> ordensDeServicoVendedor = new List<OrdemDeServico>();
-
-                foreach(var ordemDeServico in ordensDeServico)
-                {
-                    if(ordemDeServico.VendedorId == vendedorId)
-                    {
-                        ordensDeServicoVendedor.Add(ordemDeServico);
-                    }
-                }
-
-
+                var ordensDeServicoVendedor = context.OrdensDeServico.
+                    Where(veiculo => veiculo.VendedorId == vendedorId).ToList();
+            
                 return ordensDeServicoVendedor;
             }
         }

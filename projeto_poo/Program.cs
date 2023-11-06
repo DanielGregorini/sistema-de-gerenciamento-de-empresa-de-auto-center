@@ -31,7 +31,7 @@ namespace projeto_poo
                 context.Empresas.Add(empresa);
                 context.SaveChanges();
             }
-            */
+            *
 
 
             // To customize application configuration such as set high DPI settings or default font,

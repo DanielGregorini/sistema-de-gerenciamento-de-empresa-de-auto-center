@@ -69,17 +69,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                var veiculos = context.Veiculos.ToList();
-                List<Veiculo> veiculosCliente = new List<Veiculo>();
-
-                foreach (var veiculo in veiculos)
-                {
-                    if(veiculo.ClienteId == clienteId)
-                    {
-                        veiculosCliente.Add(veiculo);
-                    }
-                }
-
+                var veiculosCliente = context.Veiculos.Where(veiculo => veiculo.ClienteId == clienteId).ToList();
                 return veiculosCliente;
             }
         }

@@ -51,10 +51,12 @@ namespace AutoCenter.Data
                 optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 25)));
             }
         }
-       
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //funcionarios
+            // Configuração das entidades
+
+            // Funcionários
             modelBuilder.Entity<Caixa>()
                 .HasKey(pk => pk.CaixaId);
 
@@ -64,51 +66,69 @@ namespace AutoCenter.Data
             modelBuilder.Entity<Gerente>()
                 .HasKey(pk => pk.GerenteId);
 
-            //ordens de serviço
+            // Ordens de serviço
+
             modelBuilder.Entity<OrdemDeServico>()
                 .HasKey(pk => pk.OrdemDeServicoId);
 
+            // Relacionamento entre OrdemDeServico e Cliente
             modelBuilder.Entity<OrdemDeServico>()
                 .HasOne(v => v.Cliente)
-                .WithMany(c => c.OrdensDeServico)
+                .WithMany(c => c.OrdensDeServico) // Define o relacionamento (um-para-muitos)
                 .HasForeignKey(v => v.ClienteId);
 
+            // Relacionamento entre OrdemDeServico e Vendedor
+            modelBuilder.Entity<OrdemDeServico>()
+                .HasOne(v => v.Vendedor)
+                .WithMany(c => c.OrdensDeServico) // Define o relacionamento (um-para-muitos)
+                .HasForeignKey(v => v.VendedorId);
+
+            // Produtos de OrdemDeServico
             modelBuilder.Entity<ProdutoOrdemDeServico>()
                 .HasKey(pk => pk.ProdutoOrdemDeServicoId);
 
             modelBuilder.Entity<ProdutoOrdemDeServico>()
                 .HasOne(po => po.OrdemDeServico) // Define a propriedade de navegação para a OrdemDeServico
-                .WithMany(os => os.ProdutosUtilizados) // Define o tipo de relacionamento (um-para-muitos)
+                .WithMany(os => os.ProdutosUtilizados) // Define o relacionamento (um-para-muitos)
                 .HasForeignKey(po => po.OrdemDeServicoId); // Define a chave estrangeira para OrdemDeServicoId
 
-            //venda
+            // Vendas
             modelBuilder.Entity<Venda>()
                 .HasKey(pk => pk.VendaId);
 
+            // Relacionamento entre Venda e Cliente
             modelBuilder.Entity<Venda>()
                 .HasOne(v => v.Cliente)
                 .WithMany(c => c.Vendas)
                 .HasForeignKey(v => v.ClienteId);
 
+            // Relacionamento entre Venda e Vendedor
+            modelBuilder.Entity<Venda>()
+                .HasOne(v => v.Vendedor)
+                .WithMany(c => c.Vendas) // Define o relacionamento (um-para-muitos)
+                .HasForeignKey(v => v.VendedorId);
+
+            // Produtos de Venda
             modelBuilder.Entity<ProdutoVenda>()
                 .HasKey(pk => pk.ProdutoVendaId);
 
             modelBuilder.Entity<ProdutoVenda>()
-                .HasOne(po => po.Venda) // Define a propriedade de navegação para a OrdemDeServico
-                .WithMany(os => os.ProdutosVendidos) // Define o tipo de relacionamento (um-para-muitos)
-                .HasForeignKey(po => po.VendaId); // Define a chave estrangeira para OrdemDeServicoId
+                .HasOne(po => po.Venda) // Define a propriedade de navegação para a Venda
+                .WithMany(os => os.ProdutosVendidos) // Define o relacionamento (um-para-muitos)
+                .HasForeignKey(po => po.VendaId); // Define a chave estrangeira para VendaId
 
-            //Produto
+            // Produto
             modelBuilder.Entity<Produto>()
                 .HasKey(pk => pk.ProdutoId);
 
-            //Cliente, veiculos e empresa
+            // Cliente, Veículos e Empresa
             modelBuilder.Entity<Cliente>()
                 .HasKey(pk => pk.ClienteId);
 
             modelBuilder.Entity<Veiculo>()
                 .HasKey(pk => pk.VeiculoId);
-            
+
+            // Relacionamento entre Veículo e Cliente
             modelBuilder.Entity<Veiculo>()
                 .HasOne(v => v.Cliente)
                 .WithMany(c => c.Veiculos)
@@ -117,5 +137,6 @@ namespace AutoCenter.Data
             modelBuilder.Entity<Empresa>()
                 .HasKey(pk => pk.EmpresaId);
         }
+
     }
 }

@@ -14,5 +14,7 @@ namespace AutoCenter.Model
     public class Vendedor : Funcionario
     {
         public int VendedorId { get; set; }
+        public List<Venda>? Vendas { get; set; }
+        public List<OrdemDeServico>? OrdensDeServico { get; set; }
     }
 }
