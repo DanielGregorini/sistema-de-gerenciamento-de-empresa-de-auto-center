@@ -14,9 +14,27 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
+                double valorTotal = 0;
+
                 venda.Estado = "NãoPago";
+
+                var protudoVendas = ProdutoVendaRepository.ListarProdutoVendasPorVenda(venda.VendaId);
+
+                foreach (var p in protudoVendas)
+                {
+                    var produto = ProdutoRepository.ProdutoPorId(p.ProdutoId);
+
+                    if (produto != null)
+                    {
+                        valorTotal = valorTotal + produto.Preco * p.Quantidade;
+                    }
+                }
+
+                venda.ValorTotal = valorTotal;
+
                 context.Vendas.Add(venda);
                 context.SaveChanges();
+
             }
         }
 
@@ -39,26 +57,31 @@ namespace AutoCenter.Repository
             }
         }
 
-        //public int VendaId { get; set; }
-        //public List<ProdutoVenda> ProdutosVendidos { get; set; }
-        //public int ClienteId { get; set; }
-        //public Cliente Cliente { get; set; }
-        //public double ValorTotal { get; set; }
-        //public string Estado { get; set; }
-        //public DateTime HorioRealizacao { get; set; }
-        /*
-        static public void EditarVenda(int id, string? novoNome, string? novaDescricao,
-            double? novoPreco, double? novaQuantidade)
+        static public void AtualizarVenda(Venda venda)
         {
             using (var context = new AutoCenterContext())
             {
-                var produtoParaEditar = context.Produtos.Find(id);
+                double valorTotal = 0;
+             
+                var protudoVendas = ProdutoVendaRepository.ListarProdutoVendasPorVenda(venda.VendaId);
 
+                foreach (var p in protudoVendas)
+                {
+                    var produto = ProdutoRepository.ProdutoPorId(p.VendaId);
 
+                    if (produto != null)
+                    {
+                        valorTotal = valorTotal + produto.Preco * p.Quantidade;
+                    }
+                }
+
+                venda.ValorTotal = valorTotal;
+
+                context.Vendas.Add(venda);
                 context.SaveChanges();
             }
         }
-        */
+        
         static public List<Venda> ListarVendasDeCliente(int clienteId)
         {
             using (var context = new AutoCenterContext())
@@ -68,7 +91,7 @@ namespace AutoCenter.Repository
                 return vendasCliente;
             }
         }
-
+        
         static public List<Venda> ListarVendaDeVendedor(int vendedorId)
         {
             using (var context = new AutoCenterContext())
@@ -99,6 +122,7 @@ namespace AutoCenter.Repository
                 if (venda == null)
                 {
                     throw new ArgumentException("ID não encontrado");
+                    return null;
                 }
 
                 return venda;

@@ -165,6 +165,9 @@ namespace AutoCenter.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<double>("ValorTotal")
+                        .HasColumnType("double");
+
                     b.Property<int>("VendedorId")
                         .HasColumnType("int");
 
@@ -370,13 +373,13 @@ namespace AutoCenter.Migrations
             modelBuilder.Entity("AutoCenter.Model.OrdemDeServico", b =>
                 {
                     b.HasOne("AutoCenter.Model.Cliente", "Cliente")
-                        .WithMany()
+                        .WithMany("OrdensDeServico")
                         .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("AutoCenter.Model.Vendedor", "Vendedor")
-                        .WithMany()
+                        .WithMany("OrdensDeServico")
                         .HasForeignKey("VendedorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -444,7 +447,7 @@ namespace AutoCenter.Migrations
                         .IsRequired();
 
                     b.HasOne("AutoCenter.Model.Vendedor", "Vendedor")
-                        .WithMany()
+                        .WithMany("Vendas")
                         .HasForeignKey("VendedorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -467,6 +470,8 @@ namespace AutoCenter.Migrations
 
             modelBuilder.Entity("AutoCenter.Model.Cliente", b =>
                 {
+                    b.Navigation("OrdensDeServico");
+
                     b.Navigation("Veiculos");
 
                     b.Navigation("Vendas");
@@ -480,6 +485,13 @@ namespace AutoCenter.Migrations
             modelBuilder.Entity("AutoCenter.Model.Venda", b =>
                 {
                     b.Navigation("ProdutosVendidos");
+                });
+
+            modelBuilder.Entity("AutoCenter.Model.Vendedor", b =>
+                {
+                    b.Navigation("OrdensDeServico");
+
+                    b.Navigation("Vendas");
                 });
 #pragma warning restore 612, 618
         }

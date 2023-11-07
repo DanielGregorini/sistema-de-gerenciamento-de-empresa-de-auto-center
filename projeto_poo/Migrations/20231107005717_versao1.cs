@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AutoCenter.Migrations
 {
     /// <inheritdoc />
-    public partial class versao : Migration
+    public partial class versao1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -206,6 +206,7 @@ namespace AutoCenter.Migrations
                     VendedorId = table.Column<int>(type: "int", nullable: false),
                     Estado = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    ValorTotal = table.Column<double>(type: "double", nullable: false),
                     HorarioDeEntrega = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>

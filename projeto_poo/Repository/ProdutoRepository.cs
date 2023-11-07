@@ -80,6 +80,7 @@ namespace AutoCenter.Repository
                 if (produto == null)
                 {
                     throw new ArgumentException("ID não encontrado");
+                    return null;
                 }
 
                 return produto;

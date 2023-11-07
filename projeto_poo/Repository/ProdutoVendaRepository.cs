@@ -29,10 +29,39 @@ namespace AutoCenter.Repository
             }
         }
 
+        static public List<ProdutoVenda> ListarProdutoVendasPorVenda(int vendaId)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var produtosVenda = context.ProdutoVendas.Where(ProdutoVenda => ProdutoVenda.VendaId == vendaId).ToList();
+                return produtosVenda;
+            }
+        }
 
+        static public List<ProdutoVenda> ListarProdutoVendas()
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var produtosVenda = context.ProdutoVendas.ToList();
+                return produtosVenda;
+            }
+        }
 
+        static public ProdutoVenda ProdutoVendaPorId(int id)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                //procura o produto pelo id
+                var produtoVenda = context.ProdutoVendas.Find(id);
 
+                if (produtoVenda == null)
+                {
+                    throw new ArgumentException("ID não encontrado");
+                    return null;
+                }
 
-
+                return produtoVenda;
+            }
+        }
     }
 }

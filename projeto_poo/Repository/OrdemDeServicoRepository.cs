@@ -14,7 +14,25 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
+                double valorTotal = 0;
+
                 ordemDeServico.Estado = "NãoPago";
+
+                var protudoOrdensDeServico = ProdutoOrdemDeServicoRepository
+                    .ListarProdutoOrdensDeServicoPorOrdemDeServico(ordemDeServico.OrdemDeServicoId);
+
+                foreach (var p in protudoOrdensDeServico)
+                {
+                    var produto = ProdutoRepository.ProdutoPorId(p.ProdutoId);
+
+                    if (produto != null)
+                    {
+                        valorTotal = valorTotal + produto.Preco * p.Quantidade;
+                    }
+                }
+                ordemDeServico.ValorTotal = valorTotal;
+
+              
                 context.OrdensDeServico.Add(ordemDeServico);
                 context.SaveChanges();
             }
@@ -79,6 +97,7 @@ namespace AutoCenter.Repository
                 if (ordemDeServico == null)
                 {
                     throw new ArgumentException("ID não encontrado");
+                    return null;
                 }
 
                 return ordemDeServico;

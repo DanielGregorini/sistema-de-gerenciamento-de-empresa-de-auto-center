@@ -21,6 +21,7 @@ namespace AutoCenter.Model
         public Vendedor Vendedor { get; set; }
         public List<ProdutoOrdemDeServico> ProdutosUtilizados { get; set; }
         public string Estado { get; set; }
+        public double ValorTotal { get; set; }
         public DateTime HorarioDeEntrega { get; set; }
     }
 }

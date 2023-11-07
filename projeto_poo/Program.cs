@@ -1,5 +1,6 @@
 using AutoCenter.Data;
 using AutoCenter.Model;
+using AutoCenter.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace projeto_poo
         [STAThread]
         static void Main()
         {
-           
+            
             /*
             Empresa empresa = new Empresa();
 
@@ -31,7 +32,7 @@ namespace projeto_poo
                 context.Empresas.Add(empresa);
                 context.SaveChanges();
             }
-            *
+            */
 
 
             // To customize application configuration such as set high DPI settings or default font,
