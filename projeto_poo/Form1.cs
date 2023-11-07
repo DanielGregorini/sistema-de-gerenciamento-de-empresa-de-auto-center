@@ -31,5 +31,30 @@ namespace projeto_poo
                 context.SaveChanges();
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            // Carregar a imagem a partir de um arquivo no sistema
+            string imagePath = "imaegens/logo.png";
+            Image imagem = Image.FromFile(imagePath);
+
+            // Atribuir a imagem ao controle PictureBox
+            pictureBox1.Image = imagem;
+        }
     }
 }

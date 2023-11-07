@@ -22,7 +22,7 @@ namespace AutoCenter.Data
         //funcionarios
         public DbSet<Vendedor> Vendedores { get; set; }
         public DbSet<Caixa> Caixas { get; set; }
-        public DbSet<Vendedor> Gerentes { get; set; }
+        public DbSet<Gerente> Gerentes { get; set; }
 
         //clientes e seus veiculos
         public DbSet<Cliente> Clientes { get; set; }

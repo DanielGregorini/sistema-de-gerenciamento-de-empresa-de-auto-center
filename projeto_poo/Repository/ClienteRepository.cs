@@ -71,7 +71,7 @@ namespace AutoCenter.Repository
             }
         }
 
-        static public List<Cliente> ListarParticipantes()
+        static public List<Cliente> ListarClientes()
         {
             using (var context = new AutoCenterContext())
             {
