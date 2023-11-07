@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoCenter.Repository
+namespace AutoCenter.Repository.Funcionarios_Empresa
 {
     public class CaixaRepository
     {
@@ -41,7 +41,7 @@ namespace AutoCenter.Repository
                 else
                 {
                     throw new ArgumentException("Apenas gerentes podem deletar caixas");
-                }            
+                }
             }
         }
 
@@ -53,7 +53,7 @@ namespace AutoCenter.Repository
                 return caixas;
             }
         }
-         
+
         static public Caixa CaixaPorId(int id)
         {
             using (var context = new AutoCenterContext())
@@ -78,7 +78,7 @@ namespace AutoCenter.Repository
 
                 if (caixa != null && caixa.Senha == senha)
                 {
-                   
+
                     return true;
                 }
 
