@@ -60,11 +60,29 @@ namespace AutoCenter.Data
             modelBuilder.Entity<Caixa>()
                 .HasKey(pk => pk.CaixaId);
 
+            //uma empresa muitos caixas
+            modelBuilder.Entity<Caixa>()
+                .HasOne(v => v.Empresa)
+                .WithMany(e => e.Caixas)
+                .HasForeignKey(v => v.EmpresaId);
+
             modelBuilder.Entity<Vendedor>()
                 .HasKey(pk => pk.VendedorId);
 
+            //uma empresa muitos vendedores
+            modelBuilder.Entity<Vendedor>()
+                .HasOne(v => v.Empresa)
+                .WithMany(e => e.Vendedores)
+                .HasForeignKey(v => v.EmpresaId);
+
             modelBuilder.Entity<Gerente>()
                 .HasKey(pk => pk.GerenteId);
+
+            //uma empresa muitos gerentes
+            modelBuilder.Entity<Gerente>()
+               .HasOne(v => v.Empresa)
+                .WithMany(e => e.Gerentes)
+                .HasForeignKey(v => v.EmpresaId);
 
             // Ordens de serviço
 

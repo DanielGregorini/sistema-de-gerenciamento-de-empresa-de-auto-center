@@ -1,5 +1,7 @@
 using AutoCenter.Data;
 using AutoCenter.Model;
+using AutoCenter.Repository;
+using AutoCenter.Repository.Funcionarios_Empresa;
 
 namespace projeto_poo
 {
@@ -17,19 +19,8 @@ namespace projeto_poo
 
         public void button1_Click(object sender, EventArgs e)
         {
-            Empresa empresa = new Empresa();
 
-            empresa.Nome = "Video Som AutoCenter";
-            empresa.RazaoSocial = "Auto Center";
-            empresa.CNPJ = "4444-44444-4444/1000";
-            empresa.Endereco = "Rua Paraguai, 1039";
-            empresa.Telefone = "3264-1000";
 
-            using (var context = new AutoCenterContext())
-            {
-                context.Empresas.Remove(empresa);
-                context.SaveChanges();
-            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -55,6 +46,27 @@ namespace projeto_poo
 
             // Atribuir a imagem ao controle PictureBox
             pictureBox1.Image = imagem;
+        }
+
+        private void button_logar_Click(object sender, EventArgs e)
+        {
+
+            string login = text_login.Text;
+            string senha = text_senha.Text;
+
+            if (VendedorRepository.LoginVendedor(login, senha))
+            {
+                MessageBox.Show("É VENDEDOR");
+            }
+            else if (CaixaRepository.LoginCaixa(login, senha))
+            {
+                MessageBox.Show("É CAIXA");
+            }
+            else if (GerenteRepository.LoginGerente(login, senha))
+            {
+                MessageBox.Show("É GERENTE");
+            }
+            //MessageBox.Show("é nada");
         }
     }
 }

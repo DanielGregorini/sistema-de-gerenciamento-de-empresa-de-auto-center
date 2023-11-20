@@ -11,6 +11,7 @@ namespace AutoCenter.Model
 {
     public class Funcionario
     {
+        public int EmpresaId { get; set; }
         public Empresa Empresa { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }

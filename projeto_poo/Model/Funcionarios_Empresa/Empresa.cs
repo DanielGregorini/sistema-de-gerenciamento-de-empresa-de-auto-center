@@ -17,6 +17,9 @@ namespace AutoCenter.Model
         public string RazaoSocial { get; set; }
         public string CNPJ { get; set; }
         public string Endereco { get; set; }
-        public string Telefone { get; set; }
+        public string? Telefone { get; set; }
+        public List<Caixa>? Caixas { get; set; }
+        public List<Vendedor>? Vendedores { get; set; }
+        public List<Gerente>? Gerentes{ get; set; }
     }
 }

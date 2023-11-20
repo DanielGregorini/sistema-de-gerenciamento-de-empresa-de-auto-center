@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OiFPv/OE3thE3RNfRNOhZBIa+RgvOkNhCoWcLea71acDfQus8jChFq0BtiRFy/0uTDm0vUcItLvQZGCZE1G6VA==",
+  "dgSpecHash": "l7WhSOCFJCmiEqJB3xeLi0hcpyPi6k/knS2/M2xjElZkdsCUlI+XIhEX7Q/YxJzDFcJCR7yXxPYyMYoR0L5lYg==",
   "success": true,
-  "projectFilePath": "F:\\CODES\\c#\\aulas\\sistema-de-gerenciamento-de-empresa-de-auto-center\\projeto_poo\\AutoCenter.csproj",
+  "projectFilePath": "F:\\CODES\\c#\\projeto_final\\sistema-de-gerenciamento-de-empresa-de-auto-center\\projeto_poo\\AutoCenter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",

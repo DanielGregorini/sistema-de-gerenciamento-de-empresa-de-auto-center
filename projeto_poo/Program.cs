@@ -17,21 +17,35 @@ namespace projeto_poo
         [STAThread]
         static void Main()
         {
-            
-           /*
-            Empresa empresa = new Empresa();
 
-            empresa.Nome = "Video Som AutoCenter";
-            empresa.RazaoSocial = "Auto Center";
-            empresa.CNPJ = "4444-44444-4444/1000";
-            empresa.Endereco = "Rua Paraguai, 1039";
-            empresa.Telefone = "3264-1000";
+            /*
+             Empresa empresa = new Empresa();
 
-            using (var context = new AutoCenterContext())
-            {
-                context.Empresas.Add(empresa);
-                context.SaveChanges();
-            }
+             empresa.Nome = "Video Som AutoCenter";
+             empresa.RazaoSocial = "Auto Center";
+             empresa.CNPJ = "4444-44444-4444/1000";
+             empresa.Endereco = "Rua Paraguai, 1039";
+             empresa.Telefone = "3264-1000";
+
+             using (var context = new AutoCenterContext())
+             {
+                 context.Empresas.Add(empresa);
+                 context.SaveChanges();
+             }
+
+             using (var context = new AutoCenterContext())
+             {
+                 Gerente gerente = new Gerente
+                 {
+                     Nome = "gerente2",
+                     EmpresaId = 1,
+                     Cpf = "111.111.111-11",
+                     Login = "gerente2",
+                     Senha = "gerente2"
+                 };
+                 context.Gerentes.Add(gerente);
+                 context.SaveChanges();
+             }
             */
 
 

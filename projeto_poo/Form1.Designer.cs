@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Login = new Label();
-            Senha = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            label_senha = new Label();
+            text_login = new TextBox();
+            text_senha = new TextBox();
+            button_logar = new Button();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -48,42 +48,41 @@
             Login.Size = new Size(139, 54);
             Login.TabIndex = 0;
             Login.Text = "LOGIN";
-            Login.Click += label1_Click;
             // 
-            // Senha
+            // label_senha
             // 
-            Senha.AutoSize = true;
-            Senha.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Senha.Location = new Point(508, 420);
-            Senha.Name = "Senha";
-            Senha.Size = new Size(148, 54);
-            Senha.TabIndex = 1;
-            Senha.Text = "SENHA";
+            label_senha.AutoSize = true;
+            label_senha.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            label_senha.Location = new Point(508, 420);
+            label_senha.Name = "label_senha";
+            label_senha.Size = new Size(148, 54);
+            label_senha.TabIndex = 1;
+            label_senha.Text = "SENHA";
             // 
-            // textBox1
+            // text_login
             // 
-            textBox1.Location = new Point(466, 382);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(252, 23);
-            textBox1.TabIndex = 2;
+            text_login.Location = new Point(466, 382);
+            text_login.Name = "text_login";
+            text_login.Size = new Size(252, 23);
+            text_login.TabIndex = 2;
             // 
-            // textBox2
+            // text_senha
             // 
-            textBox2.Location = new Point(466, 491);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(252, 23);
-            textBox2.TabIndex = 3;
+            text_senha.Location = new Point(466, 477);
+            text_senha.Name = "text_senha";
+            text_senha.Size = new Size(252, 23);
+            text_senha.TabIndex = 3;
             // 
-            // button1
+            // button_logar
             // 
-            button1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(508, 540);
-            button1.Name = "button1";
-            button1.Size = new Size(149, 63);
-            button1.TabIndex = 4;
-            button1.Text = "Logar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            button_logar.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            button_logar.Location = new Point(508, 540);
+            button_logar.Name = "button_logar";
+            button_logar.Size = new Size(149, 63);
+            button_logar.TabIndex = 4;
+            button_logar.Text = "Logar";
+            button_logar.UseVisualStyleBackColor = true;
+            button_logar.Click += button_logar_Click;
             // 
             // pictureBox1
             // 
@@ -102,10 +101,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1179, 659);
             Controls.Add(pictureBox1);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(Senha);
+            Controls.Add(button_logar);
+            Controls.Add(text_senha);
+            Controls.Add(text_login);
+            Controls.Add(label_senha);
             Controls.Add(Login);
             Name = "Form1";
             Text = "Form1";
@@ -118,10 +117,10 @@
         #endregion
 
         private Label Login;
-        private Label Senha;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
+        private Label label_senha;
+        private TextBox text_login;
+        private TextBox text_senha;
+        private Button button_logar;
         private PictureBox pictureBox1;
     }
 }
