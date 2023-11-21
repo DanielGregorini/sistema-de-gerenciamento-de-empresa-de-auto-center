@@ -147,3 +147,4 @@ F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\pro
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.pdb
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.genruntimeconfig.cache
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\ref\AutoCenter.dll
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.TelaCaixa.resources

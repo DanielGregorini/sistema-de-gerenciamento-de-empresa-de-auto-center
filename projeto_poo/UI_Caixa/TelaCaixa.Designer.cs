@@ -37,6 +37,7 @@
             ClientSize = new Size(1401, 706);
             Name = "TelaCaixa";
             Text = "TelaCaixa";
+            Load += TelaCaixa_Load;
             ResumeLayout(false);
         }
 

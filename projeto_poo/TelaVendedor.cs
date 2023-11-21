@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace AutoCenter
 {
-    public partial class TelaCaixa : Form
+    public partial class TelaVendedor : Form
     {
-        public TelaCaixa()
+        public TelaVendedor()
         {
             InitializeComponent();
+            this.Text = "Sistema de Gerenciamento de empresa Auto Center";
+        }
+
+        private void TelaVendedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

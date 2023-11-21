@@ -1,15 +1,16 @@
+using AutoCenter;
 using AutoCenter.Data;
 using AutoCenter.Model;
 using AutoCenter.Repository;
-using AutoCenter.Repository.Funcionarios_Empresa;
 
-namespace projeto_poo
+namespace AutoCenter
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Sistema de Gerenciamento de empresa Auto Center";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,23 +51,29 @@ namespace projeto_poo
 
         private void button_logar_Click(object sender, EventArgs e)
         {
-
             string login = text_login.Text;
             string senha = text_senha.Text;
 
             if (VendedorRepository.LoginVendedor(login, senha))
             {
                 MessageBox.Show("É VENDEDOR");
+                TelaVendedor telaVendedor = new TelaVendedor();
+                telaVendedor.Show();
             }
             else if (CaixaRepository.LoginCaixa(login, senha))
             {
                 MessageBox.Show("É CAIXA");
+                TelaCaixa telaCaixa = new TelaCaixa();
+                telaCaixa.Show();
             }
             else if (GerenteRepository.LoginGerente(login, senha))
             {
                 MessageBox.Show("É GERENTE");
+                TelaGerente telaGerente = new TelaGerente();
+                telaGerente.Show();
             }
-            //MessageBox.Show("é nada");
+          
+            //this.Close();
         }
     }
 }

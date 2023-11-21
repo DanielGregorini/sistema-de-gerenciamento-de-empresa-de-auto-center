@@ -1,4 +1,4 @@
-﻿namespace projeto_poo
+﻿namespace AutoCenter
 {
     partial class Form1
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoCenter.Repository.Funcionarios_Empresa
+namespace AutoCenter.Repository
 {
     public class EmpresaRepository
     {
