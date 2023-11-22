@@ -133,7 +133,6 @@ F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\pro
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\bin\Debug\net7.0-windows\SshNet.Security.Cryptography.dll
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\bin\Debug\net7.0-windows\System.Xml.XPath.XmlDocument.dll
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.csproj.AssemblyReference.cache
-F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\projeto_poo.Form1.resources
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.Properties.Resources.resources
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.csproj.GenerateResource.cache
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.GeneratedMSBuildEditorConfig.editorconfig
@@ -148,3 +147,6 @@ F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\pro
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.genruntimeconfig.cache
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\ref\AutoCenter.dll
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.TelaCaixa.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.Form1.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.TelaGerente.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.TelaVendedor.resources

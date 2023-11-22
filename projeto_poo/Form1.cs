@@ -59,21 +59,29 @@ namespace AutoCenter
                 MessageBox.Show("É VENDEDOR");
                 TelaVendedor telaVendedor = new TelaVendedor();
                 telaVendedor.Show();
+                this.Hide();
             }
             else if (CaixaRepository.LoginCaixa(login, senha))
             {
+                Caixa caixaLogado = CaixaRepository.RetornarCaixaPorLogin(login, senha);
                 MessageBox.Show("É CAIXA");
-                TelaCaixa telaCaixa = new TelaCaixa();
+                TelaCaixa telaCaixa = new TelaCaixa(caixaLogado);
                 telaCaixa.Show();
+                this.Hide();
             }
             else if (GerenteRepository.LoginGerente(login, senha))
             {
                 MessageBox.Show("É GERENTE");
                 TelaGerente telaGerente = new TelaGerente();
                 telaGerente.Show();
+                this.Hide();
             }
-          
-            //this.Close();
+            else
+            {
+                MessageBox.Show("Login ou senha inválido");
+                text_login.Text = "";
+                text_senha.Text= "";
+            }
         }
     }
 }

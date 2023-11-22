@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoCenter.Migrations
 {
     [DbContext(typeof(AutoCenterContext))]
-    [Migration("20231107005717_versao1")]
+    [Migration("20231122185522_versao1")]
     partial class versao1
     {
         /// <inheritdoc />
@@ -37,7 +37,7 @@ namespace AutoCenter.Migrations
 
                     b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -50,6 +50,9 @@ namespace AutoCenter.Migrations
                     b.HasKey("CaixaId");
 
                     b.HasIndex("EmpresaId");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("tb_caixa");
                 });
@@ -104,7 +107,6 @@ namespace AutoCenter.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Telefone")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("EmpresaId");
@@ -127,7 +129,7 @@ namespace AutoCenter.Migrations
 
                     b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -140,6 +142,9 @@ namespace AutoCenter.Migrations
                     b.HasKey("GerenteId");
 
                     b.HasIndex("EmpresaId");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("tb_gerente");
                 });
@@ -334,7 +339,7 @@ namespace AutoCenter.Migrations
 
                     b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -348,13 +353,16 @@ namespace AutoCenter.Migrations
 
                     b.HasIndex("EmpresaId");
 
+                    b.HasIndex("Login")
+                        .IsUnique();
+
                     b.ToTable("tb_vendedor");
                 });
 
             modelBuilder.Entity("AutoCenter.Model.Caixa", b =>
                 {
                     b.HasOne("AutoCenter.Model.Empresa", "Empresa")
-                        .WithMany()
+                        .WithMany("Caixas")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -365,7 +373,7 @@ namespace AutoCenter.Migrations
             modelBuilder.Entity("AutoCenter.Model.Gerente", b =>
                 {
                     b.HasOne("AutoCenter.Model.Empresa", "Empresa")
-                        .WithMany()
+                        .WithMany("Gerentes")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -463,7 +471,7 @@ namespace AutoCenter.Migrations
             modelBuilder.Entity("AutoCenter.Model.Vendedor", b =>
                 {
                     b.HasOne("AutoCenter.Model.Empresa", "Empresa")
-                        .WithMany()
+                        .WithMany("Vendedores")
                         .HasForeignKey("EmpresaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -478,6 +486,15 @@ namespace AutoCenter.Migrations
                     b.Navigation("Veiculos");
 
                     b.Navigation("Vendas");
+                });
+
+            modelBuilder.Entity("AutoCenter.Model.Empresa", b =>
+                {
+                    b.Navigation("Caixas");
+
+                    b.Navigation("Gerentes");
+
+                    b.Navigation("Vendedores");
                 });
 
             modelBuilder.Entity("AutoCenter.Model.OrdemDeServico", b =>

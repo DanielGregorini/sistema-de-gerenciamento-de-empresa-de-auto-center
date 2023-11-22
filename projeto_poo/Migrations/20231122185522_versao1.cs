@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AutoCenter.Migrations
 {
     /// <inheritdoc />
-    public partial class versao10 : Migration
+    public partial class versao1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -119,7 +119,7 @@ namespace AutoCenter.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Cpf = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Login = table.Column<string>(type: "longtext", nullable: false)
+                    Login = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Senha = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -147,7 +147,7 @@ namespace AutoCenter.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Cpf = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Login = table.Column<string>(type: "longtext", nullable: false)
+                    Login = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Senha = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -175,7 +175,7 @@ namespace AutoCenter.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Cpf = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Login = table.Column<string>(type: "longtext", nullable: false)
+                    Login = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Senha = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -320,9 +320,21 @@ namespace AutoCenter.Migrations
                 column: "EmpresaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_tb_caixa_Login",
+                table: "tb_caixa",
+                column: "Login",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_tb_gerente_EmpresaId",
                 table: "tb_gerente",
                 column: "EmpresaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tb_gerente_Login",
+                table: "tb_gerente",
+                column: "Login",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_tb_ordemdeservico_ClienteId",
@@ -373,6 +385,12 @@ namespace AutoCenter.Migrations
                 name: "IX_tb_vendedor_EmpresaId",
                 table: "tb_vendedor",
                 column: "EmpresaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tb_vendedor_Login",
+                table: "tb_vendedor",
+                column: "Login",
+                unique: true);
         }
 
         /// <inheritdoc />

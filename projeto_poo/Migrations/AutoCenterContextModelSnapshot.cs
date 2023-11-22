@@ -34,7 +34,7 @@ namespace AutoCenter.Migrations
 
                     b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -47,6 +47,9 @@ namespace AutoCenter.Migrations
                     b.HasKey("CaixaId");
 
                     b.HasIndex("EmpresaId");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("tb_caixa");
                 });
@@ -123,7 +126,7 @@ namespace AutoCenter.Migrations
 
                     b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -136,6 +139,9 @@ namespace AutoCenter.Migrations
                     b.HasKey("GerenteId");
 
                     b.HasIndex("EmpresaId");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("tb_gerente");
                 });
@@ -330,7 +336,7 @@ namespace AutoCenter.Migrations
 
                     b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -343,6 +349,9 @@ namespace AutoCenter.Migrations
                     b.HasKey("VendedorId");
 
                     b.HasIndex("EmpresaId");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("tb_vendedor");
                 });

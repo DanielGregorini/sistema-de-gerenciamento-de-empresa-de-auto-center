@@ -56,9 +56,14 @@ namespace AutoCenter.Data
         {
             // Configuração das entidades
 
-            // Funcionários
+            // -Funcionários
             modelBuilder.Entity<Caixa>()
                 .HasKey(pk => pk.CaixaId);
+
+            //não pode haver dois caixas com login igual
+            modelBuilder.Entity<Caixa>()
+                .HasIndex(p => p.Login)
+                .IsUnique();
 
             //uma empresa muitos caixas
             modelBuilder.Entity<Caixa>()
@@ -69,6 +74,11 @@ namespace AutoCenter.Data
             modelBuilder.Entity<Vendedor>()
                 .HasKey(pk => pk.VendedorId);
 
+            //não pode haver dois vendedores com login igual
+            modelBuilder.Entity<Vendedor>()
+                .HasIndex(p => p.Login)
+                .IsUnique();
+
             //uma empresa muitos vendedores
             modelBuilder.Entity<Vendedor>()
                 .HasOne(v => v.Empresa)
@@ -78,13 +88,18 @@ namespace AutoCenter.Data
             modelBuilder.Entity<Gerente>()
                 .HasKey(pk => pk.GerenteId);
 
+            //não pode haver dois vendedores com login igual
+            modelBuilder.Entity<Gerente>()
+                .HasIndex(p => p.Login)
+                .IsUnique();
+
             //uma empresa muitos gerentes
             modelBuilder.Entity<Gerente>()
                .HasOne(v => v.Empresa)
                 .WithMany(e => e.Gerentes)
                 .HasForeignKey(v => v.EmpresaId);
 
-            // Ordens de serviço
+            //-Ordens de serviço
 
             modelBuilder.Entity<OrdemDeServico>()
                 .HasKey(pk => pk.OrdemDeServicoId);
@@ -110,23 +125,23 @@ namespace AutoCenter.Data
                 .WithMany(os => os.ProdutosUtilizados) // Define o relacionamento (um-para-muitos)
                 .HasForeignKey(po => po.OrdemDeServicoId); // Define a chave estrangeira para OrdemDeServicoId
 
-            // Vendas
+            //-Vendas
             modelBuilder.Entity<Venda>()
                 .HasKey(pk => pk.VendaId);
 
-            // Relacionamento entre Venda e Cliente
+            //Relacionamento entre Venda e Cliente
             modelBuilder.Entity<Venda>()
                 .HasOne(v => v.Cliente)
                 .WithMany(c => c.Vendas)
                 .HasForeignKey(v => v.ClienteId);
 
-            // Relacionamento entre Venda e Vendedor
+            //Relacionamento entre Venda e Vendedor
             modelBuilder.Entity<Venda>()
                 .HasOne(v => v.Vendedor)
                 .WithMany(c => c.Vendas) // Define o relacionamento (um-para-muitos)
                 .HasForeignKey(v => v.VendedorId);
 
-            // Produtos de Venda
+            // -Produtos de Venda
             modelBuilder.Entity<ProdutoVenda>()
                 .HasKey(pk => pk.ProdutoVendaId);
 
@@ -135,11 +150,11 @@ namespace AutoCenter.Data
                 .WithMany(os => os.ProdutosVendidos) // Define o relacionamento (um-para-muitos)
                 .HasForeignKey(po => po.VendaId); // Define a chave estrangeira para VendaId
 
-            // Produto
+            // -Produto
             modelBuilder.Entity<Produto>()
                 .HasKey(pk => pk.ProdutoId);
 
-            // Cliente, Veículos e Empresa
+            // -Cliente, Veículos e Empresa
             modelBuilder.Entity<Cliente>()
                 .HasKey(pk => pk.ClienteId);
 
@@ -155,6 +170,5 @@ namespace AutoCenter.Data
             modelBuilder.Entity<Empresa>()
                 .HasKey(pk => pk.EmpresaId);
         }
-
     }
 }

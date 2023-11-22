@@ -28,19 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            caixa_nome = new Label();
+            listaVendaEmAberto = new DataGridView();
+            listaOrdemDeServicoEmAberto = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listaVendaEmAberto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)listaOrdemDeServicoEmAberto).BeginInit();
             SuspendLayout();
+            // 
+            // caixa_nome
+            // 
+            caixa_nome.AutoSize = true;
+            caixa_nome.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
+            caixa_nome.Location = new Point(12, 9);
+            caixa_nome.Name = "caixa_nome";
+            caixa_nome.Size = new Size(200, 46);
+            caixa_nome.TabIndex = 0;
+            caixa_nome.Text = "Nome Caixa";
+            // 
+            // listaVendaEmAberto
+            // 
+            listaVendaEmAberto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listaVendaEmAberto.Location = new Point(29, 104);
+            listaVendaEmAberto.Name = "listaVendaEmAberto";
+            listaVendaEmAberto.RowTemplate.Height = 25;
+            listaVendaEmAberto.Size = new Size(599, 590);
+            listaVendaEmAberto.TabIndex = 1;
+            // 
+            // listaOrdemDeServicoEmAberto
+            // 
+            listaOrdemDeServicoEmAberto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listaOrdemDeServicoEmAberto.Location = new Point(693, 104);
+            listaOrdemDeServicoEmAberto.Name = "listaOrdemDeServicoEmAberto";
+            listaOrdemDeServicoEmAberto.RowTemplate.Height = 25;
+            listaOrdemDeServicoEmAberto.Size = new Size(599, 590);
+            listaOrdemDeServicoEmAberto.TabIndex = 2;
             // 
             // TelaCaixa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1401, 706);
+            Controls.Add(listaOrdemDeServicoEmAberto);
+            Controls.Add(listaVendaEmAberto);
+            Controls.Add(caixa_nome);
             Name = "TelaCaixa";
             Text = "TelaCaixa";
             Load += TelaCaixa_Load;
+            ((System.ComponentModel.ISupportInitialize)listaVendaEmAberto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)listaOrdemDeServicoEmAberto).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label caixa_nome;
+        private DataGridView listaVendaEmAberto;
+        private DataGridView listaOrdemDeServicoEmAberto;
     }
 }

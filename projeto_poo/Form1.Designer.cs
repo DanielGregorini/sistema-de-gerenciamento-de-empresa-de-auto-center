@@ -43,7 +43,7 @@
             Login.AutoSize = true;
             Login.BackColor = SystemColors.Control;
             Login.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Login.Location = new Point(517, 325);
+            Login.Location = new Point(518, 325);
             Login.Name = "Login";
             Login.Size = new Size(139, 54);
             Login.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             label_senha.AutoSize = true;
             label_senha.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label_senha.Location = new Point(508, 420);
+            label_senha.Location = new Point(518, 420);
             label_senha.Name = "label_senha";
             label_senha.Size = new Size(148, 54);
             label_senha.TabIndex = 1;

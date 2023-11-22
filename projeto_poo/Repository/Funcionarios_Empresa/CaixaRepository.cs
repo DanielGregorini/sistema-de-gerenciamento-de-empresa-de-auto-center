@@ -84,6 +84,24 @@ namespace AutoCenter.Repository
 
                 return false;
             }
+
+        }
+
+        static public Caixa RetornarCaixaPorLogin(string login, string senha)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var caixa = context.Caixas.FirstOrDefault(c => c.Login == login);
+
+                if (caixa != null && caixa.Senha == senha)
+                {
+
+                    return caixa;
+                }
+
+                return caixa;
+            }
+
         }
     }
 }
