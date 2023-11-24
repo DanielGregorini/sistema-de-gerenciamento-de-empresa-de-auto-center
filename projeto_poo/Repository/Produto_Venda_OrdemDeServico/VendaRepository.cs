@@ -31,11 +31,11 @@ namespace AutoCenter.Repository
                     }
                 }
 
+                venda.HorioRealizacao = DateTime.Now;
                 venda.ValorTotal = valorTotal;
 
                 context.Vendas.Add(venda);
                 context.SaveChanges();
-
             }
         }
 
@@ -49,14 +49,28 @@ namespace AutoCenter.Repository
             }
         }
 
-        static public void MudarEstadoVenda(Venda venda)
+        static public void MudarEstadoVenda(int vendaId)
         {
             using (var context = new AutoCenterContext())
             {
-                venda.Estado = "Pago";
-                context.SaveChanges();
+                // Buscar a venda pelo ID
+                var venda = context.Vendas.Find(vendaId);
+
+                // Verificar se a venda foi encontrada
+                if (venda != null)
+                {
+                    // Atualizar o estado da venda
+                    venda.Estado = "Pago";
+                    context.SaveChanges();
+                }
+                else
+                {
+                    // Lidar com o caso em que a venda não foi encontrada
+                    return;
+                }
             }
         }
+
 
         static public void AtualizarVenda(Venda venda)
         {

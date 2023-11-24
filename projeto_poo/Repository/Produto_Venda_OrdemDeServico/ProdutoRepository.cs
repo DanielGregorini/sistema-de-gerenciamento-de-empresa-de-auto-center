@@ -14,6 +14,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
+                produto.CustoMedio = produto.CustoUltimaEntrada;
                 context.Produtos.Add(produto);
                 context.SaveChanges();
             }
