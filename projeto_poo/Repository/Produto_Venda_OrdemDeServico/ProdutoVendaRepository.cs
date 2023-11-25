@@ -15,16 +15,20 @@ namespace AutoCenter.Repository
             using (var context = new AutoCenterContext())
             {
                 context.ProdutoVendas.Add(produtoVenda);
+                //AtualizarVenda(Venda venda)
 
+                
                 var produto = ProdutoRepository.ProdutoPorId(produtoVenda.ProdutoId);
 
-                if(produto.Quantidade < produtoVenda.Quantidade) {
+                if (produto.Quantidade < produtoVenda.Quantidade) {
 
                     throw new Exception("Não pode vender mais que tem em estoque");
                     return;
                 }
                 else
                 {
+                    var venda = VendaRepository.VendaPorId(produtoVenda.VendaId);
+                    VendaRepository.AtualizarVenda(venda);
                     ProdutoRepository.EditarProduto(produto.ProdutoId, null, null, null, produto.Quantidade - produtoVenda.Quantidade);
                 }
 

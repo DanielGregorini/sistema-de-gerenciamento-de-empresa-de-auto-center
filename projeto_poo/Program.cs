@@ -136,7 +136,7 @@ namespace projeto_poo
                 };
 
                 VendaRepository.AdicionarVenda(venda1);
-
+            
             ProdutoVenda produtovenda1 = new ProdutoVenda
                 {
                     ProdutoId= 1,
@@ -148,7 +148,7 @@ namespace projeto_poo
                 ProdutoVendaRepository.AdicionarProdutoVenda(produtovenda1);
             */
 
-
+            
 
 
 

@@ -2,6 +2,7 @@
 using AutoCenter.Data;
 using AutoCenter.Model;
 using AutoCenter.Repository;
+using System.Diagnostics;
 
 namespace AutoCenter
 {
@@ -10,96 +11,105 @@ namespace AutoCenter
         public TelaCaixa(Caixa caixa)
         {
             InitializeComponent();
-            this.Text = "Sistema de Gerenciamento de empresa Auto Center";
+            this.Text = "Sistema de Gerenciamento de Empresa Auto Center";
             caixa_nome.Text = caixa.Nome;
 
-            // Obter dados das vendas
-            var listaDeVendasEmAberto = VendaRepository.ListarVendas().Where(v => v.Estado != "Pago").ToList();
-            
-            // Atribuir a fonte de dados à DataGridView existente
-            listaVendaEmAberto.DataSource = listaDeVendasEmAberto;
-            // Adicionar uma nova coluna para o nome do vendedor
-            
+            // Configurar as colunas do DataGridView
+            ConfigurarColunasDataGridView();
 
-            // Ocultar as colunas desejadas
-            listaVendaEmAberto.Columns["Vendedor"].Visible = false;
-            listaVendaEmAberto.Columns["Cliente"].Visible = false;
-
-            // Adicionar uma coluna de botão
-            DataGridViewButtonColumn botaoColuna = new DataGridViewButtonColumn();
-            botaoColuna.Name = "BotaoAcao";
-            botaoColuna.HeaderText = "Ação";
-            botaoColuna.Text = "Confirmar Pagamento";
-            botaoColuna.UseColumnTextForButtonValue = true;
-            listaVendaEmAberto.Columns.Add(botaoColuna);
-
-            // Definir tamanhos específicos para as
-            listaVendaEmAberto.Columns["VendaId"].Width = 60;
-            listaVendaEmAberto.Columns["BotaoAcao"].Width = 150;
-            listaVendaEmAberto.Columns["ClienteId"].Width = 50;
-            listaVendaEmAberto.Columns["VendedorId"].Width = 70;  // Substitua "Nome" pelo nome real da coluna
-            //listaVendaEmAberto.Columns["Preco"].Width = 100;  // Substitua "Preco" pelo nome real da coluna
-
-            // Manipular o evento de clique no botão
-            listaVendaEmAberto.CellContentClick += ListaVendaEmAberto_CellContentClick;
-
-            // Atualizar o layout da DataGridView, se necessário
-            listaVendaEmAberto.Refresh();
-            listaVendaEmAberto.AutoResizeColumns();
+            // Carregar os dados no DataGridView
+            CarregarDadosGridVendasEmAberto();
         }
 
-        private void RecarregarPagina()
+        private void ConfigurarColunasDataGridView()
         {
-            // Obter dados das vendas
-            var listaDeVendasEmAberto = VendaRepository.ListarVendas();
+            // Limpar as colunas existentes, se houver
+            listaVendaEmAberto.Columns.Clear();
 
-            // Atribuir a fonte de dados à DataGridView existente
-            listaVendaEmAberto.DataSource = listaDeVendasEmAberto;
+            // Criar e adicionar as colunas necessárias
+            DataGridViewTextBoxColumn colunaIdVenda = new DataGridViewTextBoxColumn();
+            colunaIdVenda.HeaderText = "Id Venda";
+            colunaIdVenda.DataPropertyName = "IdVenda";
+            listaVendaEmAberto.Columns.Add(colunaIdVenda);
 
-            // Ocultar as colunas desejadas
-            listaVendaEmAberto.Columns["Vendedor"].Visible = false;
-            listaVendaEmAberto.Columns["Cliente"].Visible = false;
+            DataGridViewTextBoxColumn colunaNomeCliente = new DataGridViewTextBoxColumn();
+            colunaNomeCliente.HeaderText = "Nome Cliente";
+            colunaNomeCliente.DataPropertyName = "NomeCliente";
+            listaVendaEmAberto.Columns.Add(colunaNomeCliente);
 
-            // Adicionar uma coluna de botão
+            DataGridViewTextBoxColumn colunaIdVendedor = new DataGridViewTextBoxColumn();
+            colunaIdVendedor.HeaderText = "Id Vendedor";
+            colunaIdVendedor.DataPropertyName = "IdVendedor";
+            listaVendaEmAberto.Columns.Add(colunaIdVendedor);
+
+            DataGridViewTextBoxColumn colunaValorTotal = new DataGridViewTextBoxColumn();
+            colunaValorTotal.HeaderText = "Valor Total";
+            colunaValorTotal.DataPropertyName = "ValorTotal";
+            listaVendaEmAberto.Columns.Add(colunaValorTotal);
+
             DataGridViewButtonColumn botaoColuna = new DataGridViewButtonColumn();
             botaoColuna.Name = "BotaoAcao";
-            botaoColuna.HeaderText = "Ação";
-            botaoColuna.Text = "Mudar Estado";
+            botaoColuna.HeaderText = "Confirmar Venda";
             botaoColuna.UseColumnTextForButtonValue = true;
             listaVendaEmAberto.Columns.Add(botaoColuna);
+        }
 
-            // Manipular o evento de clique no botão
-            listaVendaEmAberto.CellContentClick += ListaVendaEmAberto_CellContentClick;
+        private void CarregarDadosGridVendasEmAberto()
+        {
+            // Limpar as linhas existentes, se houver
+            listaVendaEmAberto.Rows.Clear();
 
-            // Atualizar o layout da DataGridView, se necessário
-            listaVendaEmAberto.AutoResizeColumns();
-            RecarregarPagina();
+            // Lista de todas as vendas em aberto
+            var listaDeVendasEmAberto = VendaRepository.ListarVendas().Where(v => v.Estado != "Pago").ToList();
+
+            foreach (var venda in listaDeVendasEmAberto)
+            {
+                if(venda != null)
+                {
+                    // Criar uma nova instância de DataGridViewRow
+                    DataGridViewRow novaLinha = new DataGridViewRow();
+
+                    // Adicionar as células à linha
+                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendaId });
+
+                    var cliente = ClienteRepository.ClientePorId(venda.ClienteId);
+                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = cliente.Nome });
+
+                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendedorId });
+                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.ValorTotal });
+
+                    // Adicionar a célula do botão à linha
+                    DataGridViewButtonCell botaoCelula = new DataGridViewButtonCell { Value = "Confirmar Pagamento" };
+                    novaLinha.Cells.Add(botaoCelula);
+
+                    // Adicionar a linha ao DataGridView
+                    listaVendaEmAberto.Rows.Add(novaLinha);
+                }
+            }
         }
 
         private void ListaVendaEmAberto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             // Verificar se o clique ocorreu na coluna de botão
             if (e.RowIndex >= 0 && e.ColumnIndex == listaVendaEmAberto.Columns["BotaoAcao"].Index)
             {
-                // Obter o ID da venda na mesma linha
-                int idVenda = Convert.ToInt32(listaVendaEmAberto.Rows[e.RowIndex].Cells["VendaId"].Value);
-                MessageBox.Show($"A venda com ID {idVenda} será alterada.", "Aviso");
-                // Chamar a função VendaRepository.MudarEstadoVenda com o ID da venda
-                
-                VendaRepository.MudarEstadoVenda(idVenda);
-                listaVendaEmAberto.Refresh();
+                // Obter o valor da primeira coluna (índice 0) na mesma linha
+                if (listaVendaEmAberto.Rows[e.RowIndex].Cells[0].Value is int idVenda)
+                {
+                    MessageBox.Show($"A venda com ID {idVenda} será alterada.", "Aviso");
+
+                    // Chamar a função VendaRepository.MudarEstadoVenda com o ID da venda
+                    VendaRepository.MudarEstadoVenda(idVenda);
+
+                    // Recarregar o DataGridView chamando a função de carregar dados
+                    CarregarDadosGridVendasEmAberto();
+                }
             }
         }
 
         private void TelaCaixa_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void listaVendaEmAberto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            // O código a ser executado ao carregar a tela, se necessário
         }
     }
 }

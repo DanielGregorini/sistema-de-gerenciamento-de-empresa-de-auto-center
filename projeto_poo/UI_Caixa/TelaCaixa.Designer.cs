@@ -53,7 +53,7 @@
             listaVendaEmAberto.RowTemplate.Height = 25;
             listaVendaEmAberto.Size = new Size(715, 590);
             listaVendaEmAberto.TabIndex = 1;
-            listaVendaEmAberto.CellContentClick += listaVendaEmAberto_CellContentClick;
+            
             // 
             // listaOrdemDeServicoEmAberto
             // 
@@ -75,6 +75,8 @@
             Name = "TelaCaixa";
             Text = "TelaCaixa";
             Load += TelaCaixa_Load;
+            listaVendaEmAberto.CellContentClick += ListaVendaEmAberto_CellContentClick;
+
             ((System.ComponentModel.ISupportInitialize)listaVendaEmAberto).EndInit();
             ((System.ComponentModel.ISupportInitialize)listaOrdemDeServicoEmAberto).EndInit();
             ResumeLayout(false);
