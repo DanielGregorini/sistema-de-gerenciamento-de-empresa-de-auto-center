@@ -15,13 +15,15 @@ namespace AutoCenter
             caixa_nome.Text = caixa.Nome;
 
             // Configurar as colunas do DataGridView
-            ConfigurarColunasDataGridView();
+            ConfigurarColunasDataGridViewVendas();
 
             // Carregar os dados no DataGridView
             CarregarDadosGridVendasEmAberto();
+
+            ConfigurarColunasDataGridViewOrdensDeServico();
         }
 
-        private void ConfigurarColunasDataGridView()
+        private void ConfigurarColunasDataGridViewVendas()
         {
             // Limpar as colunas existentes, se houver
             listaVendaEmAberto.Columns.Clear();
@@ -64,7 +66,7 @@ namespace AutoCenter
 
             foreach (var venda in listaDeVendasEmAberto)
             {
-                if(venda != null)
+                if (venda != null)
                 {
                     // Criar uma nova instância de DataGridViewRow
                     DataGridViewRow novaLinha = new DataGridViewRow();
@@ -107,9 +109,70 @@ namespace AutoCenter
             }
         }
 
+        
+
+        private void ConfigurarColunasDataGridViewOrdensDeServico()
+        {
+            //listaOrdemDeServicoEmAberto
+            // Limpar as colunas existentes, se houver
+            listaOrdemDeServicoEmAberto.Columns.Clear();
+
+            // Criar e adicionar as colunas necessárias
+            DataGridViewTextBoxColumn colunaIdOrdemDeServico = new DataGridViewTextBoxColumn();
+            colunaIdOrdemDeServico.HeaderText = "Id Ordem de Serviço";
+            colunaIdOrdemDeServico.DataPropertyName = "IdOrdemDeServico";
+            listaOrdemDeServicoEmAberto.Columns.Add(colunaIdOrdemDeServico);
+
+            DataGridViewTextBoxColumn colunaTipoDeServico = new DataGridViewTextBoxColumn();
+            colunaTipoDeServico.HeaderText = "Tipo de Serviço";
+            colunaTipoDeServico.DataPropertyName = "TipoDeServico";
+            listaOrdemDeServicoEmAberto.Columns.Add(colunaTipoDeServico);
+
+            DataGridViewTextBoxColumn colunaDescricao = new DataGridViewTextBoxColumn();
+            colunaDescricao.HeaderText = "Descrição";
+            colunaDescricao.DataPropertyName = "Descricao";
+            listaOrdemDeServicoEmAberto.Columns.Add(colunaDescricao);
+
+            DataGridViewTextBoxColumn colunaNomeCliente = new DataGridViewTextBoxColumn();
+            colunaNomeCliente.HeaderText = "Nome Cliente";
+            colunaNomeCliente.DataPropertyName = "NomeCliente";
+            listaOrdemDeServicoEmAberto.Columns.Add(colunaNomeCliente);
+
+            DataGridViewTextBoxColumn colunaIdVendedor = new DataGridViewTextBoxColumn();
+            colunaIdVendedor.HeaderText = "Id Vendedor";
+            colunaIdVendedor.DataPropertyName = "IdVendedor";
+            listaOrdemDeServicoEmAberto.Columns.Add(colunaIdVendedor);
+
+            DataGridViewTextBoxColumn colunaValorTotal = new DataGridViewTextBoxColumn();
+            colunaValorTotal.HeaderText = "Valor Total";
+            colunaValorTotal.DataPropertyName = "ValorTotal";
+            listaOrdemDeServicoEmAberto.Columns.Add(colunaValorTotal);
+
+            DataGridViewTextBoxColumn colunaHorarioDeEntrega = new DataGridViewTextBoxColumn();
+            colunaHorarioDeEntrega.HeaderText = "Horario de Entrega";
+            colunaHorarioDeEntrega.DataPropertyName = "HorarioDeEntrega";
+            listaOrdemDeServicoEmAberto.Columns.Add(colunaHorarioDeEntrega);
+
+            DataGridViewButtonColumn botaoColuna = new DataGridViewButtonColumn();
+            botaoColuna.Name = "BotaoAcao";
+            botaoColuna.HeaderText = "Confirmar Ordem de Serviço";
+            botaoColuna.UseColumnTextForButtonValue = true;
+            listaOrdemDeServicoEmAberto.Columns.Add(botaoColuna);
+        }
+
+        private void CarregarDadosGridOrdensDeServicoEmAberto()
+        {
+
+        }
+
         private void TelaCaixa_Load(object sender, EventArgs e)
         {
             // O código a ser executado ao carregar a tela, se necessário
+        }
+
+        private void listaOrdemDeServicoEmAberto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

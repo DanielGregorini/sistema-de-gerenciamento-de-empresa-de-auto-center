@@ -41,7 +41,7 @@ namespace AutoCenter.Repository
 
         static public void ExcluirVenda(Venda venda)
         {
-
+            //no futuro adicionar um metodo para adicionar os produtos de volta
             using (var context = new AutoCenterContext())
             {
                 context.Vendas.Remove(venda);
@@ -71,18 +71,18 @@ namespace AutoCenter.Repository
             }
         }
 
-
-        static public void AtualizarVenda(Venda venda)
+        static public void AtualizarVenda(int IdVenda)
         {
             using (var context = new AutoCenterContext())
             {
                 double valorTotal = 0;
-             
-                var protudoVendas = ProdutoVendaRepository.ListarProdutoVendasPorVenda(venda.VendaId);
 
-                foreach (var p in protudoVendas)
+                var venda = VendaPorId(IdVenda);
+                var produtoVendas = ProdutoVendaRepository.ListarProdutoVendasPorVenda(venda.VendaId);
+
+                foreach (var p in produtoVendas)
                 {
-                    var produto = ProdutoRepository.ProdutoPorId(p.VendaId);
+                    var produto = ProdutoRepository.ProdutoPorId(p.ProdutoId);
 
                     if (produto != null)
                     {
@@ -92,7 +92,7 @@ namespace AutoCenter.Repository
 
                 venda.ValorTotal = valorTotal;
 
-                context.Vendas.Add(venda);
+                context.Vendas.Update(venda);
                 context.SaveChanges();
             }
         }

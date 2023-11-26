@@ -38,10 +38,38 @@ namespace AutoCenter.Repository
             }
         }
 
-        static public void ExcluirVenda(OrdemDeServico ordemDeServico)
+        static public void AtualizarOrdemDeServico(int idOrdemDeServico)
         {
             using (var context = new AutoCenterContext())
             {
+                double valorTotal = 0;
+
+                var ordemDeServico = OrdemDeServicoPorId(idOrdemDeServico);
+                var ProdutoOrdensDeServico = ProdutoOrdemDeServicoRepository.ListarProdutoOrdensDeServicoPorOrdemDeServico(ordemDeServico.OrdemDeServicoId);
+
+                foreach (var p in ProdutoOrdensDeServico)
+                {
+                    var produto = ProdutoRepository.ProdutoPorId(p.ProdutoId);
+
+                    if (produto != null)
+                    {
+                        valorTotal = valorTotal + produto.Preco * p.Quantidade;
+                    }
+                }
+
+                ordemDeServico.ValorTotal = valorTotal;
+                context.OrdensDeServico.Update(ordemDeServico);
+                context.SaveChanges();
+
+            }
+        }
+
+        static public void ExcluirOrdemDeServico(OrdemDeServico ordemDeServico)
+        {
+            using (var context = new AutoCenterContext())
+            {
+
+                //no futuro adicionar um metodo para adicionar os produtos de volta
                 context.OrdensDeServico.Remove(ordemDeServico);
                 context.SaveChanges();
             }

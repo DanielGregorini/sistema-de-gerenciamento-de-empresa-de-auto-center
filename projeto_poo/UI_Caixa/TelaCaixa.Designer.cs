@@ -48,21 +48,22 @@
             // listaVendaEmAberto
             // 
             listaVendaEmAberto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listaVendaEmAberto.Location = new Point(29, 104);
+            listaVendaEmAberto.Location = new Point(12, 156);
             listaVendaEmAberto.Name = "listaVendaEmAberto";
             listaVendaEmAberto.RowTemplate.Height = 25;
-            listaVendaEmAberto.Size = new Size(715, 590);
+            listaVendaEmAberto.Size = new Size(583, 590);
             listaVendaEmAberto.TabIndex = 1;
-            
+            listaVendaEmAberto.CellContentClick += ListaVendaEmAberto_CellContentClick;
             // 
             // listaOrdemDeServicoEmAberto
             // 
             listaOrdemDeServicoEmAberto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listaOrdemDeServicoEmAberto.Location = new Point(781, 104);
+            listaOrdemDeServicoEmAberto.Location = new Point(646, 156);
             listaOrdemDeServicoEmAberto.Name = "listaOrdemDeServicoEmAberto";
             listaOrdemDeServicoEmAberto.RowTemplate.Height = 25;
-            listaOrdemDeServicoEmAberto.Size = new Size(715, 590);
+            listaOrdemDeServicoEmAberto.Size = new Size(868, 590);
             listaOrdemDeServicoEmAberto.TabIndex = 2;
+            listaOrdemDeServicoEmAberto.CellContentClick += listaOrdemDeServicoEmAberto_CellContentClick;
             // 
             // TelaCaixa
             // 
@@ -75,8 +76,6 @@
             Name = "TelaCaixa";
             Text = "TelaCaixa";
             Load += TelaCaixa_Load;
-            listaVendaEmAberto.CellContentClick += ListaVendaEmAberto_CellContentClick;
-
             ((System.ComponentModel.ISupportInitialize)listaVendaEmAberto).EndInit();
             ((System.ComponentModel.ISupportInitialize)listaOrdemDeServicoEmAberto).EndInit();
             ResumeLayout(false);

@@ -14,14 +14,30 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                context.ProdutoOrdensDeServico.Add(produtoOrdemDeServico);
+
+                var produto = ProdutoRepository.ProdutoPorId(produtoOrdemDeServico.ProdutoId);
+
+                if (produto.Quantidade < produtoOrdemDeServico.Quantidade)
+                {
+
+                    throw new Exception("Não pode vender mais que tem em estoque");
+                    return;
+                }
+                else
+                {
+                    context.ProdutoOrdensDeServico.Add(produtoOrdemDeServico);
+                    var ordemDeServico = OrdemDeServicoRepository.OrdemDeServicoPorId(produtoOrdemDeServico.OrdemDeServicoId);
+                    OrdemDeServicoRepository.AtualizarOrdemDeServico(ordemDeServico.OrdemDeServicoId);
+                    ProdutoRepository.EditarProduto(produto.ProdutoId, null, null, null, produto.Quantidade - produtoOrdemDeServico.Quantidade);
+                }
+
                 context.SaveChanges();
             }
         }
 
         static public void ExcluirProdutoOrdemDeServico(ProdutoOrdemDeServico produtoOrdemDeServico)
         {
-
+            //no futuro adicionar um metodo para adicionar os produtos de volta
             using (var context = new AutoCenterContext())
             {
                 context.ProdutoOrdensDeServico.Remove(produtoOrdemDeServico);

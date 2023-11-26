@@ -14,9 +14,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                context.ProdutoVendas.Add(produtoVenda);
-                //AtualizarVenda(Venda venda)
-
+                
                 
                 var produto = ProdutoRepository.ProdutoPorId(produtoVenda.ProdutoId);
 
@@ -27,8 +25,9 @@ namespace AutoCenter.Repository
                 }
                 else
                 {
+                    context.ProdutoVendas.Add(produtoVenda);
                     var venda = VendaRepository.VendaPorId(produtoVenda.VendaId);
-                    VendaRepository.AtualizarVenda(venda);
+                    VendaRepository.AtualizarVenda(venda.VendaId);
                     ProdutoRepository.EditarProduto(produto.ProdutoId, null, null, null, produto.Quantidade - produtoVenda.Quantidade);
                 }
 
@@ -38,7 +37,7 @@ namespace AutoCenter.Repository
 
         static public void ExcluirProduto(ProdutoVenda produtoVenda)
         {
-
+            //no futuro adicionar um metodo para adicionar os produtos de volta
             using (var context = new AutoCenterContext())
             {
                 context.ProdutoVendas.Remove(produtoVenda);
@@ -68,6 +67,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
+
                 //procura o produto pelo id
                 var produtoVenda = context.ProdutoVendas.Find(id);
 
