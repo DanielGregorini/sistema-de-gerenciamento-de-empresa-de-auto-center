@@ -75,12 +75,25 @@ namespace AutoCenter.Repository
             }
         }
 
-        static public void MudarEstadoOrdemDeServico(OrdemDeServico ordemDeServico)
+        static public void MudarEstadoOrdemDeServico(int ordemDeServicoId)
         {
             using (var context = new AutoCenterContext())
             {
-                ordemDeServico.Estado = "Pago";
-                context.SaveChanges();
+                // Buscar a venda pelo ID
+                var ordemDeServico = context.OrdensDeServico.Find(ordemDeServicoId);
+
+                // Verificar se a venda foi encontrada
+                if (ordemDeServico != null)
+                {
+                    // Atualizar o estado da ordem de servico
+                    ordemDeServico.Estado = "Pago";
+                    context.SaveChanges();
+                }
+                else
+                {
+                    
+                    return;
+                }
             }
         }
 

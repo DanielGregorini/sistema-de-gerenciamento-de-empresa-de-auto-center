@@ -14,16 +14,24 @@ namespace AutoCenter
             this.Text = "Sistema de Gerenciamento de Empresa Auto Center";
             caixa_nome.Text = caixa.Nome;
 
-            // Configurar as colunas do DataGridView
-            ConfigurarColunasDataGridViewVendas();
-
-            // Carregar os dados no DataGridView
-            CarregarDadosGridVendasEmAberto();
-
-            ConfigurarColunasDataGridViewOrdensDeServico();
+            CarregarDadosAsync();
         }
 
-        private void ConfigurarColunasDataGridViewVendas()
+        private async void CarregarDadosAsync()
+        {
+            
+            // Iniciar os métodos assíncronos e aguardar a conclusão de todos
+            await Task.WhenAll(
+                ConfigurarColunasDataGridViewVendas(), ConfigurarColunasDataGridViewOrdensDeServico()
+            );
+
+            await Task.WhenAll(
+                CarregarDadosGridVendasEmAberto(), CarregarDadosGridOrdensDeServicoEmAberto()
+            );
+            
+        }
+
+        private async Task ConfigurarColunasDataGridViewVendas()
         {
             // Limpar as colunas existentes, se houver
             listaVendaEmAberto.Columns.Clear();
@@ -56,7 +64,7 @@ namespace AutoCenter
             listaVendaEmAberto.Columns.Add(botaoColuna);
         }
 
-        private void CarregarDadosGridVendasEmAberto()
+        private async Task CarregarDadosGridVendasEmAberto()
         {
             // Limpar as linhas existentes, se houver
             listaVendaEmAberto.Rows.Clear();
@@ -66,27 +74,24 @@ namespace AutoCenter
 
             foreach (var venda in listaDeVendasEmAberto)
             {
-                if (venda != null)
-                {
-                    // Criar uma nova instância de DataGridViewRow
-                    DataGridViewRow novaLinha = new DataGridViewRow();
+                // Criar uma nova instância de DataGridViewRow
+                DataGridViewRow novaLinha = new DataGridViewRow();
 
-                    // Adicionar as células à linha
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendaId });
+                // Adicionar as células à linha
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendaId });
 
-                    var cliente = ClienteRepository.ClientePorId(venda.ClienteId);
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = cliente.Nome });
+                var cliente = ClienteRepository.ClientePorId(venda.ClienteId);
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = cliente.Nome });
 
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendedorId });
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.ValorTotal });
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendedorId });
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.ValorTotal });
 
-                    // Adicionar a célula do botão à linha
-                    DataGridViewButtonCell botaoCelula = new DataGridViewButtonCell { Value = "Confirmar Pagamento" };
-                    novaLinha.Cells.Add(botaoCelula);
+                // Adicionar a célula do botão à linha
+                DataGridViewButtonCell botaoCelula = new DataGridViewButtonCell { Value = "Confirmar Pagamento" };
+                novaLinha.Cells.Add(botaoCelula);
 
-                    // Adicionar a linha ao DataGridView
-                    listaVendaEmAberto.Rows.Add(novaLinha);
-                }
+                // Adicionar a linha ao DataGridView
+                listaVendaEmAberto.Rows.Add(novaLinha);
             }
         }
 
@@ -109,9 +114,7 @@ namespace AutoCenter
             }
         }
 
-        
-
-        private void ConfigurarColunasDataGridViewOrdensDeServico()
+        private async Task ConfigurarColunasDataGridViewOrdensDeServico()
         {
             //listaOrdemDeServicoEmAberto
             // Limpar as colunas existentes, se houver
@@ -160,9 +163,60 @@ namespace AutoCenter
             listaOrdemDeServicoEmAberto.Columns.Add(botaoColuna);
         }
 
-        private void CarregarDadosGridOrdensDeServicoEmAberto()
+        private async Task CarregarDadosGridOrdensDeServicoEmAberto()
         {
 
+            listaOrdemDeServicoEmAberto.Rows.Clear();
+
+            var listaDeOrdensDeServicoEmAberto = OrdemDeServicoRepository.ListarOrdemDeServico().Where(v => v.Estado != "Pago").ToList();
+
+            foreach(var ordemDeServico in listaDeOrdensDeServicoEmAberto)
+            {
+                DataGridViewRow novaLinha = new DataGridViewRow();
+
+                // Adicionar as células à linha
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.OrdemDeServicoId });
+
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.TipoDeServico });
+
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.Descricao });
+
+                var cliente = ClienteRepository.ClientePorId(ordemDeServico.ClienteId);
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = cliente.Nome });
+
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.VendedorId});
+
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.ValorTotal });
+
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.HorarioDeEntrega });
+
+                DataGridViewButtonCell botaoCelulaOrdemDeServico = new DataGridViewButtonCell { Value = "Confirmar Pagamento" };
+
+                novaLinha.Cells.Add(botaoCelulaOrdemDeServico);
+
+                // Adicionar a linha ao DataGridView
+                listaOrdemDeServicoEmAberto.Rows.Add(novaLinha);
+            }
+
+        }
+
+        private void ListaOrdemDeServicoEmAberto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar se o clique ocorreu na coluna de botão
+            if (e.RowIndex >= 0 && e.ColumnIndex == listaOrdemDeServicoEmAberto.Columns["BotaoAcao"].Index)
+            {
+                // Obter o valor da primeira coluna (índice 0) na mesma linha
+                if (listaOrdemDeServicoEmAberto.Rows[e.RowIndex].Cells[0].Value is int idOrdemDeServico)
+                {
+                    MessageBox.Show($"A ordem de serviço com ID {idOrdemDeServico} será confirmada.", "Aviso");
+
+                    // Chamar a função para confirmar a ordem de serviço
+                    OrdemDeServicoRepository.MudarEstadoOrdemDeServico(idOrdemDeServico);
+
+                    // Recarregar o DataGridView chamando a função de carregar dados
+                    CarregarDadosGridOrdensDeServicoEmAberto();
+                }
+            }
         }
 
         private void TelaCaixa_Load(object sender, EventArgs e)

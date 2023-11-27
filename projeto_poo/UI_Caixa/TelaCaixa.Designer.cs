@@ -63,7 +63,10 @@
             listaOrdemDeServicoEmAberto.RowTemplate.Height = 25;
             listaOrdemDeServicoEmAberto.Size = new Size(868, 590);
             listaOrdemDeServicoEmAberto.TabIndex = 2;
-            listaOrdemDeServicoEmAberto.CellContentClick += listaOrdemDeServicoEmAberto_CellContentClick;
+            listaOrdemDeServicoEmAberto.CellContentClick += ListaOrdemDeServicoEmAberto_CellContentClick;
+
+
+
             // 
             // TelaCaixa
             // 

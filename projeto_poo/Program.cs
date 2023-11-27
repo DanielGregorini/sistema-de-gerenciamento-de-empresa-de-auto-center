@@ -146,14 +146,31 @@ namespace projeto_poo
                 };
                
                 ProdutoVendaRepository.AdicionarProdutoVenda(produtovenda1);
+
+
+            var ordemDeServico = new OrdemDeServico
+            {
+                TipoDeServico = $"Instalação de som",
+                Descricao = $"Descrição do Serviço 5",
+                ClienteId = 1, // Cliente com Id 1
+                VendedorId = 5, // Vendedor com Id 1
+                HorarioDeEntrega = DateTime.Now.AddDays(1),
+
+
+            };
             */
+
+
+
+
+
+
 
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
-
         }
     }
 }
