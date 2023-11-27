@@ -72,7 +72,8 @@ namespace AutoCenter
             else if (GerenteRepository.LoginGerente(login, senha))
             {
                 MessageBox.Show("É GERENTE");
-                TelaGerente telaGerente = new TelaGerente();
+                var gerenteLogado = GerenteRepository.RetornarGerentePorLogin(login, senha);
+                TelaGerente telaGerente = new TelaGerente(gerenteLogado);
                 telaGerente.Show();
                 this.Hide();
             }

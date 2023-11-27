@@ -31,6 +31,8 @@
             caixa_nome = new Label();
             listaVendaEmAberto = new DataGridView();
             listaOrdemDeServicoEmAberto = new DataGridView();
+            VendasLabel = new Label();
+            OrdemDeServicoLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)listaVendaEmAberto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)listaOrdemDeServicoEmAberto).BeginInit();
             SuspendLayout();
@@ -64,15 +66,34 @@
             listaOrdemDeServicoEmAberto.Size = new Size(868, 590);
             listaOrdemDeServicoEmAberto.TabIndex = 2;
             listaOrdemDeServicoEmAberto.CellContentClick += ListaOrdemDeServicoEmAberto_CellContentClick;
-
-
-
+            // 
+            // VendasLabel
+            // 
+            VendasLabel.AutoSize = true;
+            VendasLabel.Font = new Font("Segoe UI", 35F, FontStyle.Regular, GraphicsUnit.Point);
+            VendasLabel.Location = new Point(12, 91);
+            VendasLabel.Name = "VendasLabel";
+            VendasLabel.Size = new Size(177, 62);
+            VendasLabel.TabIndex = 3;
+            VendasLabel.Text = "Vendas";
+            // 
+            // OrdemDeServicoLabel
+            // 
+            OrdemDeServicoLabel.AutoSize = true;
+            OrdemDeServicoLabel.Font = new Font("Segoe UI", 35F, FontStyle.Regular, GraphicsUnit.Point);
+            OrdemDeServicoLabel.Location = new Point(646, 91);
+            OrdemDeServicoLabel.Name = "OrdemDeServicoLabel";
+            OrdemDeServicoLabel.Size = new Size(407, 62);
+            OrdemDeServicoLabel.TabIndex = 4;
+            OrdemDeServicoLabel.Text = "Ordens de Serviço";
             // 
             // TelaCaixa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1526, 851);
+            Controls.Add(OrdemDeServicoLabel);
+            Controls.Add(VendasLabel);
             Controls.Add(listaOrdemDeServicoEmAberto);
             Controls.Add(listaVendaEmAberto);
             Controls.Add(caixa_nome);
@@ -90,5 +111,7 @@
         private Label caixa_nome;
         private DataGridView listaVendaEmAberto;
         private DataGridView listaOrdemDeServicoEmAberto;
+        private Label VendasLabel;
+        private Label OrdemDeServicoLabel;
     }
 }

@@ -43,7 +43,7 @@
             Login.AutoSize = true;
             Login.BackColor = SystemColors.Control;
             Login.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Login.Location = new Point(518, 325);
+            Login.Location = new Point(253, 319);
             Login.Name = "Login";
             Login.Size = new Size(139, 54);
             Login.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             label_senha.AutoSize = true;
             label_senha.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label_senha.Location = new Point(518, 420);
+            label_senha.Location = new Point(244, 443);
             label_senha.Name = "label_senha";
             label_senha.Size = new Size(148, 54);
             label_senha.TabIndex = 1;
@@ -61,14 +61,14 @@
             // 
             // text_login
             // 
-            text_login.Location = new Point(466, 382);
+            text_login.Location = new Point(198, 398);
             text_login.Name = "text_login";
             text_login.Size = new Size(252, 23);
             text_login.TabIndex = 2;
             // 
             // text_senha
             // 
-            text_senha.Location = new Point(466, 477);
+            text_senha.Location = new Point(198, 513);
             text_senha.Name = "text_senha";
             text_senha.Size = new Size(252, 23);
             text_senha.TabIndex = 3;
@@ -76,7 +76,7 @@
             // button_logar
             // 
             button_logar.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            button_logar.Location = new Point(508, 540);
+            button_logar.Location = new Point(243, 560);
             button_logar.Name = "button_logar";
             button_logar.Size = new Size(149, 63);
             button_logar.TabIndex = 4;
@@ -87,7 +87,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(358, 73);
+            pictureBox1.Location = new Point(103, 47);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(445, 249);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1179, 659);
+            ClientSize = new Size(664, 659);
             Controls.Add(pictureBox1);
             Controls.Add(button_logar);
             Controls.Add(text_senha);

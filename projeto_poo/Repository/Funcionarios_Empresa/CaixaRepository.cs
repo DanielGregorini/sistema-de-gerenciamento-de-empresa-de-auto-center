@@ -16,8 +16,12 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-
-                if (GerenteRepository.LoginGerente(loginGerente, senhaGerente))
+                if(GerenteRepository.LoginGerente(caixa.Login, caixa.Senha) || 
+                    VendedorRepository.LoginVendedor(caixa.Login, caixa.Senha) || LoginCaixa(caixa.Login, caixa.Senha))
+                {
+                    throw new ArgumentException("Já existe esse login");
+                    return;
+                }else if (GerenteRepository.LoginGerente(loginGerente, senhaGerente))
                 {
                     context.Caixas.Add(caixa);
                     context.SaveChanges();
@@ -99,7 +103,7 @@ namespace AutoCenter.Repository
                     return caixa;
                 }
 
-                return caixa;
+                return null;
             }
 
         }

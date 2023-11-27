@@ -14,7 +14,13 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-
+                if (GerenteRepository.LoginGerente(vendedor.Login, vendedor.Senha) ||
+                    LoginVendedor(vendedor.Login, vendedor.Senha) ||
+                    CaixaRepository.LoginCaixa(vendedor.Login, vendedor.Senha))
+                {
+                    throw new ArgumentException("Já existe esse login");
+                    return;
+                }
                 if (GerenteRepository.LoginGerente(loginGerente, senhaGerente))
                 {
                     context.Vendedores.Add(vendedor);
@@ -83,6 +89,22 @@ namespace AutoCenter.Repository
                 }
 
                 return false;
+            }
+        }
+
+        static public Vendedor RetornarVendedorPorLogin(string login, string senha)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var vendedor = context.Vendedores.FirstOrDefault(c => c.Login == login);
+
+                if (vendedor != null && vendedor.Senha == senha)
+                {
+
+                    return vendedor;
+                }
+
+                return null;
             }
         }
     }

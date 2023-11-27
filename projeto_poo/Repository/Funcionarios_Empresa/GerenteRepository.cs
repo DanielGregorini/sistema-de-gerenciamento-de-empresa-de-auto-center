@@ -15,8 +15,14 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                
-                if(LoginGerente(login, senha))
+                if (LoginGerente(novoGerente.Login, novoGerente.Senha) || 
+                    VendedorRepository.LoginVendedor(novoGerente.Login, novoGerente.Senha) || 
+                    CaixaRepository.LoginCaixa(novoGerente.Login, novoGerente.Senha))
+                {
+                    throw new ArgumentException("Já existe esse login");
+                    return;
+                }
+                if (LoginGerente(login, senha))
                 {
                     context.Gerentes.Add(novoGerente);
                     context.SaveChanges();
@@ -84,6 +90,22 @@ namespace AutoCenter.Repository
                 }
 
                 return false;
+            }
+        }
+
+        static public Gerente RetornarGerentePorLogin(string login, string senha)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var gerente = context.Gerentes.FirstOrDefault(c => c.Login == login);
+
+                if (gerente != null && gerente.Senha == senha)
+                {
+
+                    return gerente;
+                }
+
+                return null;
             }
         }
     }

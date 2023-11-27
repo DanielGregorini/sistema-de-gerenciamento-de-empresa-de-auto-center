@@ -3,6 +3,7 @@ using AutoCenter.Data;
 using AutoCenter.Model;
 using AutoCenter.Repository;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace AutoCenter
 {
@@ -19,7 +20,6 @@ namespace AutoCenter
 
         private async void CarregarDadosAsync()
         {
-            
             // Iniciar os métodos assíncronos e aguardar a conclusão de todos
             await Task.WhenAll(
                 ConfigurarColunasDataGridViewVendas(), ConfigurarColunasDataGridViewOrdensDeServico()
@@ -28,7 +28,7 @@ namespace AutoCenter
             await Task.WhenAll(
                 CarregarDadosGridVendasEmAberto(), CarregarDadosGridOrdensDeServicoEmAberto()
             );
-            
+
         }
 
         private async Task ConfigurarColunasDataGridViewVendas()
@@ -165,12 +165,11 @@ namespace AutoCenter
 
         private async Task CarregarDadosGridOrdensDeServicoEmAberto()
         {
-
             listaOrdemDeServicoEmAberto.Rows.Clear();
 
             var listaDeOrdensDeServicoEmAberto = OrdemDeServicoRepository.ListarOrdemDeServico().Where(v => v.Estado != "Pago").ToList();
 
-            foreach(var ordemDeServico in listaDeOrdensDeServicoEmAberto)
+            foreach (var ordemDeServico in listaDeOrdensDeServicoEmAberto)
             {
                 DataGridViewRow novaLinha = new DataGridViewRow();
 
@@ -184,7 +183,7 @@ namespace AutoCenter
                 var cliente = ClienteRepository.ClientePorId(ordemDeServico.ClienteId);
                 novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = cliente.Nome });
 
-                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.VendedorId});
+                novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.VendedorId });
 
                 novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = ordemDeServico.ValorTotal });
 
@@ -225,6 +224,11 @@ namespace AutoCenter
         }
 
         private void listaOrdemDeServicoEmAberto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
