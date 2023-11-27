@@ -23,6 +23,7 @@ namespace AutoCenter.Repository
                 }
                 if (GerenteRepository.LoginGerente(loginGerente, senhaGerente))
                 {
+                    vendedor.EmpresaId = 1;
                     context.Vendedores.Add(vendedor);
                     context.SaveChanges();
                 }

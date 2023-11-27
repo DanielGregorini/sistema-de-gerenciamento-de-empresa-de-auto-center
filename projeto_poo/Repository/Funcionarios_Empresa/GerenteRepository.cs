@@ -24,6 +24,7 @@ namespace AutoCenter.Repository
                 }
                 if (LoginGerente(login, senha))
                 {
+                    novoGerente.EmpresaId = 1;
                     context.Gerentes.Add(novoGerente);
                     context.SaveChanges();
                 }

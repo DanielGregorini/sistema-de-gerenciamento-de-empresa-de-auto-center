@@ -23,6 +23,7 @@ namespace AutoCenter.Repository
                     return;
                 }else if (GerenteRepository.LoginGerente(loginGerente, senhaGerente))
                 {
+                    caixa.EmpresaId = 1;
                     context.Caixas.Add(caixa);
                     context.SaveChanges();
                 }

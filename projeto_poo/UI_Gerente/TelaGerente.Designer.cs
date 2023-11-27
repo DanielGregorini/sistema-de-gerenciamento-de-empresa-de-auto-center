@@ -50,7 +50,7 @@
             CriarFuncionarioButton.TabIndex = 0;
             CriarFuncionarioButton.Text = "Criar Funcionario";
             CriarFuncionarioButton.UseVisualStyleBackColor = true;
-            CriarFuncionarioButton.Click += button1_Click;
+            CriarFuncionarioButton.Click += CriarFuncionarioButton_Click;
             // 
             // label1
             // 
@@ -92,6 +92,7 @@
             ProdutosLabel.Size = new Size(183, 54);
             ProdutosLabel.TabIndex = 5;
             ProdutosLabel.Text = "Produtos";
+            ProdutosLabel.Click += ProdutosLabel_Click;
             // 
             // CadastrarNovoProdutoButton
             // 
