@@ -61,6 +61,44 @@ namespace AutoCenter.Repository
             }
         }
 
+        static public void EditarVendedor(int id, string? novoNome, string? novoCpf, 
+            string? novoLogin, string? novaSenha)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var  vendedorParaEditar = context.Vendedores.Find(id);
+
+                if (vendedorParaEditar == null)
+                {
+                    throw new ArgumentException("ID não encontrado");
+                    return;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoNome))
+                {
+                    vendedorParaEditar.Nome = novoNome;
+                }
+
+
+                if (!string.IsNullOrWhiteSpace(novoCpf))
+                {
+                    vendedorParaEditar.Cpf = novoCpf;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoLogin))
+                {
+                    vendedorParaEditar.Login = novoLogin;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novaSenha))
+                {
+                    vendedorParaEditar.Senha = novaSenha;
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         static public Vendedor VendedorPorId(int id)
         {
             using (var context = new AutoCenterContext())

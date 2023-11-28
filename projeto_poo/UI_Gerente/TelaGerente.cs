@@ -45,6 +45,10 @@ namespace AutoCenter
 
         }
 
-        
+        private void ListarVendas_Click(object sender, EventArgs e)
+        {
+            EditarExcluirFuncionario editarExcluirFuncionario = new EditarExcluirFuncionario(gerente);
+            editarExcluirFuncionario.Show();
+        }
     }
 }

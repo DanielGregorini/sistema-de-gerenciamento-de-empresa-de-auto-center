@@ -35,6 +35,43 @@ namespace AutoCenter.Repository
             }
         }
 
+        static public void EditarGerente(int id, string? novoNome, string? novoCpf,
+            string? novoLogin, string? novaSenha)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var GerenteParaEditar = context.Gerentes.Find(id);
+
+                if (GerenteParaEditar == null)
+                {
+                    throw new ArgumentException("ID não encontrado");
+                    return;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoNome))
+                {
+                    GerenteParaEditar.Nome = novoNome;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoCpf))
+                {
+                    GerenteParaEditar.Cpf = novoCpf;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoLogin))
+                {
+                    GerenteParaEditar.Login = novoLogin;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novaSenha))
+                {
+                    GerenteParaEditar.Senha = novaSenha;
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         static public void ExcluirCliente(Gerente gerente, string login, string senha)
         {
 

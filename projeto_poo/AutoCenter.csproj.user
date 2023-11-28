@@ -10,6 +10,9 @@
     <Compile Update="UI_Gerente\CriarFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI_Gerente\EditarExcluirFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI_Gerente\TelaGerente.cs">
       <SubType>Form</SubType>
     </Compile>

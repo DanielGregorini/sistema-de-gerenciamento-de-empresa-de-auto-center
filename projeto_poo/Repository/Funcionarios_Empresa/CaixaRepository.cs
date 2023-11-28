@@ -34,6 +34,43 @@ namespace AutoCenter.Repository
             }
         }
 
+        static public void EditarCaixa(int id, string? novoNome, string? novoCpf,
+            string? novoLogin, string? novaSenha)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var CaixaParaEditar = context.Caixas.Find(id);
+
+                if (CaixaParaEditar == null)
+                {
+                    throw new ArgumentException("ID não encontrado");
+                    return;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoNome))
+                {
+                    CaixaParaEditar.Nome = novoNome;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoCpf))
+                {
+                    CaixaParaEditar.Cpf = novoCpf;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novoLogin))
+                {
+                    CaixaParaEditar.Login = novoLogin;
+                }
+
+                if (!string.IsNullOrWhiteSpace(novaSenha))
+                {
+                    CaixaParaEditar.Senha = novaSenha;
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         static public void ExcluirCaixa(Caixa caixa, string loginGerente, string senhaGerente)
         {
             using (var context = new AutoCenterContext())

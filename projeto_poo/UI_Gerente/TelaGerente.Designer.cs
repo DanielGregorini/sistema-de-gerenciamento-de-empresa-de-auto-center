@@ -44,9 +44,10 @@
             // CriarFuncionarioButton
             // 
             CriarFuncionarioButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CriarFuncionarioButton.Location = new Point(34, 225);
+            CriarFuncionarioButton.Location = new Point(39, 300);
+            CriarFuncionarioButton.Margin = new Padding(3, 4, 3, 4);
             CriarFuncionarioButton.Name = "CriarFuncionarioButton";
-            CriarFuncionarioButton.Size = new Size(193, 64);
+            CriarFuncionarioButton.Size = new Size(221, 85);
             CriarFuncionarioButton.TabIndex = 0;
             CriarFuncionarioButton.Text = "Criar Funcionario";
             CriarFuncionarioButton.UseVisualStyleBackColor = true;
@@ -56,9 +57,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 35F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(14, 12);
             label1.Name = "label1";
-            label1.Size = new Size(334, 62);
+            label1.Size = new Size(417, 78);
             label1.TabIndex = 1;
             label1.Text = "Nome Gerente";
             // 
@@ -66,9 +67,9 @@
             // 
             Funcionarios.AutoSize = true;
             Funcionarios.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Funcionarios.Location = new Point(12, 149);
+            Funcionarios.Location = new Point(14, 199);
             Funcionarios.Name = "Funcionarios";
-            Funcionarios.Size = new Size(247, 54);
+            Funcionarios.Size = new Size(305, 67);
             Funcionarios.TabIndex = 2;
             Funcionarios.Text = "Funcionários";
             Funcionarios.Click += label2_Click;
@@ -76,20 +77,22 @@
             // ListarVendas
             // 
             ListarVendas.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarVendas.Location = new Point(34, 295);
+            ListarVendas.Location = new Point(39, 393);
+            ListarVendas.Margin = new Padding(3, 4, 3, 4);
             ListarVendas.Name = "ListarVendas";
-            ListarVendas.Size = new Size(193, 64);
+            ListarVendas.Size = new Size(221, 85);
             ListarVendas.TabIndex = 3;
             ListarVendas.Text = "Editar/Excluir Funcionario";
             ListarVendas.UseVisualStyleBackColor = true;
+            ListarVendas.Click += ListarVendas_Click;
             // 
             // ProdutosLabel
             // 
             ProdutosLabel.AutoSize = true;
             ProdutosLabel.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            ProdutosLabel.Location = new Point(595, 149);
+            ProdutosLabel.Location = new Point(680, 199);
             ProdutosLabel.Name = "ProdutosLabel";
-            ProdutosLabel.Size = new Size(183, 54);
+            ProdutosLabel.Size = new Size(227, 67);
             ProdutosLabel.TabIndex = 5;
             ProdutosLabel.Text = "Produtos";
             ProdutosLabel.Click += ProdutosLabel_Click;
@@ -97,9 +100,10 @@
             // CadastrarNovoProdutoButton
             // 
             CadastrarNovoProdutoButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarNovoProdutoButton.Location = new Point(595, 225);
+            CadastrarNovoProdutoButton.Location = new Point(680, 300);
+            CadastrarNovoProdutoButton.Margin = new Padding(3, 4, 3, 4);
             CadastrarNovoProdutoButton.Name = "CadastrarNovoProdutoButton";
-            CadastrarNovoProdutoButton.Size = new Size(193, 64);
+            CadastrarNovoProdutoButton.Size = new Size(221, 85);
             CadastrarNovoProdutoButton.TabIndex = 6;
             CadastrarNovoProdutoButton.Text = "Cadastrar Produto";
             CadastrarNovoProdutoButton.UseVisualStyleBackColor = true;
@@ -108,9 +112,10 @@
             // ListarProdutosButton
             // 
             ListarProdutosButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarProdutosButton.Location = new Point(595, 295);
+            ListarProdutosButton.Location = new Point(680, 393);
+            ListarProdutosButton.Margin = new Padding(3, 4, 3, 4);
             ListarProdutosButton.Name = "ListarProdutosButton";
-            ListarProdutosButton.Size = new Size(193, 64);
+            ListarProdutosButton.Size = new Size(221, 85);
             ListarProdutosButton.TabIndex = 7;
             ListarProdutosButton.Text = "Listar Produtos\r\n";
             ListarProdutosButton.UseVisualStyleBackColor = true;
@@ -119,18 +124,19 @@
             // 
             CaixaVendaLabel.AutoSize = true;
             CaixaVendaLabel.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            CaixaVendaLabel.Location = new Point(1105, 149);
+            CaixaVendaLabel.Location = new Point(1263, 199);
             CaixaVendaLabel.Name = "CaixaVendaLabel";
-            CaixaVendaLabel.Size = new Size(242, 54);
+            CaixaVendaLabel.Size = new Size(300, 67);
             CaixaVendaLabel.TabIndex = 8;
             CaixaVendaLabel.Text = "Caixa/Venda";
             // 
             // ListarV
             // 
             ListarV.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarV.Location = new Point(595, 365);
+            ListarV.Location = new Point(680, 487);
+            ListarV.Margin = new Padding(3, 4, 3, 4);
             ListarV.Name = "ListarV";
-            ListarV.Size = new Size(193, 64);
+            ListarV.Size = new Size(221, 85);
             ListarV.TabIndex = 9;
             ListarV.Text = "Listar Vendas";
             ListarV.UseVisualStyleBackColor = true;
@@ -138,9 +144,10 @@
             // TelaCaixa
             // 
             TelaCaixa.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            TelaCaixa.Location = new Point(1129, 225);
+            TelaCaixa.Location = new Point(1290, 300);
+            TelaCaixa.Margin = new Padding(3, 4, 3, 4);
             TelaCaixa.Name = "TelaCaixa";
-            TelaCaixa.Size = new Size(193, 64);
+            TelaCaixa.Size = new Size(221, 85);
             TelaCaixa.TabIndex = 10;
             TelaCaixa.Text = "Vendas e Ordem de Servço em aberto";
             TelaCaixa.UseVisualStyleBackColor = true;
@@ -148,18 +155,19 @@
             // CriarUmNovaVenda
             // 
             CriarUmNovaVenda.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CriarUmNovaVenda.Location = new Point(1129, 352);
+            CriarUmNovaVenda.Location = new Point(1290, 469);
+            CriarUmNovaVenda.Margin = new Padding(3, 4, 3, 4);
             CriarUmNovaVenda.Name = "CriarUmNovaVenda";
-            CriarUmNovaVenda.Size = new Size(193, 64);
+            CriarUmNovaVenda.Size = new Size(221, 85);
             CriarUmNovaVenda.TabIndex = 11;
             CriarUmNovaVenda.Text = "Vendas";
             CriarUmNovaVenda.UseVisualStyleBackColor = true;
             // 
             // TelaGerente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1372, 745);
+            ClientSize = new Size(1568, 993);
             Controls.Add(CriarUmNovaVenda);
             Controls.Add(TelaCaixa);
             Controls.Add(ListarV);
@@ -171,6 +179,7 @@
             Controls.Add(Funcionarios);
             Controls.Add(label1);
             Controls.Add(CriarFuncionarioButton);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TelaGerente";
             StartPosition = FormStartPosition.Manual;
             Text = "TelaGerente";
