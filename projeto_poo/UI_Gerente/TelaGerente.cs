@@ -50,5 +50,11 @@ namespace AutoCenter
             EditarExcluirFuncionario editarExcluirFuncionario = new EditarExcluirFuncionario(gerente);
             editarExcluirFuncionario.Show();
         }
+
+        private void ListarV_Click(object sender, EventArgs e)
+        {
+            ListarVendasOrdemDeServico listaVendasODS = new ListarVendasOrdemDeServico(gerente);
+            listaVendasODS.Show();
+        }
     }
 }

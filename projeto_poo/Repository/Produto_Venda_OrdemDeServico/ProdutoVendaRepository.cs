@@ -49,10 +49,12 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                var produtosVenda = context.ProdutoVendas.Where(ProdutoVenda => ProdutoVenda.VendaId == vendaId).ToList();
+                var produtosVenda = context.ProdutoVendas.Where(p => p.VendaId == vendaId).ToList();
+
                 return produtosVenda;
             }
         }
+
 
         static public List<ProdutoVenda> ListarProdutoVendas()
         {

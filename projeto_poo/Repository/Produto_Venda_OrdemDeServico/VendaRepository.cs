@@ -31,7 +31,7 @@ namespace AutoCenter.Repository
                     }
                 }
 
-                venda.HorioRealizacao = DateTime.Now;
+                venda.HorarioRealizacao = DateTime.Now;
                 venda.ValorTotal = valorTotal;
 
                 context.Vendas.Add(venda);

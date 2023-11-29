@@ -190,7 +190,7 @@ namespace AutoCenter.UI_Gerente
                     MessageBox.Show("Dados do Gerente alterados");
                 }
             }
-        }
+        }         
 
         private void LimparDadosEdicao()
         {

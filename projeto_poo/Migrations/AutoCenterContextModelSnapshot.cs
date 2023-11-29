@@ -303,7 +303,7 @@ namespace AutoCenter.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("HorioRealizacao")
+                    b.Property<DateTime>("HorarioRealizacao")
                         .HasColumnType("datetime(6)");
 
                     b.Property<double>("ValorTotal")

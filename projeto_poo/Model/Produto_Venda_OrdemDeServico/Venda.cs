@@ -20,6 +20,6 @@ namespace AutoCenter.Model
         public Vendedor Vendedor { get; set; }
         public double ValorTotal { get; set; }
         public string Estado { get; set; }
-        public DateTime HorioRealizacao { get; set; }
+        public DateTime HorarioRealizacao { get; set; }
     }
 }
