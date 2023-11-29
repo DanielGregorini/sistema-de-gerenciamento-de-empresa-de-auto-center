@@ -132,7 +132,7 @@ namespace projeto_poo
                 {
                     ClienteId = 1,
                     VendedorId = 5,
-                    HorioRealizacao = DateTime.Now,
+                    HorarioRealizacao = DateTime.Now,
                 };
 
                 VendaRepository.AdicionarVenda(venda1);
@@ -159,13 +159,6 @@ namespace projeto_poo
 
             };
             */
-
-
-
-
-
-
-
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
