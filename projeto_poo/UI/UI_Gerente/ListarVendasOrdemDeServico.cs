@@ -36,7 +36,6 @@ namespace AutoCenter.UI_Gerente
         {
             var listaVendas = VendaRepository.ListarVendas();
 
-
             foreach (var venda in listaVendas)
             {
                 var cliente = ClienteRepository.ClientePorId(venda.ClienteId);

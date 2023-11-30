@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             CriarFuncionarioButton = new Button();
-            label1 = new Label();
+            NomeGerente = new Label();
             Funcionarios = new Label();
             ListarVendas = new Button();
             ProdutosLabel = new Label();
@@ -52,15 +52,15 @@
             CriarFuncionarioButton.UseVisualStyleBackColor = true;
             CriarFuncionarioButton.Click += CriarFuncionarioButton_Click;
             // 
-            // label1
+            // NomeGerente
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 35F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(334, 62);
-            label1.TabIndex = 1;
-            label1.Text = "Nome Gerente";
+            NomeGerente.AutoSize = true;
+            NomeGerente.Font = new Font("Segoe UI", 35F, FontStyle.Regular, GraphicsUnit.Point);
+            NomeGerente.Location = new Point(12, 9);
+            NomeGerente.Name = "NomeGerente";
+            NomeGerente.Size = new Size(334, 62);
+            NomeGerente.TabIndex = 1;
+            NomeGerente.Text = "Nome Gerente";
             // 
             // Funcionarios
             // 
@@ -115,6 +115,7 @@
             ListarProdutosButton.TabIndex = 7;
             ListarProdutosButton.Text = "Listar Produtos\r\n";
             ListarProdutosButton.UseVisualStyleBackColor = true;
+            ListarProdutosButton.Click += ListarProdutosButton_Click;
             // 
             // CaixaVendaLabel
             // 
@@ -171,7 +172,7 @@
             Controls.Add(ProdutosLabel);
             Controls.Add(ListarVendas);
             Controls.Add(Funcionarios);
-            Controls.Add(label1);
+            Controls.Add(NomeGerente);
             Controls.Add(CriarFuncionarioButton);
             Name = "TelaGerente";
             StartPosition = FormStartPosition.Manual;
@@ -184,7 +185,7 @@
         #endregion
 
         private Button CriarFuncionarioButton;
-        private Label label1;
+        private Label NomeGerente;
         private Label Funcionarios;
         private Button ListarVendas;
         private Label Produtos;

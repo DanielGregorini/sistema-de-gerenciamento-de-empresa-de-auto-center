@@ -2,6 +2,7 @@
 using AutoCenter.Data;
 using AutoCenter.Model;
 using AutoCenter.Repository;
+using AutoCenter.UI.UI_Gerente;
 using AutoCenter.UI_Gerente;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace AutoCenter
             InitializeComponent();
             this.Text = "Sistema de Gerenciamento de empresa Auto Center";
             this.gerente = gerente; // Atribua o valor recebido ao campo de classe
+            NomeGerente.Text = gerente.Nome;
         }
 
         private void CriarFuncionarioButton_Click(object sender, EventArgs e)
@@ -55,6 +57,12 @@ namespace AutoCenter
         {
             ListarVendasOrdemDeServico listaVendasODS = new ListarVendasOrdemDeServico(gerente);
             listaVendasODS.Show();
+        }
+
+        private void ListarProdutosButton_Click(object sender, EventArgs e)
+        {
+            ListarProdutos listarProdutos = new ListarProdutos(gerente);
+            listarProdutos.Show();
         }
     }
 }
