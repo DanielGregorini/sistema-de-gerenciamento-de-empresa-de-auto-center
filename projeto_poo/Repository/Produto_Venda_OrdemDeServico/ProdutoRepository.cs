@@ -22,7 +22,6 @@ namespace AutoCenter.Repository
 
         static public void ExcluirProduto(Produto produto)
         {
-
             using (var context = new AutoCenterContext())
             {
                 context.Produtos.Remove(produto);
@@ -57,6 +56,23 @@ namespace AutoCenter.Repository
                 {
                     produtoParaEditar.Quantidade = novaQuantidade.Value;
                 }
+
+                context.SaveChanges();
+            }
+        }
+
+        static public void AdicionarEntredaProduto(int idProduto, double quantidadeNovaEntrada, double custoNovaEntreda)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                Produto produto = ProdutoRepository.ProdutoPorId(idProduto);
+
+                //Média aritmética ponderada
+                double novoPrecoMedio = ((produto.Quantidade * produto.CustoMedio) + 
+                    (quantidadeNovaEntrada * custoNovaEntreda)) /
+                    (produto.Quantidade + quantidadeNovaEntrada);
+
+                produto.Quantidade+= quantidadeNovaEntrada;
 
                 context.SaveChanges();
             }

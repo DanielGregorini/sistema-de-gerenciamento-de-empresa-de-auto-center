@@ -150,7 +150,8 @@ F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\pro
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.Form1.resources
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.TelaGerente.resources
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.TelaVendedor.resources
-F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.UI_Gerente.CriarFuncionario.resources
-F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.UI_Gerente.EditarExcluirFuncionario.resources
-F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.UI_Gerente.ListarVendasOrdemDeServico.resources
-F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.UI.UI_Gerente.ListarProdutos.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.CadastrarNovoProduto.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.CriarFuncionario.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.EditarExcluirFuncionario.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.ListarProdutos.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.ListarVendasOrdemDeServico.resources

@@ -71,7 +71,6 @@
             Funcionarios.Size = new Size(247, 54);
             Funcionarios.TabIndex = 2;
             Funcionarios.Text = "Funcionários";
-            Funcionarios.Click += label2_Click;
             // 
             // ListarVendas
             // 
@@ -93,12 +92,11 @@
             ProdutosLabel.Size = new Size(183, 54);
             ProdutosLabel.TabIndex = 5;
             ProdutosLabel.Text = "Produtos";
-            ProdutosLabel.Click += ProdutosLabel_Click;
             // 
             // CadastrarNovoProdutoButton
             // 
             CadastrarNovoProdutoButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarNovoProdutoButton.Location = new Point(595, 225);
+            CadastrarNovoProdutoButton.Location = new Point(595, 271);
             CadastrarNovoProdutoButton.Name = "CadastrarNovoProdutoButton";
             CadastrarNovoProdutoButton.Size = new Size(193, 64);
             CadastrarNovoProdutoButton.TabIndex = 6;
@@ -109,7 +107,7 @@
             // ListarProdutosButton
             // 
             ListarProdutosButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarProdutosButton.Location = new Point(595, 295);
+            ListarProdutosButton.Location = new Point(595, 341);
             ListarProdutosButton.Name = "ListarProdutosButton";
             ListarProdutosButton.Size = new Size(193, 64);
             ListarProdutosButton.TabIndex = 7;
@@ -130,7 +128,7 @@
             // ListarV
             // 
             ListarV.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarV.Location = new Point(595, 365);
+            ListarV.Location = new Point(595, 411);
             ListarV.Name = "ListarV";
             ListarV.Size = new Size(193, 64);
             ListarV.TabIndex = 9;
@@ -151,7 +149,7 @@
             // CriarUmNovaVenda
             // 
             CriarUmNovaVenda.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CriarUmNovaVenda.Location = new Point(1129, 352);
+            CriarUmNovaVenda.Location = new Point(1129, 295);
             CriarUmNovaVenda.Name = "CriarUmNovaVenda";
             CriarUmNovaVenda.Size = new Size(193, 64);
             CriarUmNovaVenda.TabIndex = 11;

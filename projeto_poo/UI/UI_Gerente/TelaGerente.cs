@@ -2,8 +2,6 @@
 using AutoCenter.Data;
 using AutoCenter.Model;
 using AutoCenter.Repository;
-using AutoCenter.UI.UI_Gerente;
-using AutoCenter.UI_Gerente;
 using System.Windows.Forms;
 
 namespace AutoCenter
@@ -32,19 +30,10 @@ namespace AutoCenter
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CadastrarNovoProdutoButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ProdutosLabel_Click(object sender, EventArgs e)
-        {
-
+            CadastrarNovoProduto cadastrarNovoProduto = new CadastrarNovoProduto(gerente);
+            cadastrarNovoProduto.Show();
         }
 
         private void ListarVendas_Click(object sender, EventArgs e)

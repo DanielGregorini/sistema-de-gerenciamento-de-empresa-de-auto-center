@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoCenter.UI_Gerente
+namespace AutoCenter
 {
     public partial class ListarVendasOrdemDeServico : Form
     {

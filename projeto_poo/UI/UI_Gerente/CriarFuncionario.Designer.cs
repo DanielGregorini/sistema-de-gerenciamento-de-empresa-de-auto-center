@@ -1,4 +1,4 @@
-﻿namespace AutoCenter.UI_Gerente
+﻿namespace AutoCenter
 {
     partial class CriarFuncionario
     {

@@ -1,7 +1,7 @@
 ﻿using AutoCenter.Model;
 using AutoCenter.Repository;
 
-namespace AutoCenter.UI_Gerente
+namespace AutoCenter
 {
     public partial class CriarFuncionario : Form
     {
@@ -11,6 +11,7 @@ namespace AutoCenter.UI_Gerente
         {
             InitializeComponent();
             this.gerenteLogado = gerente;
+            this.Text = "Criar novo funcionário";
         }
 
         private void ButtonCriar_Click(object sender, EventArgs e)

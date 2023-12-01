@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace AutoCenter.UI_Gerente
+namespace AutoCenter
 {
     public partial class EditarExcluirFuncionario : Form
     {
