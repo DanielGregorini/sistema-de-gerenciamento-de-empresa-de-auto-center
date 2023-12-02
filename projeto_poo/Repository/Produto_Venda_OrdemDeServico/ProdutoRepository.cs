@@ -42,6 +42,11 @@ namespace AutoCenter.Repository
                     return;
                 }
 
+                if (!string.IsNullOrWhiteSpace(novoNome))
+                {
+                    produtoParaEditar.Nome = novoNome;
+                }
+
                 if (!string.IsNullOrWhiteSpace(novaDescricao))
                 {
                     produtoParaEditar.Descricao = novaDescricao;
@@ -65,16 +70,25 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                Produto produto = ProdutoRepository.ProdutoPorId(idProduto);
+                var produto = context.Produtos.Find(idProduto);
 
+
+                if (produto == null)
+                {
+                    return;
+                }
+
+                
                 //Média aritmética ponderada
-                double novoPrecoMedio = ((produto.Quantidade * produto.CustoMedio) + 
+                double novoCustoMedio = ((produto.Quantidade * produto.CustoMedio) + 
                     (quantidadeNovaEntrada * custoNovaEntreda)) /
                     (produto.Quantidade + quantidadeNovaEntrada);
 
-                produto.Quantidade+= quantidadeNovaEntrada;
+                produto.CustoMedio = novoCustoMedio;
+                produto.Quantidade = quantidadeNovaEntrada;
 
                 context.SaveChanges();
+
             }
         }
 

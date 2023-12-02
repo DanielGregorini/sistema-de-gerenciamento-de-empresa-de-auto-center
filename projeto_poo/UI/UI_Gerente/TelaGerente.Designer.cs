@@ -39,6 +39,7 @@
             ListarV = new Button();
             TelaCaixa = new Button();
             CriarUmNovaVenda = new Button();
+            EditarProduto = new Button();
             SuspendLayout();
             // 
             // CriarFuncionarioButton
@@ -96,7 +97,7 @@
             // CadastrarNovoProdutoButton
             // 
             CadastrarNovoProdutoButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarNovoProdutoButton.Location = new Point(595, 271);
+            CadastrarNovoProdutoButton.Location = new Point(595, 295);
             CadastrarNovoProdutoButton.Name = "CadastrarNovoProdutoButton";
             CadastrarNovoProdutoButton.Size = new Size(193, 64);
             CadastrarNovoProdutoButton.TabIndex = 6;
@@ -107,7 +108,7 @@
             // ListarProdutosButton
             // 
             ListarProdutosButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarProdutosButton.Location = new Point(595, 341);
+            ListarProdutosButton.Location = new Point(595, 365);
             ListarProdutosButton.Name = "ListarProdutosButton";
             ListarProdutosButton.Size = new Size(193, 64);
             ListarProdutosButton.TabIndex = 7;
@@ -128,7 +129,7 @@
             // ListarV
             // 
             ListarV.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarV.Location = new Point(595, 411);
+            ListarV.Location = new Point(595, 435);
             ListarV.Name = "ListarV";
             ListarV.Size = new Size(193, 64);
             ListarV.TabIndex = 9;
@@ -156,11 +157,23 @@
             CriarUmNovaVenda.Text = "Vendas";
             CriarUmNovaVenda.UseVisualStyleBackColor = true;
             // 
+            // EditarProduto
+            // 
+            EditarProduto.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            EditarProduto.Location = new Point(595, 225);
+            EditarProduto.Name = "EditarProduto";
+            EditarProduto.Size = new Size(193, 64);
+            EditarProduto.TabIndex = 12;
+            EditarProduto.Text = "Editar Produto";
+            EditarProduto.UseVisualStyleBackColor = true;
+            EditarProduto.Click += EditarProduto_Click;
+            // 
             // TelaGerente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1372, 745);
+            Controls.Add(EditarProduto);
             Controls.Add(CriarUmNovaVenda);
             Controls.Add(TelaCaixa);
             Controls.Add(ListarV);
@@ -195,5 +208,6 @@
         private Button ListarV;
         private Button TelaCaixa;
         private Button CriarUmNovaVenda;
+        private Button EditarProduto;
     }
 }

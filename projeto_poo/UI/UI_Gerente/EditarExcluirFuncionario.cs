@@ -126,6 +126,7 @@ namespace AutoCenter
                 }
             }
         }
+
         private void CarregarDadosFuncionario(int IdFuncionario)
         {
             if (tipoFuncionario == "vendedor")

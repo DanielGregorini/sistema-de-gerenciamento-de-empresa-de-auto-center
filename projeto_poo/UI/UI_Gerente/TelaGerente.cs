@@ -53,5 +53,11 @@ namespace AutoCenter
             ListarProdutos listarProdutos = new ListarProdutos(gerente);
             listarProdutos.Show();
         }
+
+        private void EditarProduto_Click(object sender, EventArgs e)
+        {
+            EditarProduto editarProduto = new EditarProduto(gerente);
+            editarProduto.Show();
+        }
     }
 }

@@ -79,58 +79,5 @@ namespace AutoCenter
             return false;
         }
 
-        /*
-        private void ListarVendas(string filtro)
-        {
-            var listaVendas = VendaRepository.ListarVendas();
-
-            foreach (var venda in listaVendas)
-            {
-                var cliente = ClienteRepository.ClientePorId(venda.ClienteId);
-
-                if (ContemFiltroVenda(filtro, venda))
-                {
-                    DataGridViewRow novaLinha = new DataGridViewRow();
-
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendaId });
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.ClienteId });
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = cliente.Nome });
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.VendedorId });
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.Estado });
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.ValorTotal });
-                    novaLinha.Cells.Add(new DataGridViewTextBoxCell { Value = venda.HorarioRealizacao });
-
-                    VendasLista.Rows.Add(novaLinha);
-
-                }
-            }
-        }
-
-        private bool ContemFiltroVenda(string filtro, Venda venda)
-        {
-            var cliente = ClienteRepository.ClientePorId(venda.ClienteId);
-            var vendedor = VendedorRepository.VendedorPorId(venda.VendedorId);
-
-            if (cliente.Nome.ToLower().Contains(filtro.ToLower()) || venda.Estado.ToLower().Contains(filtro.ToLower()) ||
-                vendedor.Nome.ToLower().Contains(filtro.ToLower()))
-            {
-                return true;
-            }
-
-            var produtoVendas = ProdutoVendaRepository.ListarProdutoVendasPorVenda(venda.VendaId);
-
-            foreach (var produtoVenda in produtoVendas)
-            {
-                var produto = ProdutoRepository.ProdutoPorId(produtoVenda.ProdutoId);
-
-                if (produto.Nome.ToLower().Contains(filtro.ToLower()) || venda.VendaId == produtoVenda.VendaId)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-        */
     }
 }
