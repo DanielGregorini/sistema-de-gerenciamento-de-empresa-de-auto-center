@@ -45,7 +45,7 @@
             // CriarFuncionarioButton
             // 
             CriarFuncionarioButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CriarFuncionarioButton.Location = new Point(34, 225);
+            CriarFuncionarioButton.Location = new Point(33, 218);
             CriarFuncionarioButton.Name = "CriarFuncionarioButton";
             CriarFuncionarioButton.Size = new Size(193, 64);
             CriarFuncionarioButton.TabIndex = 0;
@@ -67,7 +67,7 @@
             // 
             Funcionarios.AutoSize = true;
             Funcionarios.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Funcionarios.Location = new Point(12, 149);
+            Funcionarios.Location = new Point(12, 155);
             Funcionarios.Name = "Funcionarios";
             Funcionarios.Size = new Size(247, 54);
             Funcionarios.TabIndex = 2;
@@ -76,7 +76,7 @@
             // ListarVendas
             // 
             ListarVendas.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarVendas.Location = new Point(34, 295);
+            ListarVendas.Location = new Point(33, 288);
             ListarVendas.Name = "ListarVendas";
             ListarVendas.Size = new Size(193, 64);
             ListarVendas.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             ProdutosLabel.AutoSize = true;
             ProdutosLabel.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            ProdutosLabel.Location = new Point(595, 149);
+            ProdutosLabel.Location = new Point(597, 155);
             ProdutosLabel.Name = "ProdutosLabel";
             ProdutosLabel.Size = new Size(183, 54);
             ProdutosLabel.TabIndex = 5;
@@ -97,7 +97,7 @@
             // CadastrarNovoProdutoButton
             // 
             CadastrarNovoProdutoButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarNovoProdutoButton.Location = new Point(595, 295);
+            CadastrarNovoProdutoButton.Location = new Point(587, 289);
             CadastrarNovoProdutoButton.Name = "CadastrarNovoProdutoButton";
             CadastrarNovoProdutoButton.Size = new Size(193, 64);
             CadastrarNovoProdutoButton.TabIndex = 6;
@@ -108,7 +108,7 @@
             // ListarProdutosButton
             // 
             ListarProdutosButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarProdutosButton.Location = new Point(595, 365);
+            ListarProdutosButton.Location = new Point(587, 359);
             ListarProdutosButton.Name = "ListarProdutosButton";
             ListarProdutosButton.Size = new Size(193, 64);
             ListarProdutosButton.TabIndex = 7;
@@ -120,7 +120,7 @@
             // 
             CaixaVendaLabel.AutoSize = true;
             CaixaVendaLabel.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            CaixaVendaLabel.Location = new Point(1105, 149);
+            CaixaVendaLabel.Location = new Point(1105, 155);
             CaixaVendaLabel.Name = "CaixaVendaLabel";
             CaixaVendaLabel.Size = new Size(242, 54);
             CaixaVendaLabel.TabIndex = 8;
@@ -129,7 +129,7 @@
             // ListarV
             // 
             ListarV.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            ListarV.Location = new Point(595, 435);
+            ListarV.Location = new Point(587, 429);
             ListarV.Name = "ListarV";
             ListarV.Size = new Size(193, 64);
             ListarV.TabIndex = 9;
@@ -140,7 +140,7 @@
             // TelaCaixa
             // 
             TelaCaixa.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            TelaCaixa.Location = new Point(1129, 225);
+            TelaCaixa.Location = new Point(1129, 219);
             TelaCaixa.Name = "TelaCaixa";
             TelaCaixa.Size = new Size(193, 64);
             TelaCaixa.TabIndex = 10;
@@ -150,7 +150,7 @@
             // CriarUmNovaVenda
             // 
             CriarUmNovaVenda.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CriarUmNovaVenda.Location = new Point(1129, 295);
+            CriarUmNovaVenda.Location = new Point(1129, 289);
             CriarUmNovaVenda.Name = "CriarUmNovaVenda";
             CriarUmNovaVenda.Size = new Size(193, 64);
             CriarUmNovaVenda.TabIndex = 11;
@@ -160,7 +160,7 @@
             // EditarProduto
             // 
             EditarProduto.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            EditarProduto.Location = new Point(595, 225);
+            EditarProduto.Location = new Point(587, 219);
             EditarProduto.Name = "EditarProduto";
             EditarProduto.Size = new Size(193, 64);
             EditarProduto.TabIndex = 12;

@@ -1,4 +1,5 @@
 ﻿using AutoCenter.Model;
+using AutoCenter.UI.UI_Vendedor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,26 @@ namespace AutoCenter
 {
     public partial class TelaVendedor : Form
     {
-        public TelaVendedor()
+        Vendedor vendedor { get; set; }
+
+        public TelaVendedor(Vendedor vendedor_)
         {
             InitializeComponent();
+            this.vendedor = vendedor_;
             this.Text = "Sistema de Gerenciamento de empresa Auto Center";
+            NomeVendedor.Text = vendedor.Nome;
         }
 
         private void TelaVendedor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void CadastrarCliente_Click(object sender, EventArgs e)
+        {
+            CadastrarCliente cadastrarCliente = new CadastrarCliente(vendedor);
+
+            cadastrarCliente.Show();
         }
     }
 }

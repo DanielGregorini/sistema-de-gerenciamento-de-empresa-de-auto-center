@@ -87,7 +87,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(103, 47);
+            pictureBox1.Location = new Point(104, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(445, 249);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -108,7 +108,6 @@
             Controls.Add(Login);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
