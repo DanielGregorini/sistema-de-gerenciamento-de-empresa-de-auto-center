@@ -55,7 +55,6 @@ namespace AutoCenter.Repository
             }
         }
 
-
         static public List<ProdutoVenda> ListarProdutoVendas()
         {
             using (var context = new AutoCenterContext())

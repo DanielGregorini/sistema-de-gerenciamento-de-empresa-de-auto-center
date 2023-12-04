@@ -1,5 +1,5 @@
 ﻿using AutoCenter.Model;
-using AutoCenter.UI.UI_Vendedor;
+using AutoCenter.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +34,12 @@ namespace AutoCenter
             CadastrarCliente cadastrarCliente = new CadastrarCliente(vendedor);
 
             cadastrarCliente.Show();
+        }
+
+        private void NovaVendaButton_Click(object sender, EventArgs e)
+        {
+            CriarVenda criarVenda = new CriarVenda(vendedor);
+            criarVenda.Show();
         }
     }
 }

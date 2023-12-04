@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using AutoCenter.Model;
 using AutoCenter.Repository;
 
-namespace AutoCenter.UI.UI_Vendedor
+namespace AutoCenter
 {
     public partial class CadastrarCliente : Form
     {

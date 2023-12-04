@@ -1,4 +1,4 @@
-﻿namespace AutoCenter.UI.UI_Vendedor
+﻿namespace AutoCenter
 {
     partial class CadastrarCliente
     {

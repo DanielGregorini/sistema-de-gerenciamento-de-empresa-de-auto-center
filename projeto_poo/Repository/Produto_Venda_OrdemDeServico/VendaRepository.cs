@@ -21,16 +21,19 @@ namespace AutoCenter.Repository
 
                 var protudoVendas = ProdutoVendaRepository.ListarProdutoVendasPorVenda(venda.VendaId);
 
-                foreach (var p in protudoVendas)
+                if(protudoVendas != null)
                 {
-                    var produto = ProdutoRepository.ProdutoPorId(p.ProdutoId);
-
-                    if (produto != null)
+                    foreach (var p in protudoVendas)
                     {
-                        valorTotal = valorTotal + produto.Preco * p.Quantidade;
+                        var produto = ProdutoRepository.ProdutoPorId(p.ProdutoId);
+
+                        if (produto != null)
+                        {
+                            valorTotal = valorTotal + produto.Preco * p.Quantidade;
+                        }
                     }
                 }
-
+                
                 venda.HorarioRealizacao = DateTime.Now;
                 venda.ValorTotal = valorTotal;
 

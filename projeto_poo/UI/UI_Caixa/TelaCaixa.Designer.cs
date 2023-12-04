@@ -60,7 +60,7 @@
             // listaOrdemDeServicoEmAberto
             // 
             listaOrdemDeServicoEmAberto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listaOrdemDeServicoEmAberto.Location = new Point(646, 156);
+            listaOrdemDeServicoEmAberto.Location = new Point(656, 156);
             listaOrdemDeServicoEmAberto.Name = "listaOrdemDeServicoEmAberto";
             listaOrdemDeServicoEmAberto.RowTemplate.Height = 25;
             listaOrdemDeServicoEmAberto.Size = new Size(868, 590);

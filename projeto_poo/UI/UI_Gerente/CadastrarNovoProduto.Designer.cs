@@ -45,7 +45,7 @@
             // 
             NomeLabel.AutoSize = true;
             NomeLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            NomeLabel.Location = new Point(553, 233);
+            NomeLabel.Location = new Point(182, 130);
             NomeLabel.Name = "NomeLabel";
             NomeLabel.Size = new Size(80, 32);
             NomeLabel.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             // NomeBox
             // 
-            NomeBox.Location = new Point(639, 233);
+            NomeBox.Location = new Point(268, 130);
             NomeBox.Multiline = true;
             NomeBox.Name = "NomeBox";
             NomeBox.Size = new Size(229, 31);
@@ -63,7 +63,7 @@
             // 
             DescricaoLabel.AutoSize = true;
             DescricaoLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            DescricaoLabel.Location = new Point(553, 296);
+            DescricaoLabel.Location = new Point(182, 193);
             DescricaoLabel.Name = "DescricaoLabel";
             DescricaoLabel.Size = new Size(116, 32);
             DescricaoLabel.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // DescricaoBox
             // 
-            DescricaoBox.Location = new Point(675, 298);
+            DescricaoBox.Location = new Point(304, 195);
             DescricaoBox.Multiline = true;
             DescricaoBox.Name = "DescricaoBox";
             DescricaoBox.Size = new Size(229, 30);
@@ -81,7 +81,7 @@
             // 
             PrecoLabel.AutoSize = true;
             PrecoLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            PrecoLabel.Location = new Point(553, 355);
+            PrecoLabel.Location = new Point(182, 252);
             PrecoLabel.Name = "PrecoLabel";
             PrecoLabel.Size = new Size(73, 32);
             PrecoLabel.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             // PrecoBox
             // 
-            PrecoBox.Location = new Point(632, 364);
+            PrecoBox.Location = new Point(261, 261);
             PrecoBox.Name = "PrecoBox";
             PrecoBox.Size = new Size(85, 23);
             PrecoBox.TabIndex = 5;
@@ -99,7 +99,7 @@
             // 
             Quantidade.AutoSize = true;
             Quantidade.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            Quantidade.Location = new Point(553, 413);
+            Quantidade.Location = new Point(182, 310);
             Quantidade.Name = "Quantidade";
             Quantidade.Size = new Size(139, 32);
             Quantidade.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             // QuantidadeBox
             // 
-            QuantidadeBox.Location = new Point(698, 422);
+            QuantidadeBox.Location = new Point(327, 319);
             QuantidadeBox.Name = "QuantidadeBox";
             QuantidadeBox.Size = new Size(85, 23);
             QuantidadeBox.TabIndex = 7;
@@ -117,7 +117,7 @@
             // 
             CustoLabel.AutoSize = true;
             CustoLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            CustoLabel.Location = new Point(553, 475);
+            CustoLabel.Location = new Point(182, 372);
             CustoLabel.Name = "CustoLabel";
             CustoLabel.Size = new Size(75, 32);
             CustoLabel.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             // CustoBox
             // 
-            CustoBox.Location = new Point(637, 484);
+            CustoBox.Location = new Point(266, 381);
             CustoBox.Name = "CustoBox";
             CustoBox.Size = new Size(85, 23);
             CustoBox.TabIndex = 9;
@@ -134,7 +134,7 @@
             // CadastrarProduto
             // 
             CadastrarProduto.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarProduto.Location = new Point(585, 545);
+            CadastrarProduto.Location = new Point(214, 442);
             CadastrarProduto.Name = "CadastrarProduto";
             CadastrarProduto.Size = new Size(216, 64);
             CadastrarProduto.TabIndex = 12;
@@ -146,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1375, 798);
+            ClientSize = new Size(725, 621);
             Controls.Add(CadastrarProduto);
             Controls.Add(CustoBox);
             Controls.Add(CustoLabel);

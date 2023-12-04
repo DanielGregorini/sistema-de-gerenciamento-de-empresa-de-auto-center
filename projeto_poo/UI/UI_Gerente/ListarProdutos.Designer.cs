@@ -116,13 +116,13 @@ partial class ListarProdutos
         FiltroBox.Location = new Point(24, 23);
         FiltroBox.Multiline = true;
         FiltroBox.Name = "FiltroBox";
-        FiltroBox.Size = new Size(1210, 30);
+        FiltroBox.Size = new Size(1078, 30);
         FiltroBox.TabIndex = 2;
         // 
         // PesquisarButton
         // 
         PesquisarButton.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-        PesquisarButton.Location = new Point(1252, 14);
+        PesquisarButton.Location = new Point(1143, 12);
         PesquisarButton.Name = "PesquisarButton";
         PesquisarButton.Size = new Size(123, 48);
         PesquisarButton.TabIndex = 3;
@@ -134,7 +134,7 @@ partial class ListarProdutos
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1399, 828);
+        ClientSize = new Size(1304, 828);
         Controls.Add(PesquisarButton);
         Controls.Add(FiltroBox);
         Controls.Add(ListaProdutos);

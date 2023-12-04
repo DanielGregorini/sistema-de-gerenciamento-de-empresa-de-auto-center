@@ -40,18 +40,19 @@
             // 
             NomeVendedor.AutoSize = true;
             NomeVendedor.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            NomeVendedor.Location = new Point(19, 12);
+            NomeVendedor.Location = new Point(22, 16);
             NomeVendedor.Name = "NomeVendedor";
-            NomeVendedor.Size = new Size(240, 37);
+            NomeVendedor.Size = new Size(302, 46);
             NomeVendedor.TabIndex = 0;
             NomeVendedor.Text = "NomeDoVendedor";
             // 
             // CadastrarCliente
             // 
             CadastrarCliente.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            CadastrarCliente.Location = new Point(37, 135);
+            CadastrarCliente.Location = new Point(42, 180);
+            CadastrarCliente.Margin = new Padding(3, 4, 3, 4);
             CadastrarCliente.Name = "CadastrarCliente";
-            CadastrarCliente.Size = new Size(275, 63);
+            CadastrarCliente.Size = new Size(314, 84);
             CadastrarCliente.TabIndex = 1;
             CadastrarCliente.Text = "Cadastrar cliente";
             CadastrarCliente.UseVisualStyleBackColor = true;
@@ -60,19 +61,22 @@
             // NovaVendaButton
             // 
             NovaVendaButton.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            NovaVendaButton.Location = new Point(37, 241);
+            NovaVendaButton.Location = new Point(42, 321);
+            NovaVendaButton.Margin = new Padding(3, 4, 3, 4);
             NovaVendaButton.Name = "NovaVendaButton";
-            NovaVendaButton.Size = new Size(275, 63);
+            NovaVendaButton.Size = new Size(314, 84);
             NovaVendaButton.TabIndex = 2;
             NovaVendaButton.Text = "Nova venda";
             NovaVendaButton.UseVisualStyleBackColor = true;
+            NovaVendaButton.Click += NovaVendaButton_Click;
             // 
             // NovaODSButton
             // 
             NovaODSButton.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            NovaODSButton.Location = new Point(37, 324);
+            NovaODSButton.Location = new Point(42, 432);
+            NovaODSButton.Margin = new Padding(3, 4, 3, 4);
             NovaODSButton.Name = "NovaODSButton";
-            NovaODSButton.Size = new Size(275, 63);
+            NovaODSButton.Size = new Size(314, 84);
             NovaODSButton.TabIndex = 3;
             NovaODSButton.Text = "Nova ordem de serviço";
             NovaODSButton.UseVisualStyleBackColor = true;
@@ -80,34 +84,37 @@
             // EditarVenda
             // 
             EditarVenda.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            EditarVenda.Location = new Point(374, 241);
+            EditarVenda.Location = new Point(423, 321);
+            EditarVenda.Margin = new Padding(3, 4, 3, 4);
             EditarVenda.Name = "EditarVenda";
-            EditarVenda.Size = new Size(275, 63);
+            EditarVenda.Size = new Size(314, 84);
             EditarVenda.TabIndex = 4;
             EditarVenda.Text = "Editar venda";
             EditarVenda.UseVisualStyleBackColor = true;
             // 
             // EditarODSBox
             // 
-            EditarODSBox.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            EditarODSBox.Location = new Point(374, 324);
+            EditarODSBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            EditarODSBox.Location = new Point(423, 432);
+            EditarODSBox.Margin = new Padding(3, 4, 3, 4);
             EditarODSBox.Name = "EditarODSBox";
-            EditarODSBox.Size = new Size(275, 63);
+            EditarODSBox.Size = new Size(314, 84);
             EditarODSBox.TabIndex = 5;
             EditarODSBox.Text = "Editar ordem de serviço";
             EditarODSBox.UseVisualStyleBackColor = true;
             // 
             // TelaVendedor
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1318, 793);
+            ClientSize = new Size(1506, 1055);
             Controls.Add(EditarODSBox);
             Controls.Add(EditarVenda);
             Controls.Add(NovaODSButton);
             Controls.Add(NovaVendaButton);
             Controls.Add(CadastrarCliente);
             Controls.Add(NomeVendedor);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TelaVendedor";
             Text = "TelaVendedor";
             Load += TelaVendedor_Load;

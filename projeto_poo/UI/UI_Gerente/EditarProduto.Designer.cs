@@ -49,7 +49,7 @@
             // EditarProdutoButton
             // 
             EditarProdutoButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            EditarProdutoButton.Location = new Point(596, 682);
+            EditarProdutoButton.Location = new Point(591, 711);
             EditarProdutoButton.Name = "EditarProdutoButton";
             EditarProdutoButton.Size = new Size(216, 64);
             EditarProdutoButton.TabIndex = 23;
@@ -59,7 +59,7 @@
             // 
             // CustoNovaEntredaBox
             // 
-            CustoNovaEntredaBox.Location = new Point(556, 619);
+            CustoNovaEntredaBox.Location = new Point(551, 638);
             CustoNovaEntredaBox.Name = "CustoNovaEntredaBox";
             CustoNovaEntredaBox.Size = new Size(85, 23);
             CustoNovaEntredaBox.TabIndex = 22;
@@ -69,7 +69,7 @@
             // 
             CustoLabel.AutoSize = true;
             CustoLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            CustoLabel.Location = new Point(556, 584);
+            CustoLabel.Location = new Point(551, 603);
             CustoLabel.Name = "CustoLabel";
             CustoLabel.Size = new Size(256, 32);
             CustoLabel.TabIndex = 21;
@@ -151,7 +151,7 @@
             // 
             NovaEntreda.AutoSize = true;
             NovaEntreda.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            NovaEntreda.Location = new Point(556, 514);
+            NovaEntreda.Location = new Point(551, 533);
             NovaEntreda.Name = "NovaEntreda";
             NovaEntreda.Size = new Size(286, 32);
             NovaEntreda.TabIndex = 24;
@@ -159,7 +159,7 @@
             // 
             // QuantidadeNovaEntredaBox
             // 
-            QuantidadeNovaEntredaBox.Location = new Point(556, 549);
+            QuantidadeNovaEntredaBox.Location = new Point(551, 568);
             QuantidadeNovaEntredaBox.Name = "QuantidadeNovaEntredaBox";
             QuantidadeNovaEntredaBox.Size = new Size(85, 23);
             QuantidadeNovaEntredaBox.TabIndex = 25;
@@ -177,9 +177,9 @@
             // FiltrarProdutoButton
             // 
             FiltrarProdutoButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            FiltrarProdutoButton.Location = new Point(1098, 23);
+            FiltrarProdutoButton.Location = new Point(1104, 38);
             FiltrarProdutoButton.Name = "FiltrarProdutoButton";
-            FiltrarProdutoButton.Size = new Size(216, 64);
+            FiltrarProdutoButton.Size = new Size(172, 55);
             FiltrarProdutoButton.TabIndex = 27;
             FiltrarProdutoButton.Text = "Filtrar";
             FiltrarProdutoButton.UseVisualStyleBackColor = true;
