@@ -68,11 +68,12 @@
             // 
             ProdutosNaVenda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ProdutosNaVenda.Columns.AddRange(new DataGridViewColumn[] { IdProduto, Nome, Quantidade, Preco, ValorTotalProduto, RemoverProduto });
-            ProdutosNaVenda.Location = new Point(699, 77);
+            ProdutosNaVenda.Location = new Point(779, 56);
+            ProdutosNaVenda.Margin = new Padding(3, 2, 3, 2);
             ProdutosNaVenda.Name = "ProdutosNaVenda";
             ProdutosNaVenda.RowHeadersWidth = 51;
             ProdutosNaVenda.RowTemplate.Height = 29;
-            ProdutosNaVenda.Size = new Size(625, 538);
+            ProdutosNaVenda.Size = new Size(610, 559);
             ProdutosNaVenda.TabIndex = 0;
             ProdutosNaVenda.CellContentClick += ProdutosNaVenda_CellContentClick;
             // 
@@ -82,7 +83,7 @@
             IdProduto.HeaderText = "ID";
             IdProduto.MinimumWidth = 26;
             IdProduto.Name = "IdProduto";
-            IdProduto.Width = 53;
+            IdProduto.Width = 43;
             // 
             // Nome
             // 
@@ -90,7 +91,7 @@
             Nome.HeaderText = "Nome";
             Nome.MinimumWidth = 35;
             Nome.Name = "Nome";
-            Nome.Width = 79;
+            Nome.Width = 65;
             // 
             // Quantidade
             // 
@@ -98,7 +99,7 @@
             Quantidade.HeaderText = "Quantidade";
             Quantidade.MinimumWidth = 6;
             Quantidade.Name = "Quantidade";
-            Quantidade.Width = 116;
+            Quantidade.Width = 94;
             // 
             // Preco
             // 
@@ -106,7 +107,7 @@
             Preco.HeaderText = "Preço";
             Preco.MinimumWidth = 6;
             Preco.Name = "Preco";
-            Preco.Width = 75;
+            Preco.Width = 62;
             // 
             // ValorTotalProduto
             // 
@@ -114,7 +115,7 @@
             ValorTotalProduto.HeaderText = "Valor Total / Produto";
             ValorTotalProduto.MinimumWidth = 6;
             ValorTotalProduto.Name = "ValorTotalProduto";
-            ValorTotalProduto.Width = 113;
+            ValorTotalProduto.Width = 89;
             // 
             // RemoverProduto
             // 
@@ -125,17 +126,19 @@
             // 
             // BuscarProdutoBox
             // 
-            BuscarProdutoBox.Location = new Point(23, 424);
+            BuscarProdutoBox.Location = new Point(12, 366);
+            BuscarProdutoBox.Margin = new Padding(3, 2, 3, 2);
             BuscarProdutoBox.Name = "BuscarProdutoBox";
-            BuscarProdutoBox.Size = new Size(259, 27);
+            BuscarProdutoBox.Size = new Size(268, 23);
             BuscarProdutoBox.TabIndex = 1;
             // 
             // BuscarProdutoButton
             // 
             BuscarProdutoButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            BuscarProdutoButton.Location = new Point(288, 424);
+            BuscarProdutoButton.Location = new Point(286, 366);
+            BuscarProdutoButton.Margin = new Padding(3, 2, 3, 2);
             BuscarProdutoButton.Name = "BuscarProdutoButton";
-            BuscarProdutoButton.Size = new Size(90, 38);
+            BuscarProdutoButton.Size = new Size(79, 28);
             BuscarProdutoButton.TabIndex = 2;
             BuscarProdutoButton.Text = "Pesquisar";
             BuscarProdutoButton.UseVisualStyleBackColor = true;
@@ -144,9 +147,10 @@
             // ListaProdutos
             // 
             ListaProdutos.FormattingEnabled = true;
-            ListaProdutos.Location = new Point(23, 490);
+            ListaProdutos.Location = new Point(12, 416);
+            ListaProdutos.Margin = new Padding(3, 2, 3, 2);
             ListaProdutos.Name = "ListaProdutos";
-            ListaProdutos.Size = new Size(352, 28);
+            ListaProdutos.Size = new Size(353, 23);
             ListaProdutos.TabIndex = 29;
             ListaProdutos.SelectedIndexChanged += ListaProdutos_SelectedIndexChanged;
             // 
@@ -154,9 +158,9 @@
             // 
             TelefoneClienteLabel.AutoSize = true;
             TelefoneClienteLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TelefoneClienteLabel.Location = new Point(426, 250);
+            TelefoneClienteLabel.Location = new Point(417, 207);
             TelefoneClienteLabel.Name = "TelefoneClienteLabel";
-            TelefoneClienteLabel.Size = new Size(84, 28);
+            TelefoneClienteLabel.Size = new Size(67, 21);
             TelefoneClienteLabel.TabIndex = 30;
             TelefoneClienteLabel.Text = "Telefone";
             // 
@@ -164,9 +168,9 @@
             // 
             QuantidadeDisponivelLabel.AutoSize = true;
             QuantidadeDisponivelLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            QuantidadeDisponivelLabel.Location = new Point(426, 503);
+            QuantidadeDisponivelLabel.Location = new Point(404, 473);
             QuantidadeDisponivelLabel.Name = "QuantidadeDisponivelLabel";
-            QuantidadeDisponivelLabel.Size = new Size(210, 28);
+            QuantidadeDisponivelLabel.Size = new Size(166, 21);
             QuantidadeDisponivelLabel.TabIndex = 31;
             QuantidadeDisponivelLabel.Text = "Quantidade disponivel";
             // 
@@ -174,9 +178,9 @@
             // 
             PrecoLabel.AutoSize = true;
             PrecoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PrecoLabel.Location = new Point(426, 464);
+            PrecoLabel.Location = new Point(404, 444);
             PrecoLabel.Name = "PrecoLabel";
-            PrecoLabel.Size = new Size(61, 28);
+            PrecoLabel.Size = new Size(49, 21);
             PrecoLabel.TabIndex = 32;
             PrecoLabel.Text = "Preço";
             // 
@@ -184,10 +188,10 @@
             // 
             Descricao.AutoSize = true;
             Descricao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Descricao.Location = new Point(426, 415);
-            Descricao.MaximumSize = new Size(300, 0);
+            Descricao.Location = new Point(404, 401);
+            Descricao.MaximumSize = new Size(262, 0);
             Descricao.Name = "Descricao";
-            Descricao.Size = new Size(96, 28);
+            Descricao.Size = new Size(77, 21);
             Descricao.TabIndex = 33;
             Descricao.Text = "Descrição";
             // 
@@ -195,9 +199,9 @@
             // 
             CustoMedioLabel.AutoSize = true;
             CustoMedioLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CustoMedioLabel.Location = new Point(426, 542);
+            CustoMedioLabel.Location = new Point(404, 502);
             CustoMedioLabel.Name = "CustoMedioLabel";
-            CustoMedioLabel.Size = new Size(124, 28);
+            CustoMedioLabel.Size = new Size(98, 21);
             CustoMedioLabel.TabIndex = 34;
             CustoMedioLabel.Text = "Custo Medio";
             // 
@@ -205,26 +209,28 @@
             // 
             QuantidadeVendidaLabel.AutoSize = true;
             QuantidadeVendidaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            QuantidadeVendidaLabel.Location = new Point(428, 583);
+            QuantidadeVendidaLabel.Location = new Point(404, 531);
             QuantidadeVendidaLabel.Name = "QuantidadeVendidaLabel";
-            QuantidadeVendidaLabel.Size = new Size(119, 28);
+            QuantidadeVendidaLabel.Size = new Size(94, 21);
             QuantidadeVendidaLabel.TabIndex = 35;
             QuantidadeVendidaLabel.Text = "Quantidade:";
             // 
             // QuantidadeVendidaBox
             // 
-            QuantidadeVendidaBox.Location = new Point(553, 583);
+            QuantidadeVendidaBox.Location = new Point(515, 533);
+            QuantidadeVendidaBox.Margin = new Padding(3, 2, 3, 2);
             QuantidadeVendidaBox.Name = "QuantidadeVendidaBox";
-            QuantidadeVendidaBox.Size = new Size(104, 27);
+            QuantidadeVendidaBox.Size = new Size(92, 23);
             QuantidadeVendidaBox.TabIndex = 36;
             QuantidadeVendidaBox.KeyPress += QuantidadeVendidaBox_KeyPress;
             // 
             // AdicionarProdutoBox
             // 
             AdicionarProdutoBox.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            AdicionarProdutoBox.Location = new Point(426, 628);
+            AdicionarProdutoBox.Location = new Point(404, 567);
+            AdicionarProdutoBox.Margin = new Padding(3, 2, 3, 2);
             AdicionarProdutoBox.Name = "AdicionarProdutoBox";
-            AdicionarProdutoBox.Size = new Size(199, 50);
+            AdicionarProdutoBox.Size = new Size(174, 38);
             AdicionarProdutoBox.TabIndex = 37;
             AdicionarProdutoBox.Text = "Adicionar Produto";
             AdicionarProdutoBox.UseVisualStyleBackColor = true;
@@ -232,17 +238,19 @@
             // 
             // ClienteBox
             // 
-            ClienteBox.Location = new Point(12, 94);
+            ClienteBox.Location = new Point(10, 70);
+            ClienteBox.Margin = new Padding(3, 2, 3, 2);
             ClienteBox.Name = "ClienteBox";
-            ClienteBox.Size = new Size(270, 27);
+            ClienteBox.Size = new Size(287, 23);
             ClienteBox.TabIndex = 38;
             // 
             // PesquisarCliente
             // 
             PesquisarCliente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            PesquisarCliente.Location = new Point(288, 94);
+            PesquisarCliente.Location = new Point(303, 70);
+            PesquisarCliente.Margin = new Padding(3, 2, 3, 2);
             PesquisarCliente.Name = "PesquisarCliente";
-            PesquisarCliente.Size = new Size(90, 38);
+            PesquisarCliente.Size = new Size(79, 28);
             PesquisarCliente.TabIndex = 39;
             PesquisarCliente.Text = "Pesquisar";
             PesquisarCliente.UseVisualStyleBackColor = true;
@@ -251,9 +259,10 @@
             // ListaClientes
             // 
             ListaClientes.FormattingEnabled = true;
-            ListaClientes.Location = new Point(12, 160);
+            ListaClientes.Location = new Point(10, 120);
+            ListaClientes.Margin = new Padding(3, 2, 3, 2);
             ListaClientes.Name = "ListaClientes";
-            ListaClientes.Size = new Size(363, 28);
+            ListaClientes.Size = new Size(372, 23);
             ListaClientes.TabIndex = 40;
             ListaClientes.SelectedIndexChanged += ListaClientes_SelectedIndexChanged;
             // 
@@ -261,9 +270,9 @@
             // 
             PesquisarClienteLabel.AutoSize = true;
             PesquisarClienteLabel.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            PesquisarClienteLabel.Location = new Point(12, 35);
+            PesquisarClienteLabel.Location = new Point(10, 26);
             PesquisarClienteLabel.Name = "PesquisarClienteLabel";
-            PesquisarClienteLabel.Size = new Size(202, 35);
+            PesquisarClienteLabel.Size = new Size(158, 28);
             PesquisarClienteLabel.TabIndex = 41;
             PesquisarClienteLabel.Text = "Pesquisar Cliente";
             // 
@@ -271,9 +280,9 @@
             // 
             PesquisarProdutoLabel.AutoSize = true;
             PesquisarProdutoLabel.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            PesquisarProdutoLabel.Location = new Point(23, 370);
+            PesquisarProdutoLabel.Location = new Point(12, 326);
             PesquisarProdutoLabel.Name = "PesquisarProdutoLabel";
-            PesquisarProdutoLabel.Size = new Size(217, 35);
+            PesquisarProdutoLabel.Size = new Size(170, 28);
             PesquisarProdutoLabel.TabIndex = 42;
             PesquisarProdutoLabel.Text = "Pesquisar Produto";
             // 
@@ -281,9 +290,9 @@
             // 
             NomeClienteLabel.AutoSize = true;
             NomeClienteLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            NomeClienteLabel.Location = new Point(426, 84);
+            NomeClienteLabel.Location = new Point(417, 82);
             NomeClienteLabel.Name = "NomeClienteLabel";
-            NomeClienteLabel.Size = new Size(131, 28);
+            NomeClienteLabel.Size = new Size(105, 21);
             NomeClienteLabel.TabIndex = 43;
             NomeClienteLabel.Text = "Nome Cliente";
             // 
@@ -291,9 +300,9 @@
             // 
             RgClienteLabel.AutoSize = true;
             RgClienteLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            RgClienteLabel.Location = new Point(426, 134);
+            RgClienteLabel.Location = new Point(417, 119);
             RgClienteLabel.Name = "RgClienteLabel";
-            RgClienteLabel.Size = new Size(35, 28);
+            RgClienteLabel.Size = new Size(29, 21);
             RgClienteLabel.TabIndex = 44;
             RgClienteLabel.Text = "Rg";
             // 
@@ -301,9 +310,9 @@
             // 
             CpfCnpjClienteLabel.AutoSize = true;
             CpfCnpjClienteLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            CpfCnpjClienteLabel.Location = new Point(426, 162);
+            CpfCnpjClienteLabel.Location = new Point(417, 141);
             CpfCnpjClienteLabel.Name = "CpfCnpjClienteLabel";
-            CpfCnpjClienteLabel.Size = new Size(82, 28);
+            CpfCnpjClienteLabel.Size = new Size(66, 21);
             CpfCnpjClienteLabel.TabIndex = 45;
             CpfCnpjClienteLabel.Text = "CpfCnpj";
             // 
@@ -311,9 +320,9 @@
             // 
             EnderecoClienteLabel.AutoSize = true;
             EnderecoClienteLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            EnderecoClienteLabel.Location = new Point(426, 199);
+            EnderecoClienteLabel.Location = new Point(417, 168);
             EnderecoClienteLabel.Name = "EnderecoClienteLabel";
-            EnderecoClienteLabel.Size = new Size(93, 28);
+            EnderecoClienteLabel.Size = new Size(74, 21);
             EnderecoClienteLabel.TabIndex = 46;
             EnderecoClienteLabel.Text = "Endereço";
             // 
@@ -321,9 +330,9 @@
             // 
             NomeProdutoLabel.AutoSize = true;
             NomeProdutoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            NomeProdutoLabel.Location = new Point(426, 370);
+            NomeProdutoLabel.Location = new Point(404, 369);
             NomeProdutoLabel.Name = "NomeProdutoLabel";
-            NomeProdutoLabel.Size = new Size(147, 28);
+            NomeProdutoLabel.Size = new Size(116, 21);
             NomeProdutoLabel.TabIndex = 47;
             NomeProdutoLabel.Text = "Nome Produto:";
             // 
@@ -331,18 +340,19 @@
             // 
             ProdutoAdicionadosNaVendaLabel.AutoSize = true;
             ProdutoAdicionadosNaVendaLabel.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            ProdutoAdicionadosNaVendaLabel.Location = new Point(742, 24);
+            ProdutoAdicionadosNaVendaLabel.Location = new Point(798, 17);
             ProdutoAdicionadosNaVendaLabel.Name = "ProdutoAdicionadosNaVendaLabel";
-            ProdutoAdicionadosNaVendaLabel.Size = new Size(474, 46);
+            ProdutoAdicionadosNaVendaLabel.Size = new Size(379, 37);
             ProdutoAdicionadosNaVendaLabel.TabIndex = 48;
             ProdutoAdicionadosNaVendaLabel.Text = "Produtos adicionado na venda";
             // 
             // ConcluirVenda
             // 
             ConcluirVenda.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            ConcluirVenda.Location = new Point(998, 628);
+            ConcluirVenda.Location = new Point(1041, 633);
+            ConcluirVenda.Margin = new Padding(3, 2, 3, 2);
             ConcluirVenda.Name = "ConcluirVenda";
-            ConcluirVenda.Size = new Size(234, 59);
+            ConcluirVenda.Size = new Size(205, 44);
             ConcluirVenda.TabIndex = 49;
             ConcluirVenda.Text = "Concluir Venda";
             ConcluirVenda.UseVisualStyleBackColor = true;
@@ -352,9 +362,9 @@
             // 
             ProdutoLabel.AutoSize = true;
             ProdutoLabel.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            ProdutoLabel.Location = new Point(426, 303);
+            ProdutoLabel.Location = new Point(395, 306);
             ProdutoLabel.Name = "ProdutoLabel";
-            ProdutoLabel.Size = new Size(217, 67);
+            ProdutoLabel.Size = new Size(175, 54);
             ProdutoLabel.TabIndex = 50;
             ProdutoLabel.Text = "Produto:";
             // 
@@ -362,9 +372,9 @@
             // 
             ClienteLabel.AutoSize = true;
             ClienteLabel.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            ClienteLabel.Location = new Point(412, 9);
+            ClienteLabel.Location = new Point(404, 26);
             ClienteLabel.Name = "ClienteLabel";
-            ClienteLabel.Size = new Size(192, 67);
+            ClienteLabel.Size = new Size(156, 54);
             ClienteLabel.TabIndex = 51;
             ClienteLabel.Text = "Cliente:";
             // 
@@ -372,17 +382,17 @@
             // 
             PrecoTotalVendaLabel.AutoSize = true;
             PrecoTotalVendaLabel.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            PrecoTotalVendaLabel.Location = new Point(699, 644);
+            PrecoTotalVendaLabel.Location = new Point(779, 633);
             PrecoTotalVendaLabel.Name = "PrecoTotalVendaLabel";
-            PrecoTotalVendaLabel.Size = new Size(143, 35);
+            PrecoTotalVendaLabel.Size = new Size(112, 28);
             PrecoTotalVendaLabel.TabIndex = 52;
             PrecoTotalVendaLabel.Text = "Preço Total:";
             // 
             // CriarVenda
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1336, 727);
+            ClientSize = new Size(1401, 692);
             Controls.Add(PrecoTotalVendaLabel);
             Controls.Add(ClienteLabel);
             Controls.Add(ProdutoLabel);
@@ -410,6 +420,7 @@
             Controls.Add(BuscarProdutoButton);
             Controls.Add(BuscarProdutoBox);
             Controls.Add(ProdutosNaVenda);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CriarVenda";
             Text = "CriarVenda";
             ((System.ComponentModel.ISupportInitialize)ProdutosNaVenda).EndInit();

@@ -41,5 +41,11 @@ namespace AutoCenter
             CriarVenda criarVenda = new CriarVenda(vendedor);
             criarVenda.Show();
         }
+
+        private void EditarVenda_Click(object sender, EventArgs e)
+        {
+            EditarVenda editarVenda = new EditarVenda(vendedor);
+            editarVenda.Show();
+        }
     }
 }

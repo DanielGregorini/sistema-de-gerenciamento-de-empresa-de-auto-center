@@ -35,11 +35,33 @@ namespace AutoCenter.Repository
             }
         }
 
-        static public void ExcluirProduto(ProdutoVenda produtoVenda)
+        static public void ExcluirProdutoVenda(ProdutoVenda produtoVenda)
         {
             //no futuro adicionar um metodo para adicionar os produtos de volta
             using (var context = new AutoCenterContext())
             {
+                var produto = ProdutoRepository.ProdutoPorId(produtoVenda.ProdutoId);
+
+                produto.Quantidade += produtoVenda.Quantidade;
+
+                context.Produtos.Update(produto);
+
+                context.ProdutoVendas.Remove(produtoVenda);
+                context.SaveChanges();
+            }
+        }
+
+        static public void AtualizarProdutoVenda(ProdutoVenda produtoVenda)
+        {
+            //no futuro adicionar um metodo para adicionar os produtos de volta
+            using (var context = new AutoCenterContext())
+            {
+                var produto = ProdutoRepository.ProdutoPorId(produtoVenda.ProdutoId);
+
+                produto.Quantidade += produtoVenda.Quantidade;
+
+                context.Produtos.Update(produto);
+
                 context.ProdutoVendas.Remove(produtoVenda);
                 context.SaveChanges();
             }

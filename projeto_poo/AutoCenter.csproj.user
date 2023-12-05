@@ -34,6 +34,9 @@
     <Compile Update="UI\UI_Vendedor\CriarVenda.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\UI_Vendedor\EditarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\UI_Vendedor\TelaVendedor.cs">
       <SubType>Form</SubType>
     </Compile>

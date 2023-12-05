@@ -33,7 +33,6 @@ namespace AutoCenter
         //pesquisar cliente funções 
         private void PesquisarCliente_Click(object sender, EventArgs e)
         {
-
             this.ClienteSelecionado = null;
 
             string filtroCliente = ClienteBox.Text;
@@ -73,10 +72,8 @@ namespace AutoCenter
                     cliente.Telefone.ToLower().Contains(filtro.ToLower()) ||
                     cliente.Endereco.ToLower().Contains(filtro.ToLower()))
             {
-
                 return true;
             }
-
             return false;
         }
 
@@ -195,7 +192,6 @@ namespace AutoCenter
             return false;
         }
 
-
         private void CarregarListaProdutos(List<Produto> produtos)
         {
             //limpar lista
@@ -209,7 +205,6 @@ namespace AutoCenter
 
         private void ListaProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (ListaProdutos.SelectedItem != null)
             {
                 // Obter a string selecionada
@@ -242,8 +237,6 @@ namespace AutoCenter
                 {
                     MessageBox.Show("String no formato esperado não encontrada.");
                 }
-
-
             }
         }
 
@@ -343,11 +336,10 @@ namespace AutoCenter
                 ProdutoId = produto.ProdutoId,
                 Quantidade = quantidadeVendida
             };
-            
+
             ListaProdutoVenda.Add(produtoVenda);
 
             AtualizarDataGridListaDeProduto();
-
         }
 
         private void AtualizarDataGridListaDeProduto()
@@ -380,7 +372,6 @@ namespace AutoCenter
             PrecoTotalVendaLabel.Text = "Valor Total: " + valorTotal.ToString();
         }
 
-
         private void ProdutosNaVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == ProdutosNaVenda.Columns["RemoverProduto"].Index && e.RowIndex >= 0)
@@ -393,27 +384,9 @@ namespace AutoCenter
             }
         }
 
-
-
-        //Apenas deixa inserir números e . na caixa de quantidade do produto
-        private void QuantidadeVendidaBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permite apenas números, o ponto decimal e a tecla Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-
-            // Permite apenas um ponto decimal
-            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-        }
-
         private void ConcluirVenda_Click(object sender, EventArgs e)
         {
-            if(ClienteSelecionado == null || ProdutoSelecionado == null ||
+            if (ClienteSelecionado == null || ProdutoSelecionado == null ||
                 ProdutoSelecionado == null || ListaProdutoVenda == null ||
                 VendaCriada == null)
             {
@@ -432,11 +405,18 @@ namespace AutoCenter
             LimparTodosDados();
         }
 
+        //limpar os dados da venda, produto e cliente depois da criação da nova venda;
         private void LimparTodosDados()
         {
+            ClienteSelecionado = null;
+            ProdutoSelecionado = null;
+            ProdutoSelecionado = null;
+            ListaProdutoVenda = null;
+            VendaCriada = null;
+           
             NomeProdutoLabel.Text = "Nome";
             Descricao.Text = "Descrição";
-            PrecoLabel.Text = "Preço" ;
+            PrecoLabel.Text = "Preço";
             QuantidadeDisponivelLabel.Text = "Quantidade disponível";
             CustoMedioLabel.Text = "Custo médio";
 
@@ -455,6 +435,22 @@ namespace AutoCenter
             ListaProdutos.Items.Clear();
 
             ProdutosNaVenda.Rows.Clear();
+        }
+
+        //Apenas deixa inserir números e . na caixa de quantidade do produto
+        private void QuantidadeVendidaBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite apenas números, o ponto decimal e a tecla Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // Permite apenas um ponto decimal
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
