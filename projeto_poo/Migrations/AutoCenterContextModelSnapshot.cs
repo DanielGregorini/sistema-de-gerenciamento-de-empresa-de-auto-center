@@ -173,12 +173,17 @@ namespace AutoCenter.Migrations
                     b.Property<double>("ValorTotal")
                         .HasColumnType("double");
 
+                    b.Property<int?>("VeiculoId")
+                        .HasColumnType("int");
+
                     b.Property<int>("VendedorId")
                         .HasColumnType("int");
 
                     b.HasKey("OrdemDeServicoId");
 
                     b.HasIndex("ClienteId");
+
+                    b.HasIndex("VeiculoId");
 
                     b.HasIndex("VendedorId");
 
@@ -386,6 +391,10 @@ namespace AutoCenter.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("AutoCenter.Model.Veiculo", "Veiculo")
+                        .WithMany("OrdensDeServico")
+                        .HasForeignKey("VeiculoId");
+
                     b.HasOne("AutoCenter.Model.Vendedor", "Vendedor")
                         .WithMany("OrdensDeServico")
                         .HasForeignKey("VendedorId")
@@ -393,6 +402,8 @@ namespace AutoCenter.Migrations
                         .IsRequired();
 
                     b.Navigation("Cliente");
+
+                    b.Navigation("Veiculo");
 
                     b.Navigation("Vendedor");
                 });
@@ -497,6 +508,11 @@ namespace AutoCenter.Migrations
             modelBuilder.Entity("AutoCenter.Model.OrdemDeServico", b =>
                 {
                     b.Navigation("ProdutosUtilizados");
+                });
+
+            modelBuilder.Entity("AutoCenter.Model.Veiculo", b =>
+                {
+                    b.Navigation("OrdensDeServico");
                 });
 
             modelBuilder.Entity("AutoCenter.Model.Venda", b =>

@@ -385,6 +385,7 @@ namespace AutoCenter
                 if ((double)quantidadeVendida > ProdutoSelecionado.Quantidade)
                 {
                     MessageBox.Show("Não pode vender mais que tem em estoque");
+                    AdicionarProdutoBox.Text = "";
                     return;
                 }
             }
@@ -423,6 +424,7 @@ namespace AutoCenter
                 OrdemDeServicoCriada = novaVenda;
             }
 
+            AdicionarProdutoBox.Text = "";
             CriarNovaProdutoOrdemDeServico((double)quantidadeVendida);
         }
 
@@ -517,7 +519,7 @@ namespace AutoCenter
                 MessageBox.Show("Está faltando dados");
                 return;
             }
-
+            OrdemDeServicoCriada.VeiculoId = VeiculoSelecionado.VeiculoId;
             OrdemDeServicoCriada.HorarioDeEntrega = dataSelecionada;
 
             OrdemDeServicoCriada.TipoDeServico = TipoDeServicoBox.Text;
@@ -559,6 +561,11 @@ namespace AutoCenter
             EnderecoClienteLabel.Text = "Endereço";
             TelefoneClienteLabel.Text = "Telefone";
 
+            ListaDeVeiculos.SelectedItem = null;
+            ListaProdutos.SelectedItem = null;
+            ListaClientes.SelectedItem = null;
+
+            AdicionarProdutoBox.Text = "";
             BuscarProdutoBox.Text = "";
             ClienteBox.Text = "";
             QuantidadeVendidaBox.Text = "";
