@@ -110,6 +110,14 @@ namespace AutoCenter.Data
                 .WithMany(c => c.OrdensDeServico) // Define o relacionamento (um-para-muitos)
                 .HasForeignKey(v => v.ClienteId);
 
+            // public Veiculo? Veiculo { get; set; }
+            // public int VendedorId { get; set; }
+
+            //modelBuilder.Entity<OrdemDeServico>()
+              //  .HasOne(v => v.Veiculo)
+             //   .WithMany(c => c.OrdensDeServico) // Define o relacionamento (um-para-muitos)
+             //   .HasForeignKey(v => v.VeiculoId);
+
             // Relacionamento entre OrdemDeServico e Vendedor
             modelBuilder.Entity<OrdemDeServico>()
                 .HasOne(v => v.Vendedor)

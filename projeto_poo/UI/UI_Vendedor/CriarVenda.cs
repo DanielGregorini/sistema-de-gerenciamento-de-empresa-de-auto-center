@@ -413,7 +413,7 @@ namespace AutoCenter
             ProdutoSelecionado = null;
             ListaProdutoVenda = null;
             VendaCriada = null;
-           
+
             NomeProdutoLabel.Text = "Nome";
             Descricao.Text = "Descrição";
             PrecoLabel.Text = "Preço";

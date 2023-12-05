@@ -159,3 +159,4 @@ F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\pro
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.CadastrarCliente.resources
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.CriarVenda.resources
 F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.EditarVenda.resources
+F:\CODES\c#\projeto_final\sistema-de-gerenciamento-de-empresa-de-auto-center\projeto_poo\obj\Debug\net7.0-windows\AutoCenter.CriarOrdemDeServico.resources

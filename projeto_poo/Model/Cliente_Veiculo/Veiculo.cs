@@ -18,5 +18,7 @@ namespace AutoCenter.Model
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
         public string? Placa { get; set; }
+        //public List<OrdemDeServico>? OrdensDeServico { get; set; }
+
     }
 }

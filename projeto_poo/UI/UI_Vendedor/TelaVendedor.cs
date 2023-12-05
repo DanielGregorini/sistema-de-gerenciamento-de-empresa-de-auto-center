@@ -47,5 +47,11 @@ namespace AutoCenter
             EditarVenda editarVenda = new EditarVenda(vendedor);
             editarVenda.Show();
         }
+
+        private void NovaODSButton_Click(object sender, EventArgs e)
+        {
+            CriarOrdemDeServico criarOrdemDeServico = new CriarOrdemDeServico(vendedor);
+            criarOrdemDeServico.Show();
+        }
     }
 }

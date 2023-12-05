@@ -77,6 +77,7 @@
             NovaODSButton.TabIndex = 3;
             NovaODSButton.Text = "Nova ordem de serviço";
             NovaODSButton.UseVisualStyleBackColor = true;
+            NovaODSButton.Click += NovaODSButton_Click;
             // 
             // EditarVenda
             // 
