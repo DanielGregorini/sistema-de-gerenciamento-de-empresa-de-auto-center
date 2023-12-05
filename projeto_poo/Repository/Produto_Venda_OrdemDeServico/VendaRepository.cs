@@ -44,7 +44,13 @@ namespace AutoCenter.Repository
 
         static public void ExcluirVenda(Venda venda)
         {
-            //no futuro adicionar um metodo para adicionar os produtos de volta
+            var produtoVendas = ProdutoVendaRepository.ListarProdutoVendasPorVenda(venda.VendaId);
+
+            foreach(var produtoVenda in produtoVendas)
+            {
+                ProdutoVendaRepository.ExcluirProdutoVenda(produtoVenda);
+            }
+
             using (var context = new AutoCenterContext())
             {
                 context.Vendas.Remove(venda);

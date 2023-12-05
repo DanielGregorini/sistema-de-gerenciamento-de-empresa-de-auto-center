@@ -53,16 +53,18 @@ namespace AutoCenter.Repository
 
         static public void AtualizarProdutoVenda(ProdutoVenda produtoVenda)
         {
-            //no futuro adicionar um metodo para adicionar os produtos de volta
             using (var context = new AutoCenterContext())
             {
-                var produto = ProdutoRepository.ProdutoPorId(produtoVenda.ProdutoId);
+                var ProdutoVenda_ = ProdutoVendaPorId(produtoVenda.ProdutoId);
 
-                produto.Quantidade += produtoVenda.Quantidade;
+                double diferencaQuantidade = produtoVenda.Quantidade - ProdutoVenda_.Quantidade;
 
-                context.Produtos.Update(produto);
+                Produto produto = ProdutoRepository.ProdutoPorId(produtoVenda.ProdutoId);
 
-                context.ProdutoVendas.Remove(produtoVenda);
+                ProdutoRepository.EditarProduto(produtoVenda.ProdutoId, null, null, null, produto.Quantidade + diferencaQuantidade);
+
+                context.ProdutoVendas.Update(produtoVenda);
+
                 context.SaveChanges();
             }
         }
@@ -96,7 +98,7 @@ namespace AutoCenter.Repository
 
                 if (produtoVenda == null)
                 {
-                    throw new ArgumentException("ID não encontrado");
+                    //throw new ArgumentException("ID não encontrado");
                     return null;
                 }
 

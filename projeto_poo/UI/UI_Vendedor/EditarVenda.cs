@@ -265,8 +265,7 @@ namespace AutoCenter
                 }
             }
         }
-
-
+        
         private void InserirDadosProduto(int idProduto)
         {
             var produto = ProdutoRepository.ProdutoPorId(idProduto);
@@ -275,9 +274,10 @@ namespace AutoCenter
 
             NomeProdutoLabel.Text = "Nome: " + produto.Nome;
             Descricao.Text = "Descrição: " + produto.Descricao;
-            PrecoLabel.Text = "Preço: " + produto.Preco.ToString();
-            QuantidadeDisponivelLabel.Text = "Quantidade disponível: " + produto.Quantidade.ToString();
-            CustoMedioLabel.Text = "Custo médio: " + produto.CustoMedio.ToString();
+            PrecoLabel.Text = "Preço: " + produto.Preco.ToString("C2"); 
+            QuantidadeDisponivelLabel.Text = "Quantidade disponível: " + produto.Quantidade.ToString("N3");
+            CustoMedioLabel.Text = "Custo médio: " + produto.CustoMedio.ToString("N2"); 
+
         }
         private void AdicionarProdutoBox_Click(object sender, EventArgs e)
         {
@@ -406,24 +406,40 @@ namespace AutoCenter
                 return;
             }
 
-            VendaRepository.AdicionarVenda(VendaCriada);
-
             foreach (var produtoVenda in ListaProdutoVenda)
             {
-                if (produtoVenda.ProdutoVendaId != null || produtoVenda.ProdutoVendaId != 0)
+                var produtoVenda_ = ProdutoVendaRepository.ProdutoVendaPorId(produtoVenda.ProdutoVendaId);
+
+                produtoVenda.VendaId = VendaCriada.VendaId;
+
+                if (produtoVenda_ == null)
                 {
-                    produtoVenda.VendaId = VendaCriada.VendaId;
                     ProdutoVendaRepository.AdicionarProdutoVenda(produtoVenda);
                 }
                 else
                 {
-                    produtoVenda.VendaId = VendaCriada.VendaId;
-                    ProdutoVendaRepository.AdicionarProdutoVenda(produtoVenda);
+                    ProdutoVendaRepository.AtualizarProdutoVenda(produtoVenda);
                 }
             }
 
+            VendaRepository.AtualizarVenda(VendaCriada.VendaId);
+
             LimparTodosDados();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(VendaCriada == null)
+            {
+                MessageBox.Show("Sem venda selecionada");
+                return;
+            }
+
+            VendaRepository.ExcluirVenda(VendaCriada);
+
+            LimparTodosDados();
+        }
+
         //limpar os dados da venda, produto e cliente depois da criação da nova venda;
         private void LimparTodosDados()
         {
@@ -450,8 +466,10 @@ namespace AutoCenter
             PrecoTotalVendaLabel.Text = "Valor Total:";
 
             ListaProdutos.Items.Clear();
-
             ProdutosNaVenda.Rows.Clear();
+            ListarVendasEmAberto();
+
+            ListaVendasEmAberto.SelectedItem = null;
         }
     }
 }

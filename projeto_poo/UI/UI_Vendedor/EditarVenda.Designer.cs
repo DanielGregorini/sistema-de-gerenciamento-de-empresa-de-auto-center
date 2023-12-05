@@ -58,6 +58,7 @@
             RgClienteLabel = new Label();
             NomeClienteLabel = new Label();
             TelefoneClienteLabel = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)ProdutosNaVenda).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             // 
             PrecoTotalVendaLabel.AutoSize = true;
             PrecoTotalVendaLabel.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            PrecoTotalVendaLabel.Location = new Point(725, 677);
+            PrecoTotalVendaLabel.Location = new Point(707, 677);
             PrecoTotalVendaLabel.Name = "PrecoTotalVendaLabel";
             PrecoTotalVendaLabel.Size = new Size(112, 28);
             PrecoTotalVendaLabel.TabIndex = 56;
@@ -74,7 +75,7 @@
             // ConcluirVenda
             // 
             ConcluirVenda.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            ConcluirVenda.Location = new Point(987, 677);
+            ConcluirVenda.Location = new Point(917, 677);
             ConcluirVenda.Margin = new Padding(3, 2, 3, 2);
             ConcluirVenda.Name = "ConcluirVenda";
             ConcluirVenda.Size = new Size(205, 44);
@@ -355,11 +356,25 @@
             TelefoneClienteLabel.TabIndex = 73;
             TelefoneClienteLabel.Text = "Telefone";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.IndianRed;
+            button1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(1224, 668);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(93, 27);
+            button1.TabIndex = 79;
+            button1.Text = "Deletar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // EditarVenda
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1329, 749);
+            Controls.Add(button1);
             Controls.Add(ClienteLabel);
             Controls.Add(EnderecoClienteLabel);
             Controls.Add(CpfCnpjClienteLabel);
@@ -423,5 +438,6 @@
         private Label RgClienteLabel;
         private Label NomeClienteLabel;
         private Label TelefoneClienteLabel;
+        private Button button1;
     }
 }
