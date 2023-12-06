@@ -35,6 +35,7 @@
             text_senha = new TextBox();
             button_logar = new Button();
             pictureBox1 = new PictureBox();
+            EmpresaLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             Login.AutoSize = true;
             Login.BackColor = SystemColors.Control;
             Login.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            Login.Location = new Point(253, 319);
+            Login.Location = new Point(253, 329);
             Login.Name = "Login";
             Login.Size = new Size(139, 54);
             Login.TabIndex = 0;
@@ -53,7 +54,7 @@
             // 
             label_senha.AutoSize = true;
             label_senha.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label_senha.Location = new Point(244, 443);
+            label_senha.Location = new Point(244, 445);
             label_senha.Name = "label_senha";
             label_senha.Size = new Size(148, 54);
             label_senha.TabIndex = 1;
@@ -87,19 +88,30 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(104, 23);
+            pictureBox1.Location = new Point(153, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(445, 249);
+            pictureBox1.Size = new Size(359, 201);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // EmpresaLabel
+            // 
+            EmpresaLabel.AutoSize = true;
+            EmpresaLabel.Font = new Font("Roboto", 40F, FontStyle.Regular, GraphicsUnit.Point);
+            EmpresaLabel.Location = new Point(50, 216);
+            EmpresaLabel.Name = "EmpresaLabel";
+            EmpresaLabel.Size = new Size(586, 65);
+            EmpresaLabel.TabIndex = 6;
+            EmpresaLabel.Text = "Video Som Auto Center";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(664, 659);
+            Controls.Add(EmpresaLabel);
             Controls.Add(pictureBox1);
             Controls.Add(button_logar);
             Controls.Add(text_senha);
@@ -121,5 +133,6 @@
         private TextBox text_senha;
         private Button button_logar;
         private PictureBox pictureBox1;
+        private Label EmpresaLabel;
     }
 }

@@ -48,7 +48,7 @@
             TituloPaginaLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TituloPaginaLabel.AutoSize = true;
             TituloPaginaLabel.Font = new Font("Segoe UI", 45F, FontStyle.Regular, GraphicsUnit.Point);
-            TituloPaginaLabel.Location = new Point(381, 9);
+            TituloPaginaLabel.Location = new Point(109, 13);
             TituloPaginaLabel.Name = "TituloPaginaLabel";
             TituloPaginaLabel.Size = new Size(626, 81);
             TituloPaginaLabel.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             Nome.AutoSize = true;
             Nome.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            Nome.Location = new Point(506, 280);
+            Nome.Location = new Point(232, 245);
             Nome.Name = "Nome";
             Nome.Size = new Size(119, 46);
             Nome.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // NomeBox
             // 
-            NomeBox.Location = new Point(631, 291);
+            NomeBox.Location = new Point(357, 256);
             NomeBox.Name = "NomeBox";
             NomeBox.Size = new Size(207, 23);
             NomeBox.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             Cpf.AutoSize = true;
             Cpf.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            Cpf.Location = new Point(506, 352);
+            Cpf.Location = new Point(232, 317);
             Cpf.Name = "Cpf";
             Cpf.Size = new Size(84, 46);
             Cpf.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // CpfBox
             // 
-            CpfBox.Location = new Point(631, 364);
+            CpfBox.Location = new Point(357, 329);
             CpfBox.Name = "CpfBox";
             CpfBox.Size = new Size(207, 23);
             CpfBox.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             Login.AutoSize = true;
             Login.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            Login.Location = new Point(506, 417);
+            Login.Location = new Point(232, 382);
             Login.Name = "Login";
             Login.Size = new Size(110, 46);
             Login.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             // LoginBox
             // 
-            LoginBox.Location = new Point(631, 438);
+            LoginBox.Location = new Point(357, 403);
             LoginBox.Name = "LoginBox";
             LoginBox.Size = new Size(207, 23);
             LoginBox.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             Senha.AutoSize = true;
             Senha.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            Senha.Location = new Point(506, 483);
+            Senha.Location = new Point(232, 448);
             Senha.Name = "Senha";
             Senha.Size = new Size(118, 46);
             Senha.TabIndex = 7;
@@ -117,7 +117,7 @@
             // 
             // SenhaBox
             // 
-            SenhaBox.Location = new Point(631, 504);
+            SenhaBox.Location = new Point(357, 469);
             SenhaBox.Name = "SenhaBox";
             SenhaBox.Size = new Size(207, 23);
             SenhaBox.TabIndex = 8;
@@ -125,9 +125,9 @@
             // ButtonCriar
             // 
             ButtonCriar.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
-            ButtonCriar.Location = new Point(596, 619);
+            ButtonCriar.Location = new Point(290, 583);
             ButtonCriar.Name = "ButtonCriar";
-            ButtonCriar.Size = new Size(193, 72);
+            ButtonCriar.Size = new Size(203, 88);
             ButtonCriar.TabIndex = 9;
             ButtonCriar.Text = "Criar";
             ButtonCriar.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             // ButtonCaixa
             // 
             ButtonCaixa.AutoSize = true;
-            ButtonCaixa.Location = new Point(631, 560);
+            ButtonCaixa.Location = new Point(357, 525);
             ButtonCaixa.Name = "ButtonCaixa";
             ButtonCaixa.Size = new Size(54, 19);
             ButtonCaixa.TabIndex = 11;
@@ -148,7 +148,7 @@
             // 
             ButtonVendedor.AutoSize = true;
             ButtonVendedor.BackColor = SystemColors.Control;
-            ButtonVendedor.Location = new Point(518, 560);
+            ButtonVendedor.Location = new Point(244, 525);
             ButtonVendedor.Name = "ButtonVendedor";
             ButtonVendedor.Size = new Size(75, 19);
             ButtonVendedor.TabIndex = 12;
@@ -159,7 +159,7 @@
             // ButtonGerente
             // 
             ButtonGerente.AutoSize = true;
-            ButtonGerente.Location = new Point(718, 560);
+            ButtonGerente.Location = new Point(444, 525);
             ButtonGerente.Name = "ButtonGerente";
             ButtonGerente.Size = new Size(66, 19);
             ButtonGerente.TabIndex = 13;
@@ -171,7 +171,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1400, 821);
+            ClientSize = new Size(833, 733);
             Controls.Add(ButtonGerente);
             Controls.Add(ButtonVendedor);
             Controls.Add(ButtonCaixa);

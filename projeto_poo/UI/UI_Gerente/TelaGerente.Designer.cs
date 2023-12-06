@@ -35,10 +35,7 @@
             ProdutosLabel = new Label();
             CadastrarNovoProdutoButton = new Button();
             ListarProdutosButton = new Button();
-            CaixaVendaLabel = new Label();
             ListarV = new Button();
-            TelaCaixa = new Button();
-            CriarUmNovaVenda = new Button();
             EditarProduto = new Button();
             SuspendLayout();
             // 
@@ -116,16 +113,6 @@
             ListarProdutosButton.UseVisualStyleBackColor = true;
             ListarProdutosButton.Click += ListarProdutosButton_Click;
             // 
-            // CaixaVendaLabel
-            // 
-            CaixaVendaLabel.AutoSize = true;
-            CaixaVendaLabel.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            CaixaVendaLabel.Location = new Point(1105, 155);
-            CaixaVendaLabel.Name = "CaixaVendaLabel";
-            CaixaVendaLabel.Size = new Size(242, 54);
-            CaixaVendaLabel.TabIndex = 8;
-            CaixaVendaLabel.Text = "Caixa/Venda";
-            // 
             // ListarV
             // 
             ListarV.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
@@ -136,26 +123,6 @@
             ListarV.Text = "Listar Vendas/ODS";
             ListarV.UseVisualStyleBackColor = true;
             ListarV.Click += ListarV_Click;
-            // 
-            // TelaCaixa
-            // 
-            TelaCaixa.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            TelaCaixa.Location = new Point(1129, 219);
-            TelaCaixa.Name = "TelaCaixa";
-            TelaCaixa.Size = new Size(193, 64);
-            TelaCaixa.TabIndex = 10;
-            TelaCaixa.Text = "Vendas e Ordem de Servço em aberto";
-            TelaCaixa.UseVisualStyleBackColor = true;
-            // 
-            // CriarUmNovaVenda
-            // 
-            CriarUmNovaVenda.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            CriarUmNovaVenda.Location = new Point(1129, 289);
-            CriarUmNovaVenda.Name = "CriarUmNovaVenda";
-            CriarUmNovaVenda.Size = new Size(193, 64);
-            CriarUmNovaVenda.TabIndex = 11;
-            CriarUmNovaVenda.Text = "Vendas";
-            CriarUmNovaVenda.UseVisualStyleBackColor = true;
             // 
             // EditarProduto
             // 
@@ -172,12 +139,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1372, 745);
+            ClientSize = new Size(823, 540);
             Controls.Add(EditarProduto);
-            Controls.Add(CriarUmNovaVenda);
-            Controls.Add(TelaCaixa);
             Controls.Add(ListarV);
-            Controls.Add(CaixaVendaLabel);
             Controls.Add(ListarProdutosButton);
             Controls.Add(CadastrarNovoProdutoButton);
             Controls.Add(ProdutosLabel);
@@ -204,10 +168,7 @@
         private Label ProdutosLabel;
         private Button CadastrarNovoProdutoButton;
         private Button ListarProdutosButton;
-        private Label CaixaVendaLabel;
         private Button ListarV;
-        private Button TelaCaixa;
-        private Button CriarUmNovaVenda;
         private Button EditarProduto;
     }
 }
