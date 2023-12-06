@@ -27,12 +27,6 @@ namespace AutoCenter
             NomeGerenteLabel.Text = gerente.Nome;
         }
 
-
-        private void EditarExcluirFuncionario_Activated(object sender, EventArgs e)
-        {
-
-        }
-
         private void VendedorButton_CheckedChanged(object sender, EventArgs e)
         {
             if (VendedorButton.Checked)

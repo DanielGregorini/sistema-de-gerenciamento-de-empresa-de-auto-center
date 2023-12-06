@@ -37,12 +37,6 @@
             ListaODSEmAberto = new ComboBox();
             ProdutoAdicionadosNaODSLabel = new Label();
             ProdutosNaOrdemDeServico = new DataGridView();
-            IdProduto = new DataGridViewTextBoxColumn();
-            Nome = new DataGridViewTextBoxColumn();
-            Quantidade = new DataGridViewTextBoxColumn();
-            Preco = new DataGridViewTextBoxColumn();
-            ValorTotalProduto = new DataGridViewTextBoxColumn();
-            RemoverProduto = new DataGridViewButtonColumn();
             DeletarButton = new Button();
             PrecoTotalVendaLabel = new Label();
             ConcluirODS = new Button();
@@ -80,6 +74,12 @@
             TipoDeServicoLabel = new Label();
             TipoDeServicoBox = new TextBox();
             OrdemDeServicoInfoLabel = new Label();
+            IdProduto = new DataGridViewTextBoxColumn();
+            Nome = new DataGridViewTextBoxColumn();
+            Quantidade = new DataGridViewTextBoxColumn();
+            Preco = new DataGridViewTextBoxColumn();
+            ValorTotalProduto = new DataGridViewTextBoxColumn();
+            RemoverProduto = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)ProdutosNaOrdemDeServico).BeginInit();
             SuspendLayout();
             // 
@@ -175,53 +175,6 @@
             ProdutosNaOrdemDeServico.Size = new Size(659, 655);
             ProdutosNaOrdemDeServico.TabIndex = 94;
             ProdutosNaOrdemDeServico.CellContentClick += ProdutosNaOrdemDeServico_CellContentClick;
-            // 
-            // IdProduto
-            // 
-            IdProduto.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            IdProduto.HeaderText = "ID";
-            IdProduto.MinimumWidth = 26;
-            IdProduto.Name = "IdProduto";
-            IdProduto.Width = 43;
-            // 
-            // Nome
-            // 
-            Nome.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Nome.HeaderText = "Nome";
-            Nome.MinimumWidth = 35;
-            Nome.Name = "Nome";
-            Nome.Width = 65;
-            // 
-            // Quantidade
-            // 
-            Quantidade.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Quantidade.HeaderText = "Quantidade";
-            Quantidade.MinimumWidth = 6;
-            Quantidade.Name = "Quantidade";
-            Quantidade.Width = 94;
-            // 
-            // Preco
-            // 
-            Preco.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            Preco.HeaderText = "Preço";
-            Preco.MinimumWidth = 6;
-            Preco.Name = "Preco";
-            Preco.Width = 62;
-            // 
-            // ValorTotalProduto
-            // 
-            ValorTotalProduto.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            ValorTotalProduto.HeaderText = "Valor Total / Produto";
-            ValorTotalProduto.MinimumWidth = 6;
-            ValorTotalProduto.Name = "ValorTotalProduto";
-            ValorTotalProduto.Width = 89;
-            // 
-            // RemoverProduto
-            // 
-            RemoverProduto.HeaderText = "Remover Produto";
-            RemoverProduto.MinimumWidth = 6;
-            RemoverProduto.Name = "RemoverProduto";
-            RemoverProduto.Width = 125;
             // 
             // DeletarButton
             // 
@@ -585,6 +538,53 @@
             OrdemDeServicoInfoLabel.TabIndex = 126;
             OrdemDeServicoInfoLabel.Text = "Ordem de Serviço:";
             // 
+            // IdProduto
+            // 
+            IdProduto.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            IdProduto.HeaderText = "ID";
+            IdProduto.MinimumWidth = 26;
+            IdProduto.Name = "IdProduto";
+            IdProduto.Width = 43;
+            // 
+            // Nome
+            // 
+            Nome.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Nome.HeaderText = "Nome";
+            Nome.MinimumWidth = 35;
+            Nome.Name = "Nome";
+            Nome.Width = 65;
+            // 
+            // Quantidade
+            // 
+            Quantidade.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Quantidade.HeaderText = "Quantidade";
+            Quantidade.MinimumWidth = 6;
+            Quantidade.Name = "Quantidade";
+            Quantidade.Width = 94;
+            // 
+            // Preco
+            // 
+            Preco.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Preco.HeaderText = "Preço";
+            Preco.MinimumWidth = 6;
+            Preco.Name = "Preco";
+            Preco.Width = 62;
+            // 
+            // ValorTotalProduto
+            // 
+            ValorTotalProduto.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            ValorTotalProduto.HeaderText = "Valor Total / Produto";
+            ValorTotalProduto.MinimumWidth = 6;
+            ValorTotalProduto.Name = "ValorTotalProduto";
+            ValorTotalProduto.Width = 89;
+            // 
+            // RemoverProduto
+            // 
+            RemoverProduto.HeaderText = "Remover Produto";
+            RemoverProduto.MinimumWidth = 6;
+            RemoverProduto.Name = "RemoverProduto";
+            RemoverProduto.Width = 125;
+            // 
             // EditarOrdemDeServico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -654,12 +654,6 @@
         private ComboBox ListaODSEmAberto;
         private Label ProdutoAdicionadosNaODSLabel;
         private DataGridView ProdutosNaOrdemDeServico;
-        private DataGridViewTextBoxColumn IdProduto;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Quantidade;
-        private DataGridViewTextBoxColumn Preco;
-        private DataGridViewTextBoxColumn ValorTotalProduto;
-        private DataGridViewButtonColumn RemoverProduto;
         private Button DeletarButton;
         private Label PrecoTotalVendaLabel;
         private Button ConcluirODS;
@@ -697,5 +691,11 @@
         private Label TipoDeServicoLabel;
         private TextBox TipoDeServicoBox;
         private Label OrdemDeServicoInfoLabel;
+        private DataGridViewTextBoxColumn IdProduto;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Quantidade;
+        private DataGridViewTextBoxColumn Preco;
+        private DataGridViewTextBoxColumn ValorTotalProduto;
+        private DataGridViewButtonColumn RemoverProduto;
     }
 }

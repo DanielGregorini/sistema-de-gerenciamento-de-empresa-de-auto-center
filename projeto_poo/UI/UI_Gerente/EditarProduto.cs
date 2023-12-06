@@ -14,9 +14,7 @@ namespace AutoCenter
 {
     public partial class EditarProduto : Form
     {
-
         int produtoIdEditado { get; set; }
-
 
         public EditarProduto(Gerente gerente)
         {

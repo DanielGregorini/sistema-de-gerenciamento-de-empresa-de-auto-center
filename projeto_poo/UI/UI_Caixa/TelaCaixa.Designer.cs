@@ -99,7 +99,6 @@
             Controls.Add(caixa_nome);
             Name = "TelaCaixa";
             Text = "TelaCaixa";
-            Load += TelaCaixa_Load;
             ((System.ComponentModel.ISupportInitialize)listaVendaEmAberto).EndInit();
             ((System.ComponentModel.ISupportInitialize)listaOrdemDeServicoEmAberto).EndInit();
             ResumeLayout(false);

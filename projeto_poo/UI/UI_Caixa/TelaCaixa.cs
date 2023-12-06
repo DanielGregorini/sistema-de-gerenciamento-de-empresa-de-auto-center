@@ -217,20 +217,5 @@ namespace AutoCenter
                 }
             }
         }
-
-        private void TelaCaixa_Load(object sender, EventArgs e)
-        {
-            // O código a ser executado ao carregar a tela, se necessário
-        }
-
-        private void listaOrdemDeServicoEmAberto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
