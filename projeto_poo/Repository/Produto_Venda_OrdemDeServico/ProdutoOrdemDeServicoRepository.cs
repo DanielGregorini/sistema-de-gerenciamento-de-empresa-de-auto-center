@@ -27,7 +27,7 @@ namespace AutoCenter.Repository
                 {
                     context.ProdutoOrdensDeServico.Add(produtoOrdemDeServico);
                     var ordemDeServico = OrdemDeServicoRepository.OrdemDeServicoPorId(produtoOrdemDeServico.OrdemDeServicoId);
-                    OrdemDeServicoRepository.AtualizarOrdemDeServico(ordemDeServico.OrdemDeServicoId);
+                    OrdemDeServicoRepository.AtualizarOrdemDeServico(ordemDeServico.OrdemDeServicoId, null, null);
                     ProdutoRepository.EditarProduto(produto.ProdutoId, null, null, null, produto.Quantidade - produtoOrdemDeServico.Quantidade);
                 }
 
@@ -40,7 +40,31 @@ namespace AutoCenter.Repository
             //no futuro adicionar um metodo para adicionar os produtos de volta
             using (var context = new AutoCenterContext())
             {
+                var produto = ProdutoRepository.ProdutoPorId(produtoOrdemDeServico.ProdutoId);
+
+                produto.Quantidade += produtoOrdemDeServico.Quantidade;
+
+                context.Produtos.Update(produto);
+
                 context.ProdutoOrdensDeServico.Remove(produtoOrdemDeServico);
+                context.SaveChanges();
+            }
+        }
+
+        static public void AtualizarProdutoOrdemDeServico(ProdutoOrdemDeServico produtoOrdemDeServico)
+        {
+            using (var context = new AutoCenterContext())
+            {
+                var produtoOrdemDeServico_ = ProdutoOrdemDeServicoPorId(produtoOrdemDeServico.ProdutoOrdemDeServicoId);
+                
+                double diferencaQuantidade = produtoOrdemDeServico.Quantidade - produtoOrdemDeServico_.Quantidade;
+
+                Produto produto = ProdutoRepository.ProdutoPorId(produtoOrdemDeServico.ProdutoId);
+
+                ProdutoRepository.EditarProduto(produtoOrdemDeServico.ProdutoId, null, null, null, produto.Quantidade + diferencaQuantidade);
+
+                context.ProdutoOrdensDeServico.Update(produtoOrdemDeServico);
+
                 context.SaveChanges();
             }
         }
@@ -56,7 +80,6 @@ namespace AutoCenter.Repository
                 return produtosOrdemDeServico;
             }
         }
-
 
         static public List<ProdutoOrdemDeServico> ListarProdutoOrdemDeServico()
         {
@@ -76,7 +99,6 @@ namespace AutoCenter.Repository
 
                 if (produtoOrdemDeServico == null)
                 {
-                    throw new ArgumentException("ID não encontrado");
                     return null;
                 }
 

@@ -447,7 +447,6 @@ namespace AutoCenter
         private void AtualizarDataGridListaDeProduto()
         {
             double valorTotal = 0;
-            //PrecoTotalVendaLabel;
 
             // Limpar as linhas existentes antes de adicionar novas
             ProdutosNaOrdemDeServico.Rows.Clear();
@@ -471,7 +470,7 @@ namespace AutoCenter
 
                 ProdutosNaOrdemDeServico.Rows.Add(novaLinha);
             }
-            PrecoTotalVendaLabel.Text = "Valor Total: " + valorTotal.ToString();
+            PrecoTotalVendaLabel.Text = "Valor Total: " + valorTotal.ToString("F2", CultureInfo.InvariantCulture);
         }
 
         private void ProdutosNaOrdemDeServico_CellContentClick(object sender, DataGridViewCellEventArgs e)

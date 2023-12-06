@@ -38,7 +38,7 @@ namespace AutoCenter.Repository
             }
         }
 
-        static public void AtualizarOrdemDeServico(int idOrdemDeServico)
+        static public void AtualizarOrdemDeServico(int idOrdemDeServico, string? novaDescricao, string? novoTipoServico)
         {
             using (var context = new AutoCenterContext())
             {
@@ -46,6 +46,16 @@ namespace AutoCenter.Repository
 
                 var ordemDeServico = OrdemDeServicoPorId(idOrdemDeServico);
                 var ProdutoOrdensDeServico = ProdutoOrdemDeServicoRepository.ListarProdutoOrdensDeServicoPorOrdemDeServico(ordemDeServico.OrdemDeServicoId);
+                
+                if (novaDescricao != null)
+                {
+                    ordemDeServico.Descricao = novaDescricao;
+                }
+
+                if (novoTipoServico != null)
+                {
+                    ordemDeServico.TipoDeServico = novoTipoServico;
+                }
 
                 foreach (var p in ProdutoOrdensDeServico)
                 {
@@ -68,9 +78,15 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
+                var produtoOrdensDeServico = ProdutoOrdemDeServicoRepository.
+                    ListarProdutoOrdensDeServicoPorOrdemDeServico(ordemDeServico.OrdemDeServicoId);
 
-                //no futuro adicionar um metodo para adicionar os produtos de volta
-                context.OrdensDeServico.Remove(ordemDeServico);
+                foreach (var produtoOrdemDeServico in produtoOrdensDeServico)
+                {
+                    ProdutoOrdemDeServicoRepository.ExcluirProdutoOrdemDeServico(produtoOrdemDeServico);
+                }
+
+               context.OrdensDeServico.Remove(ordemDeServico);
                 context.SaveChanges();
             }
         }

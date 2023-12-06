@@ -99,6 +99,7 @@
             EditarODSBox.TabIndex = 5;
             EditarODSBox.Text = "Editar ordem de serviço";
             EditarODSBox.UseVisualStyleBackColor = true;
+            EditarODSBox.Click += EditarODSBox_Click;
             // 
             // TelaVendedor
             // 

@@ -53,5 +53,11 @@ namespace AutoCenter
             CriarOrdemDeServico criarOrdemDeServico = new CriarOrdemDeServico(vendedor);
             criarOrdemDeServico.Show();
         }
+
+        private void EditarODSBox_Click(object sender, EventArgs e)
+        {
+            EditarOrdemDeServico editarOrdemDeServico = new EditarOrdemDeServico(vendedor);
+            editarOrdemDeServico.Show();
+        }
     }
 }

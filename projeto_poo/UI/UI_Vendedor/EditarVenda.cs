@@ -145,7 +145,8 @@ namespace AutoCenter
 
                 ProdutosNaVenda.Rows.Add(novaLinha);
             }
-            PrecoTotalVendaLabel.Text = "Valor Total: " + valorTotal.ToString();
+
+            PrecoTotalVendaLabel.Text = "Valor Total: " + valorTotal.ToString("F2", CultureInfo.InvariantCulture);
         }
 
         //dados do cliente 
@@ -265,7 +266,7 @@ namespace AutoCenter
                 }
             }
         }
-        
+
         private void InserirDadosProduto(int idProduto)
         {
             var produto = ProdutoRepository.ProdutoPorId(idProduto);
@@ -274,11 +275,12 @@ namespace AutoCenter
 
             NomeProdutoLabel.Text = "Nome: " + produto.Nome;
             Descricao.Text = "Descrição: " + produto.Descricao;
-            PrecoLabel.Text = "Preço: " + produto.Preco.ToString("C2"); 
+            PrecoLabel.Text = "Preço: " + produto.Preco.ToString("C2");
             QuantidadeDisponivelLabel.Text = "Quantidade disponível: " + produto.Quantidade.ToString("N3");
-            CustoMedioLabel.Text = "Custo médio: " + produto.CustoMedio.ToString("N2"); 
+            CustoMedioLabel.Text = "Custo médio: " + produto.CustoMedio.ToString("N2");
 
         }
+
         private void AdicionarProdutoBox_Click(object sender, EventArgs e)
         {
             if (ProdutoSelecionado == null)
@@ -429,7 +431,7 @@ namespace AutoCenter
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(VendaCriada == null)
+            if (VendaCriada == null)
             {
                 MessageBox.Show("Sem venda selecionada");
                 return;
@@ -471,5 +473,6 @@ namespace AutoCenter
 
             ListaVendasEmAberto.SelectedItem = null;
         }
+
     }
 }

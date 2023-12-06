@@ -55,7 +55,7 @@ namespace AutoCenter.Repository
         {
             using (var context = new AutoCenterContext())
             {
-                var ProdutoVenda_ = ProdutoVendaPorId(produtoVenda.ProdutoId);
+                var ProdutoVenda_ = ProdutoVendaPorId(produtoVenda.ProdutoVendaId);
 
                 double diferencaQuantidade = produtoVenda.Quantidade - ProdutoVenda_.Quantidade;
 

@@ -322,7 +322,7 @@ namespace AutoCenter
 
                 VendaCriada = novaVenda;
             }
-
+            AdicionarProdutoBox.Text = "Adicionar";
             CriarNovaProdutoVenda((double)quantidadeVendida);
         }
 
@@ -345,7 +345,6 @@ namespace AutoCenter
         private void AtualizarDataGridListaDeProduto()
         {
             double valorTotal = 0;
-            //PrecoTotalVendaLabel;
 
             // Limpar as linhas existentes antes de adicionar novas
             ProdutosNaVenda.Rows.Clear();
@@ -369,7 +368,7 @@ namespace AutoCenter
 
                 ProdutosNaVenda.Rows.Add(novaLinha);
             }
-            PrecoTotalVendaLabel.Text = "Valor Total: " + valorTotal.ToString();
+            PrecoTotalVendaLabel.Text = "Valor Total: " + valorTotal.ToString("F2", CultureInfo.InvariantCulture);
         }
 
         private void ProdutosNaVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
