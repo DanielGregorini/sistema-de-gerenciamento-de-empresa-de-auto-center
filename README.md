@@ -5,6 +5,6 @@ Este repositório tem o código-fonte completo de um sistema de gerenciamento pa
 # Instruções para criação do Banco de Dados MySQL
 Caso deseje utilizar outro banco de dados, modifique a string de conexão (na pasta Data) e instale a extensão correspondente do EF Core para o banco específico. No console do NuGet, execute os seguintes comandos:
 
-Add-Migration NOMEDAVERSAO
+Add-Migration INICAL
 
 Update-Database
